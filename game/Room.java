@@ -1,4 +1,5 @@
 package game;
+import java.util.*;
 
 /**
  * Room.java
@@ -13,11 +14,6 @@ package game;
 
 public class Room {
 	
-    /**
-     * Rooms adjacent to this one, to which there is a door.
-     */
-    private Room north, south, east, west, up, down, tunnel;
-
     /**
      * A description of this room
      */
@@ -35,15 +31,28 @@ public class Room {
     	}
     
     /**
-     * Methods for added "doors"-- directiona connections to other rooms.
+     * Rooms adjacent to this one, to which there is a door.
      */
-    public void setNorth(Room north) { this.north = north; }
-    public void setSouth(Room south) { this.south = south; }
-    public void setEast(Room east) { this.east = east; }
-    public void setWest(Room west) { this.west = west; }
-    public void setUp(Room up) { this.up = up; }
-    public void setDown(Room down) {this.down = down; }
-    public void setTunnel(Room tunnel) {this.tunnel = tunnel; }
+    private HashMap<Room, String> theRooms = new HashMap<Room, String>();
+
+    private Room north;
+    private Room south;
+    private Room east;
+    private Room west;
+    private Room up;
+    private Room down;
+    private Room tunnel;
+    
+    /**
+     * Methods for added "doors"-- direction connections to other rooms.
+     */
+    theRooms.put("north", north);
+    south = theRooms.put("south", south);
+    east = theRooms.put("east", east);
+    theRooms.put("west", west);
+    theRooms.put("up", up);
+    theRooms.put("down", down);
+    theRooms.put("tunnel", tunnel);
     
     /**
      * Retrieve a description of this room (to the user).
