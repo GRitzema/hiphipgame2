@@ -52,14 +52,20 @@ public class Parser {
                 nextRoom = room.getSouth();
             else if (command.equals("west"))
                 nextRoom = room.getWest();
-            else
+            else if (command.equals("east"))
                 nextRoom = room.getEast();
+            else if (command.equals("up"))
+            	nextRoom = room.getUp();
+            else if (command.equals("down"))
+            	nextRoom = room.getDown();
+            else
+            	nextRoom = room.getTunnel();
             if (nextRoom == null) 
                 System.out.println("There is no door in that direction.");
             else
                 game.setCurrentRoom(nextRoom);
         } else if (command.equals("look")) {
-        	System.out.print(room.getDescription());
+        	System.out.println(room.getInRoom());
         }
         else
             System.out.println("I do not know how to " + command + ".");
