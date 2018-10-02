@@ -21,5 +21,19 @@ public class Inventory {
 		}
 		
 	}
+	
+	public boolean checkInventory(String what) {
+		boolean check = false; // to check whether there is such a thing
+		if (empty != 0) {
+			for (int i = 0; i<empty; i++) {
+				if (what == pockets[i].returnName()) {
+					check = true;
+				}
+			}
+		}
+		
+		return check;
+	}
+	
 
 }

@@ -72,8 +72,19 @@ public class Parser {
         } else if (command.equals("inventory")) {
         	System.out.println("In your pockets there are:");
         	pockets.displayInventory();
-        }
-        else
+        } else if (command.equals("help")) {
+        	System.out.println("Commands:");
+        	System.out.println("north/south/east/west : move between rooms");
+        	System.out.println("look : observe the room you're in");
+        	System.out.println("inventory : check what's in your pockets");
+        
+        /*}else if (command.equals("use")) {
+        	System.out.println("Use what?");
+        	String what = keyboard.nextLine().toLowerCase();
+        	if (pockets.checkInventory(what) && ) {
+        		rooms.setNorth(rooms[1]);
+        	}*/
+        } else
             System.out.println("I do not know how to " + command + ".");
 
     }
