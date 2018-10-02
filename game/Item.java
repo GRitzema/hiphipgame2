@@ -2,8 +2,10 @@ package game;
 
 public interface Item {
 
-	public void pickUp(String item);
+	public String description();
 	
-	public void drop(String item);
+	public void use();
+	
+	public String returnName();
 	
 }

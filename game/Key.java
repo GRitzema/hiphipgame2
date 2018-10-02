@@ -1,11 +1,13 @@
 package game;
 
-public class Key extends Item{
+public class Key implements Item{
 
 	private Inventory pockets;
+	private String name;
 	
-	public Key(Inventory pockets) {
+	public Key(Inventory pockets, String name) {
 		this.pockets = pockets;
+		this.name = name;
 	}
 	
 	public String description() {
@@ -13,7 +15,7 @@ public class Key extends Item{
 	}
 	
 	public String returnName() {
-		
+		return name;
 	}
 	
 	public void use() {
