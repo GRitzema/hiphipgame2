@@ -16,7 +16,7 @@ public class Room {
     /**
      * Rooms adjacent to this one, to which there is a door.
      */
-    private Room north, south, east, west;
+    private Room north, south, east, west, up, down;
 
     /**
      * A description of this room
@@ -36,6 +36,8 @@ public class Room {
     public void setSouth(Room south) { this.south = south; }
     public void setEast(Room east) { this.east = east; }
     public void setWest(Room west) { this.west = west; }
+    public void setUpStairs(Room up) { this.up = up; }
+    public void setDownStairs(Room down) {this.down = down; }
 	
     /**
      * Retrieve a description of this room (to the user).
@@ -50,6 +52,8 @@ public class Room {
     public Room getSouth() { return south; }
     public Room getEast() { return east; }
     public Room getWest() { return west; }
+    public Room getUp() { return up; }
+    public Room getDown() { return down; }
     
 
 	

@@ -38,17 +38,19 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[4];
+        Room[] rooms = new Room[5];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room");
         rooms[0].setNorth(rooms[1]);
         rooms[1].setSouth(rooms[0]);
-        rooms[1].setEast(rooms[2]);
-        rooms[2].setWest(rooms[1]);
         rooms[2].setSouth(rooms[3]);
         rooms[3].setNorth(rooms[2]);
         rooms[3].setWest(rooms[0]);
         rooms[0].setEast(rooms[3]);
+        rooms[4].setDown(rooms[3]);
+        rooms[3].setUp(rooms[4]);
+        rooms[0].setTunnel(rooms[2]);
+        rooms[2].setTunnel(rooms[0]);
         over = false;
         currentRoom = rooms[0];
     }

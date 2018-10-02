@@ -52,8 +52,14 @@ public class Parser {
                 nextRoom = room.getSouth();
             else if (command.equals("west"))
                 nextRoom = room.getWest();
-            else
+            else if (command.equals("east"))
                 nextRoom = room.getEast();
+            else if (command.equals("up"))
+            	nextRoom = room.getUp();
+            else if (command.equals("down"))
+            	nextRoom = room.getDown();
+            else
+            	nextRoom = room.getTunnel();
             if (nextRoom == null) 
                 System.out.println("There is no door in that direction.");
             else
