@@ -64,6 +64,8 @@ public class Parser {
                 System.out.println("There is no door in that direction.");
             else
                 game.setCurrentRoom(nextRoom);
+        } else if (command.equals("look")) {
+        	System.out.println(room.getInRoom());
         }
         else
             System.out.println("I do not know how to " + command + ".");
