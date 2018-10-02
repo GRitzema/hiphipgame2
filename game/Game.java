@@ -29,6 +29,8 @@ public class Game {
      */
     private boolean over;
     
+    private Inventory pockets = new Inventory();
+    
     /**
      * Return the room in which the user is currently.
      */
@@ -69,5 +71,9 @@ public class Game {
      * Indicate that the game is now over.
      */
     public void finishGame() { over = true; }
+    
+    public Inventory inventory() {
+    	return pockets;
+    }
     
 }

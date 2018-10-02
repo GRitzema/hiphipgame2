@@ -19,6 +19,8 @@ public class Parser {
      * For user input from the keyboard.
      */
     private Scanner keyboard;
+    
+    private Inventory pockets;
 
     /**
      * Plain constructor
@@ -36,6 +38,7 @@ public class Parser {
     public void executeTurn(Game game) {
         // The room that the user is in.
         Room room = game.getCurrentRoom();
+        pockets = game.inventory();
 
         System.out.println("You are in " + room.getDescription());
 
@@ -66,6 +69,9 @@ public class Parser {
                 game.setCurrentRoom(nextRoom);
         } else if (command.equals("look")) {
         	System.out.println(room.getInRoom());
+        } else if (command.equals("inventory")) {
+        	System.out.println("In your pockets there are:");
+        	pockets.displayInventory();
         }
         else
             System.out.println("I do not know how to " + command + ".");
