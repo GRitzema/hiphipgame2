@@ -22,12 +22,17 @@ public class Room {
      * A description of this room
      */
     private String description;
+    
+    private String inRoom;
 
     /**
      * Constructor.
      * @param description A String describing this room to the user.
      */
-    public Room(String description) { this.description = description; }
+    public Room(String description, String inRoom) { 
+    	this.description = description; 
+    	this.inRoom = inRoom;
+    	}
     
     /**
      * Methods for added "doors"-- directiona connections to other rooms.
@@ -41,6 +46,8 @@ public class Room {
      * Retrieve a description of this room (to the user).
      */
     public String getDescription() { return description; }
+    
+    public String getInRoom() { return inRoom; }
     
     /**
      * Methods to determine the rooms to which various
