@@ -1,32 +1,36 @@
 package game;
 
+import java.util.ArrayList;
+
 public class Inventory {
 	
-	private Item[] pockets = new Item[10]; 
+	private ArrayList<Item> pockets = new ArrayList<Item>(); 
 	
 	private int empty = 0;
 	
+	
 	public void addToInventory(Item x) {
-		pockets[empty] = x;
+		pockets.add(x);
 		empty++;
 	}
 	
+	
 	public void displayInventory() {
 		if (empty != 0) {
-			for (int i = 0; i<empty; i++) {
-				System.out.println(pockets[i].returnName());
+			for (Item it : pockets) {
+				System.out.println(it);
 			}
-		}else {
-			System.out.println("Just air... and a little lint");
 		}
-		
+		else {
+			System.out.println("You have nothing but lint");
+		}
 	}
 	
 	public boolean checkInventory(String what) {
 		boolean check = false; // to check whether there is such a thing
 		if (empty != 0) {
-			for (int i = 0; i<empty; i++) {
-				if (what == pockets[i].returnName()) {
+			for (Item it : pockets) {
+				if (what.equals(""+it)) {
 					check = true;
 				}
 			}
