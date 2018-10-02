@@ -53,6 +53,7 @@ public class Game {
         rooms[3].setUp(rooms[4]);
         rooms[0].setTunnel(rooms[2]);
         rooms[2].setTunnel(rooms[0]);
+        rooms[0].setInRoom("There is a key in the corner");
         over = false;
         currentRoom = rooms[0];
     }

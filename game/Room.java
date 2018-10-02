@@ -50,6 +50,10 @@ public class Room {
      */
     public String getDescription() { return description; }
     
+    public void setInRoom(String thing) {
+    	inRoom = thing;
+    }
+    
     public String getInRoom() { return inRoom; }
     
     /**
