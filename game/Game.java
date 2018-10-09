@@ -31,6 +31,14 @@ public class Game {
     
     private Inventory pockets = new Inventory();
     
+    private Item left = null;
+    private Item right = null;
+    
+    public Item getLeft() { return left; }
+    public Item getRight() { return right; }
+    public Inventory getPockets() { return pockets;}
+    
+    
     /**
      * Return the room in which the user is currently.
      */
