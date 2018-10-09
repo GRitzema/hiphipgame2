@@ -5,38 +5,38 @@ import java.util.ArrayList;
 public class Inventory {
 	
 	private ArrayList<Item> pockets = new ArrayList<Item>(); 
-	
-	private int empty = 0;
-	
+		
 	
 	public void addToInventory(Item x) {
 		pockets.add(x);
-		empty++;
+		
 	}
 	
+	public void removeFromInventory(Item x) {
+		if (pockets.indexOf(x) >= 0)
+			pockets.remove(pockets.indexOf(x));
+	}
 	
 	public void displayInventory() {
-		if (empty != 0) {
+		int i = 1;
+		if (!pockets.isEmpty()) {
 			for (Item it : pockets) {
-				System.out.println(it);
+				System.out.println(i + ". " + it);
+				i++;
 			}
 		}
 		else {
-			System.out.println("You have nothing but lint");
+			System.out.println("Just air... and a little lint");
 		}
 	}
 	
 	public boolean checkInventory(String what) {
-		boolean check = false; // to check whether there is such a thing
-		if (empty != 0) {
-			for (Item it : pockets) {
-				if (what.equals(""+it)) {
-					check = true;
-				}
-			}
+		if (pockets.indexOf(what) >= 0) {
+			return true;
 		}
-		
-		return check;
+		else {
+			return false;
+		}
 	}
 	
 
