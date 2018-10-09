@@ -39,5 +39,8 @@ public class Inventory {
 		}
 	}
 	
+	//public Item getFrom(String what) {
+		
+	//}
 
 }
