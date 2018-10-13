@@ -16,13 +16,16 @@ public class Room {
     /**
      * Rooms adjacent to this one, to which there is a door.
      */
-    private Room north, south, east, west, up, down, tunnel;
+    private Room forward, backward, left, right;
 
     /**
      * A description of this room
      */
     private String description;
     
+    /**
+     * A more detailed description of the items of a room.
+     */
     private String inRoom;
 
     /**

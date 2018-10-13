@@ -39,18 +39,15 @@ public class Inventory {
 		}
 	}
 	
-//HEAD
-	public Item getFrom(String what) { 
+	public Item getFrom(String what){ 
 		
 		if (pockets.indexOf(what) >= 0) {
 			return pockets.get(pockets.indexOf(what));
 		} else {
+			System.out.println("You do not have that item in your inventory\n");
 			return new Empty();
 		}
 		
 	}
-	
-=======
->>>>>>> 0d070e3c46d43152ff817144a90940d6ef4b51d7
 
 }

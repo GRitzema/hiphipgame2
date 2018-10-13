@@ -12,4 +12,10 @@ public class LookAction implements Action {
 		System.out.println(room.getInRoom());
 	}
 
+	@Override
+	public void takeAction(String substring) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

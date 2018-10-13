@@ -17,4 +17,10 @@ public class UseAction implements Action {
 		System.out.print("Use " + game.getLeft().returnName() + " or " + game.getRight().returnName() + "?");
 	}
 
+	@Override
+	public void takeAction(String substring) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

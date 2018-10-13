@@ -3,28 +3,21 @@ package game;
 import java.util.Scanner;
 
 public class GoAction implements Action {
-
-	private Scanner keyboard;
 	
 	Room room;
 	
 	Game game;
 
 	public GoAction(Game game, Room room) {
-		keyboard = new Scanner (System.in);
 		this.game = game;
 		this.room = room;
 	}
 
-	@Override
-	public void takeAction() {
-		
-		System.out.print("Which direction do you want to go? --> ");
-        String command = keyboard.nextLine().toLowerCase();  // user's command
+	public void takeAction(String command) {
         
-		if (command.equals("north") || command.equals("south") 
-	            || command.equals("west") || command.equals("east")) {
-	            Room nextRoom;   // the room we're moving to
+		if (command.equals("forward") || command.equals("backward") 
+	            || command.equals("left") || command.equals("right")) {
+	            Room nextRoom;
 	            if (command.equals("north"))
 	                nextRoom = room.getNorth();
 	            else if (command.equals("south"))
@@ -46,4 +39,7 @@ public class GoAction implements Action {
 		}
 	}
 
+	public void takeAction() {
+		System.out.println("Go where?");
+	}
 }

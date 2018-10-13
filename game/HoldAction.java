@@ -20,4 +20,10 @@ public class HoldAction implements Action {
         game.getPockets().getFrom(item);
 	}
 
+	@Override
+	public void takeAction(String substring) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
