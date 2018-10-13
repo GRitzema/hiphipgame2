@@ -40,6 +40,10 @@ public class Room {
     public Room(String description, String inRoom) { 
     	this.description = description; 
     	this.inRoom = inRoom;
+    	doors.put("left", null);
+    	doors.put("right", null);
+    	doors.put("forward", null);
+    	doors.put("backward", null);
     	}
     
     
@@ -49,6 +53,9 @@ public class Room {
     	return doors;
     }
     
+    public void setRoom(String direction,Room next) {
+    	doors.put(direction, next);
+    }
     
     /**
      * Retrieve a description of this room (to the user).
@@ -65,6 +72,8 @@ public class Room {
      * Methods to determine the rooms to which various
      * doors-- if they extist-- lead.
      */
+    
+    /**
     public Room getNorth() { return north; }
     public Room getSouth() { return south; }
     public Room getEast() { return east; }
@@ -72,6 +81,6 @@ public class Room {
     public Room getUp() { return up; }
     public Room getDown() { return down; }
     public Room getTunnel() { return tunnel; }
-
+*/
 	
 }

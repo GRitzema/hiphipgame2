@@ -67,7 +67,6 @@ public class Parser {
         
         if (command.substring(0,2).equals("go")) {
         	actions.get("go").takeAction(command.substring(3));
-        	System.out.println(command.substring(3));
         } else {
 	        if (actions.containsKey(command)) {
 	        	actions.get(command).takeAction();
