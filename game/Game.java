@@ -31,8 +31,8 @@ public class Game {
     
     private Inventory pockets = new Inventory();
     
-    private Item left = null;
-    private Item right = null;
+    private Item left = new Empty();
+    private Item right = new Empty();
     
     public Item getLeft() { return left; }
     public Item getRight() { return right; }

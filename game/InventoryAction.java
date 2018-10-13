@@ -11,18 +11,15 @@ public class InventoryAction implements Action {
 	}
 
 	public void takeAction() {
-		System.out.println("In your pockets there are:");
+		System.out.println("\nIn your pockets there are:");
     	pockets.displayInventory();
     	
-    	System.out.println("In your hands you are holding:");
+    	System.out.print("\nYou are holding ");
     	if (game.getLeft() != null) {
-    		System.out.println(game.getLeft().returnName() + " in your left hand");
+    		System.out.print(game.getLeft().returnName() + " in your left hand and ");
     	}
     	if (game.getRight() != null) {
-    		System.out.println(game.getRight().returnName() + " in your right hand");
-    	}
-    	if(game.getRight() == null && game.getLeft() == null) {
-    		System.out.println("nothing");
+    		System.out.println(game.getRight().returnName() + " in your right hand.\n");
     	}
 	}
 

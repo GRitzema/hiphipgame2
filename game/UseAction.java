@@ -14,11 +14,7 @@ public class UseAction implements Action {
 
 	@Override
 	public void takeAction() {
-		System.out.print("Use what? --> ");
-        String item = keyboard.nextLine().toLowerCase();
-        
-        
-    		
+		System.out.print("Use " + game.getLeft().returnName() + " or " + game.getRight().returnName() + "?");
 	}
 
 }

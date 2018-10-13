@@ -39,8 +39,12 @@ public class Inventory {
 		}
 	}
 	
-	//public Item getFrom(String what) {
-		
-	//}
+	public Item getFrom(String what) {
+		if (pockets.indexOf(what) >= 0) {
+			return pockets.get(pockets.indexOf(what));
+		} else {
+			return new Empty();
+		}
+	}
 
 }
