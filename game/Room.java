@@ -1,5 +1,7 @@
 package game;
 
+import java.util.HashMap;
+
 /**
  * Room.java
  * 
@@ -27,6 +29,9 @@ public class Room {
      * A more detailed description of the items of a room.
      */
     private String inRoom;
+    
+    
+    private HashMap<String,Room> doors = new HashMap<String,Room>();
 
     /**
      * Constructor.
@@ -37,16 +42,12 @@ public class Room {
     	this.inRoom = inRoom;
     	}
     
-    /**
-     * Methods for added "doors"-- directiona connections to other rooms.
-     */
-    public void setNorth(Room north) { this.north = north; }
-    public void setSouth(Room south) { this.south = south; }
-    public void setEast(Room east) { this.east = east; }
-    public void setWest(Room west) { this.west = west; }
-    public void setUp(Room up) { this.up = up; }
-    public void setDown(Room down) {this.down = down; }
-    public void setTunnel(Room tunnel) {this.tunnel = tunnel; }
+   
+    
+    public HashMap<String,Room> getDoors(){
+    	return doors;
+    }
+    
     
     /**
      * Retrieve a description of this room (to the user).
