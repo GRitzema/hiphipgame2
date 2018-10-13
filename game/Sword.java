@@ -37,4 +37,8 @@ public class Sword implements Item{
 	public int getDurability() {
 		return durability;
 	}
+	
+	public String getMaterial() {
+		return material;
+	}
 }
