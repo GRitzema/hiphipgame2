@@ -1,21 +1,40 @@
 package game;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class GoAction implements Action {
 	
-	Room room;
+	private Room room;
 	
-	Game game;
-
+	private Game game;
+	
+	private HashMap<String,Room> doors;
+	
 	public GoAction(Game game, Room room) {
 		this.game = game;
 		this.room = room;
+		this.doors = room.getDoors();
 	}
 
 	public void takeAction(String command) {
+		
+		Room nextRoom;
+		
+		if(doors.containsKey(command)){
+			nextRoom = doors.get(command);
+		} else {
+			System.out.println("Go where?");
+			nextRoom = null;
+		}
+		
+		if (nextRoom == null) 
+            System.out.println("There is no door in that direction.");
+        else
+            game.setCurrentRoom(nextRoom);
+
         
-		if (command.equals("forward") || command.equals("backward") 
+		/**if (command.equals("forward") || command.equals("backward") 
 	            || command.equals("left") || command.equals("right")) {
 	            Room nextRoom;
 	            if (command.equals("north"))
@@ -32,11 +51,13 @@ public class GoAction implements Action {
 	            	nextRoom = room.getDown();
 	            else
 	            	nextRoom = room.getTunnel();
-	            if (nextRoom == null) 
-	                System.out.println("There is no door in that direction.");
-	            else
-	                game.setCurrentRoom(nextRoom);
 		}
+		if (nextRoom == null) 
+            System.out.println("There is no door in that direction.");
+        else
+            game.setCurrentRoom(nextRoom);
+	            
+	            */
 	}
 
 	public void takeAction() {

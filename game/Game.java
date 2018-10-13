@@ -51,6 +51,11 @@ public class Game {
         Room[] rooms = new Room[5];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room", "There is nothing of interest.");
+        
+        rooms[0].setRoom("forward",rooms[1]);
+        rooms[1].setRoom("backward", rooms[0]);
+        
+        /**
         rooms[0].setNorth(rooms[1]);
         rooms[1].setSouth(rooms[0]);
         rooms[2].setSouth(rooms[3]);
@@ -63,7 +68,9 @@ public class Game {
         rooms[2].setTunnel(rooms[0]);
         rooms[0].setInRoom("There is a key in the corner");
         over = false;
+        */
         currentRoom = rooms[0];
+        
     }
     
     /**
