@@ -31,7 +31,8 @@ public class Food implements Item {
 	
 	public void eat() {
 		p.setHealth(hp + p.getHealth());
-		System.out.println();
+		System.out.println("You ate the " + name + "! You gained " + hp);
+		System.out.println("You now have " + p.getHealth());
 	}
 	
 }
