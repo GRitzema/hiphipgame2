@@ -21,14 +21,24 @@ public class Combat {
 	}
 	
 	public void playerCombat(Sword sword) {
-		Scanner keyboard1 = new Scanner(System.in);		
+		Scanner keyboard = new Scanner(System.in);		
 		
-		String turn1 = keyboard1.nextLine();
+		String turn = keyboard.nextLine();
 		
-		if (turn1.substring(0,3).equals("eat ") && pockets.getFrom(turn1.substring(4)).isEdible()) {
-			pockets.getFrom(turn1.substring(4)).use();
+		if (turn.substring(0,3).equals("eat ") && pockets.getFrom(turn.substring(4)).isEdible()) {
+			pockets.getFrom(turn.substring(4)).use();
 		}
 		
+		else if(turn.equals("fight")) {
+			fight(sword);
+		}
+		
+		else {
+			System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
+		}
+	}
+	
+	public void fight(Sword sword) {
 		double damage = 0;
 		if (Math.random()>=0.2) {
 			System.out.println("You missed " + m.getName() + "!");
@@ -55,7 +65,6 @@ public class Combat {
 				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
 		}
 	}
-	
 	
 	public void engage(String guess) {
 		if (guess.equals(m.getRiddle().getAnswer())){
