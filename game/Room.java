@@ -47,8 +47,13 @@ public class Room {
     	doors.put("backward", null);
     	}
       
-    public HashMap<String,Room> getDoors(){
-    	return doors;
+    public Room getDoors(String command){
+		if(doors.containsKey(command)){
+			return doors.get(command);
+		} else {
+			System.out.println("Go where?");
+			return this;
+		}
     }
     
     public void setRoom(String direction,Room next) {
@@ -65,20 +70,5 @@ public class Room {
     }
     
     public String getInRoom() { return inRoom; }
-    
-    /**
-     * Methods to determine the rooms to which various
-     * doors-- if they exist-- lead.
-     */
-    
-    /**
-    public Room getNorth() { return north; }
-    public Room getSouth() { return south; }
-    public Room getEast() { return east; }
-    public Room getWest() { return west; }
-    public Room getUp() { return up; }
-    public Room getDown() { return down; }
-    public Room getTunnel() { return tunnel; }
-*/
 	
 }
