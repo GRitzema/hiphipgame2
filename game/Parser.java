@@ -68,7 +68,7 @@ public class Parser {
         String full = keyboard.nextLine().toLowerCase();  // user's command
         if (full.indexOf(' ') != -1) {
 	        command = full.substring(0, full.indexOf(' '));
-	        extra = full.substring(full.indexOf(' '));
+	        extra = full.substring(full.indexOf(' ') + 1);
         } else {
         	command = full;
         }

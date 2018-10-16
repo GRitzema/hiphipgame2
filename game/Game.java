@@ -48,9 +48,35 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[10];
+        Room[] rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room", "There is nothing of interest.");
+  
+        setRooms(rooms);
+
+        currentRoom = rooms[0];
+    }
+ 
+    /**
+     * Is this game over or not?
+     */
+    public boolean isOver() { return over; }
+
+    /**
+     * Move into a different current room.
+     */
+    public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
+    
+    /**
+     * Indicate that the game is now over.
+     */
+    public void finishGame() { over = true; }
+    
+    public Inventory inventory() {
+    	return pockets;
+    }
+    
+    private void setRooms(Room[] rooms) {
         
         rooms[0].setRoom("forward",rooms[1]);
         rooms[1].setRoom("backward", rooms[0]);
@@ -72,47 +98,9 @@ public class Game {
         rooms[9].setRoom("backward", rooms[6]);
         rooms[9].setRoom("forward", rooms[10]);
         rooms[10].setRoom("backward", rooms[9]);
-        
-    }
-        /**
-        rooms[0].setNorth(rooms[1]);
-        rooms[1].setSouth(rooms[0]);
-        
-        rooms[2].setSouth(rooms[3]);
-        rooms[3].setNorth(rooms[2]);
-        rooms[3].setWest(rooms[0]);
-        rooms[0].setEast(rooms[3]);
-        rooms[4].setDown(rooms[3]);
-        rooms[3].setUp(rooms[4]);
-        rooms[0].setTunnel(rooms[2]);
-        rooms[2].setTunnel(rooms[0]);
-        rooms[0].setInRoom("There is a key in the corner");
-=======
->>>>>>> cf69633410b007b81a4544d1aeeaa6e04818fbd5
         over = false;
         
         rooms[0].setInRoom("There is a key in the corner");
-
-        currentRoom = rooms[0];
-        */
- 
-    /**
-     * Is this game over or not?
-     */
-    public boolean isOver() { return over; }
-
-    /**
-     * Move into a different current room.
-     */
-    public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
-    
-    /**
-     * Indicate that the game is now over.
-     */
-    public void finishGame() { over = true; }
-    
-    public Inventory inventory() {
-    	return pockets;
     }
     
 }
