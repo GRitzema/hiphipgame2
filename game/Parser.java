@@ -34,17 +34,20 @@ public class Parser {
     
     private Room room;
     
+    private Player player;
+    
     /**
      * Plain constructor
      */
     public Parser(Game game) {
+    	player = game.getPlayer();
     	keyboard = new Scanner (System.in);
-    	room = game.getCurrentRoom();
+    	room = player.getCurrentRoom();
     	pockets = game.getPockets();
         actions.put("inventory",new InventoryAction(pockets, game));
-        actions.put("look", new LookAction(room));
+        actions.put("look", new LookAction(player));
         actions.put("help", new HelpAction());
-        actions.put("go", new GoAction(game, room));
+        actions.put("go", new GoAction(game.getPlayer()));
         //actions.put("use", new UseAction(pockets));
         //actions.put("hold", new HoldAction(pockets));
     }
@@ -57,7 +60,7 @@ public class Parser {
      */
     public void executeTurn(Game game) {
         // The room that the user is in.
-        Room room = game.getCurrentRoom();
+        Room room = player.getCurrentRoom();
         pockets = game.inventory();
         
         System.out.println("You are in " + room.getDescription());

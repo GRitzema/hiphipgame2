@@ -3,19 +3,18 @@ package game;
 public class LookAction implements Action {
 
 	Room room;
+	Player player;
 	
-	public LookAction(Room room) {
-		this.room = room;
+	public LookAction(Player player) {
+		this.player = player;
 	}
 
 	public void takeAction() {
+		room = player.getCurrentRoom();
 		System.out.println(room.getInRoom());
 	}
 
-	@Override
-	public void takeAction(String substring) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	public void takeAction(String substring) { }
 
 }
