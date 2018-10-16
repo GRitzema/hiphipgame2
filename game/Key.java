@@ -20,11 +20,9 @@ public class Key implements Item{
 		return name;
 	}
 	
-	@Override
-	public boolean isEdible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
+
+
 
 	
 	public boolean isEdible() {
@@ -32,7 +30,10 @@ public class Key implements Item{
 	}
 
 
-	@Override
+
+	
+
+	
 	public void use() {
 		// TODO Auto-generated method stub
 		
