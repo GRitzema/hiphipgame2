@@ -21,13 +21,6 @@ public class GoAction implements Action {
 		
 		Room nextRoom;
 		
-		if(doors.containsKey(command)){
-			nextRoom = doors.get(command);
-		} else {
-			System.out.println("Go where?");
-			nextRoom = room;
-		}
-		
 		if (nextRoom == null) 
             System.out.println("There is no door in that direction.");
         else
