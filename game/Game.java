@@ -15,7 +15,7 @@ package game;
 
 public class Game {
     
-	private Player p = new Player(50,null);
+	Player p = new Player(50,null);
 
     /**
      * Keeps track of whether this game is over or not.
@@ -58,10 +58,6 @@ public class Game {
      * Indicate that the game is now over.
      */
     public void finishGame() { over = true; }
-    
-    public Inventory inventory() {
-    	return pockets;
-    }
     
     private void setRooms() {
     	
@@ -114,15 +110,15 @@ public class Game {
     	//rooms[4].addInside(newSword());
     	//rooms[6].addInside(new Food());
     
-        Key key1 = new Key(pockets, "Handcuffs Key", "a handcuffs key on the floor");
+        Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor");
         Riddle riddle1 = new Riddle("asdf", "jkl");
         rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, key1));
        
-        Key key2 = new Key(pockets, "Master Key", "a master key on the floor");
+        Key key2 = new Key("Master Key", "a master key on the floor");
         Riddle riddle2 = new Riddle("asdf", "jkl");
         rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, rooms[5], null, key2));
        
-        Key key3 = new Key(pockets, "Golden Key", "a golden key on the floor");
+        Key key3 = new Key("Golden Key", "a golden key on the floor");
         Riddle riddle3 = new Riddle("asdf", "jkl");
         rooms[9].placeMonster(new Monster("Satan", 100, riddle3, rooms[9], null, key3));
     }

@@ -44,5 +44,4 @@ public class Player {
 	public void setSword(Sword newSword) {
 		sword = newSword;
 	}
-	
 }

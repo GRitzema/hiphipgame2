@@ -6,6 +6,7 @@ public class Sword implements Item{
 	private Inventory pockets;
 	private String name;
 	private String description;
+	private String type = "sword";
 	
 	
 	public Sword(Inventory pockets, String material, String name, String description) {
@@ -35,7 +36,7 @@ public class Sword implements Item{
 
 	@Override
 	public boolean isEdible() {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
@@ -47,5 +48,10 @@ public class Sword implements Item{
 	
 	public boolean isEdible() {
 		return false;
+	}
+
+	@Override
+	public String returnType() {
+		return type;
 	}
 }

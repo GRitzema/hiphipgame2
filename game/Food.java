@@ -7,12 +7,14 @@ public class Food implements Item {
 	private String name;
 	private Inventory pockets;
 	private Player p;
+	private String type;
 	
-	public Food(int hp, String name, String description, Inventory pockets, Player p) {
+	public Food(int hp, String name, String description, Inventory pockets, Player p, String type) {
 		this.hp = hp;
 		this.name = name;
 		this.description = description;
 		this.pockets = pockets;
+		this.type = type;
 	}
 	
 	public String getDescription() {
@@ -38,5 +40,10 @@ public class Food implements Item {
 	
 	public boolean isEdible() {
 		return true;
+	}
+
+	@Override
+	public String returnType() {
+		return type;
 	}
 }
