@@ -13,5 +13,11 @@ public class Empty implements Item {
 	public void pickUp() {
 		
 	}
+	
+	public boolean isEdible(){
+		return false;
+	}
+	
+	
 
 }

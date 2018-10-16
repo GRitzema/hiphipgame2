@@ -8,4 +8,8 @@ public interface Item {
 	
 	public void pickUp();
 	
+	public boolean isEdible();
+	
+	public void use();
+	
 }

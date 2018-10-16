@@ -21,11 +21,13 @@ public class Combat {
 	}
 	
 	public void playerCombat(Sword sword) {
-		Scanner keyboard1 = new Scanner(System.in);
-		Scanner keyboard2 = new Scanner(System.in);
+		Scanner keyboard1 = new Scanner(System.in);		
 		
 		String turn1 = keyboard1.nextLine();
 		
+		if (turn1.substring(0,3).equals("eat ") && pockets.getFrom(turn1.substring(4)).isEdible()) {
+			pockets.getFrom(turn1.substring(4)).use();
+		}
 		
 		double damage = 0;
 		if (Math.random()>=0.2) {
@@ -58,6 +60,7 @@ public class Combat {
 	public void engage(String guess) {
 		if (guess.equals(m.getRiddle().getAnswer())){
 			System.out.println("Hmmph, I suppose that answer will suffice.");
+			System.out.println(m.getName() + "gave you the " + m.getKey() + "!");
 			pockets.addToInventory(m.getKey());
 		}
 		else {
