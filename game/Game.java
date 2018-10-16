@@ -24,7 +24,7 @@ public class Game {
      */
     private Room currentRoom;
     
-    private Player p = new Player(50);
+    //private Player p = new Player(50);
 
     /**
      * Keeps track of whether this game is over or not.
@@ -125,12 +125,24 @@ public class Game {
         rooms[9].setDescription("the backstage. There is a monster among the dresses.");
         rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box.");
 
+        Key key1 = new Key(pockets, "Handcuffs Key", "Open the hallway gate to the waiting room.");
+        Riddle riddle1 = new Riddle("asdf", "jkl");
+        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, pockets, null, key1));
+       
+        Key key2 = new Key(pockets, "Master Key", "Open the door to the backstage room.");
+        Riddle riddle2 = new Riddle("asdf", "jkl");
+        rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, pockets, null, key2));
+       
+        Key key3 = new Key(pockets, "Golden Key", "Open a secret room.");
+        Riddle riddle3 = new Riddle("asdf", "jkl");
+        rooms[9].placeMonster(new Monster("Satan", 100, riddle3, pockets, null, key3));
+        
         populateRooms();
     }
     
     private void populateRooms () {
-    	rooms[0].addInside(new Money(5));
-    	rooms[3].addInside(new Money(10));
+    	//rooms[0].addInside(new Money(5));
+    	//rooms[3].addInside(new Money(10));
     	//rooms[4].addInside(new Food(20,"a butterscotch and snail pie", pockets, p));
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(newSword());

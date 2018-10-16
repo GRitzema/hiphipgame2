@@ -30,6 +30,8 @@ public class Room {
     private HashMap<String,Room> doors = new HashMap<String,Room>();
     
     private ArrayList<Item> inside = new ArrayList<Item>();
+    
+    private Monster theMonster;
 
     /**
      * Constructor.
@@ -42,6 +44,7 @@ public class Room {
     	doors.put("right", null);
     	doors.put("forward", null);
     	doors.put("backward", null);
+    	this.theMonster = null;
     	}
       
     public Room getDoors(String command){
@@ -75,5 +78,9 @@ public class Room {
     }
     
     public String getInRoom() { return inRoom; }
+    
+    public void placeMonster(Monster newMonster) {
+    	theMonster = newMonster;
+    }
 	
 }
