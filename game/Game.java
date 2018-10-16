@@ -51,6 +51,32 @@ public class Game {
         Room[] rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room", "There is nothing of interest.");
+  
+        setRooms(rooms);
+
+        currentRoom = rooms[0];
+    }
+ 
+    /**
+     * Is this game over or not?
+     */
+    public boolean isOver() { return over; }
+
+    /**
+     * Move into a different current room.
+     */
+    public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
+    
+    /**
+     * Indicate that the game is now over.
+     */
+    public void finishGame() { over = true; }
+    
+    public Inventory inventory() {
+    	return pockets;
+    }
+    
+    private void setRooms(Room[] rooms) {
         
         rooms[0].setRoom("forward",rooms[1]);
         rooms[1].setRoom("backward", rooms[0]);
@@ -72,32 +98,9 @@ public class Game {
         rooms[9].setRoom("backward", rooms[6]);
         rooms[9].setRoom("forward", rooms[10]);
         rooms[10].setRoom("backward", rooms[9]);
-        
         over = false;
         
         rooms[0].setInRoom("There is a key in the corner");
-
-        currentRoom = rooms[0];
-        
-    }
-    
-    /**
-     * Is this game over or not?
-     */
-    public boolean isOver() { return over; }
-
-    /**
-     * Move into a different current room.
-     */
-    public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
-    
-    /**
-     * Indicate that the game is now over.
-     */
-    public void finishGame() { over = true; }
-    
-    public Inventory inventory() {
-    	return pockets;
     }
     
 }
