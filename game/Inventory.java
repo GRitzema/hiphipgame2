@@ -20,5 +20,5 @@ public class Inventory {
 			System.out.println("Just air... and a little lint");
 		}
 	}
-
+	
 }
