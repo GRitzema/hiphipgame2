@@ -14,12 +14,11 @@ public class GoAction implements Action {
 	public GoAction(Game game, Room room) {
 		this.game = game;
 		this.room = room;
-		this.doors = room.getDoors();
 	}
 
 	public void takeAction(String command) {
 		
-		Room nextRoom;
+		Room nextRoom = room.getDoors(command);
 		
 		if (nextRoom == null) 
             System.out.println("There is no door in that direction.");
