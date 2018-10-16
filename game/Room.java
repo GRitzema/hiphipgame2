@@ -17,11 +17,6 @@ import java.util.HashMap;
 public class Room {
 	
     /**
-     * Rooms adjacent to this one, to which there is a door.
-     */
-    private Room forward, backward, left, right;
-
-    /**
      * A description of this room
      */
     private String description;
@@ -47,8 +42,13 @@ public class Room {
     	doors.put("backward", null);
     	}
       
-    public HashMap<String,Room> getDoors(){
-    	return doors;
+    public Room getDoors(String command){
+		if(doors.containsKey(command)){
+			return doors.get(command);
+		} else {
+			System.out.println("You don't know what direction that is...");
+			return this;
+		}
     }
     
     public void setRoom(String direction,Room next) {
@@ -60,25 +60,14 @@ public class Room {
      */
     public String getDescription() { return description; }
     
+    public void setDescription(String descrip) {
+    	description = descrip;
+    }
+    
     public void setInRoom(String thing) {
     	inRoom = thing;
     }
     
     public String getInRoom() { return inRoom; }
-    
-    /**
-     * Methods to determine the rooms to which various
-     * doors-- if they exist-- lead.
-     */
-    
-    /**
-    public Room getNorth() { return north; }
-    public Room getSouth() { return south; }
-    public Room getEast() { return east; }
-    public Room getWest() { return west; }
-    public Room getUp() { return up; }
-    public Room getDown() { return down; }
-    public Room getTunnel() { return tunnel; }
-*/
 	
 }

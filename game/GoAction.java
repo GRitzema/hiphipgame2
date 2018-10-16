@@ -14,24 +14,18 @@ public class GoAction implements Action {
 	public GoAction(Game game, Room room) {
 		this.game = game;
 		this.room = room;
-		this.doors = room.getDoors();
 	}
 
 	public void takeAction(String command) {
 		
-		Room nextRoom;
+		Room nextRoom = room.getDoors(command);
 		
-		if(doors.containsKey(command)){
-			nextRoom = doors.get(command);
-		} else {
-			System.out.println("Go where?");
-			nextRoom = room;
-		}
-		
-		if (nextRoom == null) 
+		if (nextRoom == null) {
             System.out.println("There is no door in that direction.");
-        else
+		} else {
             game.setCurrentRoom(nextRoom);
+            room = nextRoom;
+        }
 	}
 
 	public void takeAction() {

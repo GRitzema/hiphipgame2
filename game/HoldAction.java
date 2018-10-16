@@ -4,23 +4,21 @@ import java.util.Scanner;
 
 public class HoldAction implements Action {
 	
-	Game game;
+	Inventory pockets;
 	
 	private Scanner keyboard;
 	
-	public HoldAction(Game game) {
-		this.game = game;
+	public HoldAction(Inventory pockets) {
+		this.pockets = pockets;
 	}
 
-	@Override
+
 	public void takeAction() {
-		
+		System.out.println("Hold what?");
 	}
 
-	@Override
-	public void takeAction(String substring) {
-	
-        game.getPockets().getFrom(item);
+	public void takeAction(String item) {
+        pockets.getFrom(item);
 	}
 
 }
