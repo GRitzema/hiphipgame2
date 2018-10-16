@@ -1,5 +1,7 @@
 package game;
 
+import java.util.HashMap;
+
 /**
  * Parser.java
  * 
@@ -20,13 +22,31 @@ public class Parser {
      */
     private Scanner keyboard;
     
+    /**
+     * Inventory class
+     */
     private Inventory pockets;
-
+    
+    /**
+     * Map of possible actions
+     */
+    private HashMap<String, Action> actions = new HashMap<String, Action>();
+    
+    private Room room;
+    
     /**
      * Plain constructor
      */
-    public Parser() {
-        keyboard = new Scanner(System.in);
+    public Parser(Game game) {
+    	keyboard = new Scanner (System.in);
+    	room = game.getCurrentRoom();
+    	pockets = game.getPockets();
+        actions.put("inventory",new InventoryAction(pockets, game));
+        actions.put("look", new LookAction(room));
+        actions.put("help", new HelpAction());
+        actions.put("go", new GoAction(game, room));
+        //actions.put("use", new UseAction(pockets));
+        //actions.put("hold", HoldAction());
     }
 
     /**
@@ -44,39 +64,17 @@ public class Parser {
 
         System.out.print("Enter command--> ");
         String command = keyboard.nextLine().toLowerCase();  // user's command
-
-
-        if (command.equals("north") || command.equals("south") 
-            || command.equals("west") || command.equals("east")) {
-            Room nextRoom;   // the room we're moving to
-            if (command.equals("north"))
-                nextRoom = room.getNorth();
-            else if (command.equals("south"))
-                nextRoom = room.getSouth();
-            else if (command.equals("west"))
-                nextRoom = room.getWest();
-            else if (command.equals("east"))
-                nextRoom = room.getEast();
-            else if (command.equals("up"))
-            	nextRoom = room.getUp();
-            else if (command.equals("down"))
-            	nextRoom = room.getDown();
-            else
-            	nextRoom = room.getTunnel();
-            if (nextRoom == null) 
-                System.out.println("There is no door in that direction.");
-            else
-                game.setCurrentRoom(nextRoom);
-        } else if (command.equals("look")) {
-        	System.out.println(room.getInRoom());
-        } else if (command.equals("inventory")) {
-        	System.out.println("In your pockets there are:");
-        	pockets.displayInventory();
+        
+        if (command.substring(0,2).equals("go")) {
+        	actions.get("go").takeAction(command.substring(3));
+        } else {
+	        if (actions.containsKey(command)) {
+	        	actions.get(command).takeAction();
+	        } else {
+	        	System.out.println("I do not know how to " + command + ".");
+	        }
         }
-        else
-            System.out.println("I do not know how to " + command + ".");
-
+        
+        System.out.println("");
     }
-
-
 }

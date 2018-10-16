@@ -1,6 +1,8 @@
 package game;
 import java.util.*;
 
+import java.util.HashMap;
+
 /**
  * Room.java
  * 
@@ -15,11 +17,22 @@ import java.util.*;
 public class Room {
 	
     /**
+     * Rooms adjacent to this one, to which there is a door.
+     */
+    private Room forward, backward, left, right;
+
+    /**
      * A description of this room
      */
     private String description;
     
+    /**
+     * A more detailed description of the items of a room.
+     */
     private String inRoom;
+    
+    
+    private HashMap<String,Room> doors = new HashMap<String,Room>();
 
     /**
      * Constructor.
@@ -28,43 +41,37 @@ public class Room {
     public Room(String description, String inRoom) { 
     	this.description = description; 
     	this.inRoom = inRoom;
+    	doors.put("left", null);
+    	doors.put("right", null);
+    	doors.put("forward", null);
+    	doors.put("backward", null);
     	}
+      
+    public HashMap<String,Room> getDoors(){
+    	return doors;
+    }
     
-    /**
-     * Rooms adjacent to this one, to which there is a door.
-     */
-    private HashMap<Room, String> theRooms = new HashMap<Room, String>();
-
-    private Room north;
-    private Room south;
-    private Room east;
-    private Room west;
-    private Room up;
-    private Room down;
-    private Room tunnel;
-    
-    /**
-     * Methods for added "doors"-- direction connections to other rooms.
-     */
-    theRooms.put("north", north);
-    south = theRooms.put("south", south);
-    east = theRooms.put("east", east);
-    theRooms.put("west", west);
-    theRooms.put("up", up);
-    theRooms.put("down", down);
-    theRooms.put("tunnel", tunnel);
+    public void setRoom(String direction,Room next) {
+    	doors.put(direction, next);
+    }
     
     /**
      * Retrieve a description of this room (to the user).
      */
     public String getDescription() { return description; }
     
+    public void setInRoom(String thing) {
+    	inRoom = thing;
+    }
+    
     public String getInRoom() { return inRoom; }
     
     /**
      * Methods to determine the rooms to which various
-     * doors-- if they extist-- lead.
+     * doors-- if they exist-- lead.
      */
+    
+    /**
     public Room getNorth() { return north; }
     public Room getSouth() { return south; }
     public Room getEast() { return east; }
@@ -72,6 +79,6 @@ public class Room {
     public Room getUp() { return up; }
     public Room getDown() { return down; }
     public Room getTunnel() { return tunnel; }
-
+*/
 	
 }
