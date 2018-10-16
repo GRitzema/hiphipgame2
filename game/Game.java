@@ -58,6 +58,7 @@ public class Game {
         /**
         rooms[0].setNorth(rooms[1]);
         rooms[1].setSouth(rooms[0]);
+        
         rooms[2].setSouth(rooms[3]);
         rooms[3].setNorth(rooms[2]);
         rooms[3].setWest(rooms[0]);

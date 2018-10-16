@@ -25,7 +25,7 @@ public class GoAction implements Action {
 			nextRoom = doors.get(command);
 		} else {
 			System.out.println("Go where?");
-			nextRoom = null;
+			nextRoom = room;
 		}
 		
 		if (nextRoom == null) 

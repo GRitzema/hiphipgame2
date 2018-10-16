@@ -59,22 +59,29 @@ public class Parser {
         // The room that the user is in.
         Room room = game.getCurrentRoom();
         pockets = game.inventory();
+        String command;
+        String extra = "ahem";
 
         System.out.println("You are in " + room.getDescription());
 
         System.out.print("Enter command--> ");
-        String command = keyboard.nextLine().toLowerCase();  // user's command
-        
-        if (command.substring(0,2).equals("go")) {
-        	actions.get("go").takeAction(command.substring(3));
+        String full = keyboard.nextLine().toLowerCase();  // user's command
+        if (full.indexOf(' ') != -1) {
+	        command = full.substring(0, full.indexOf(' '));
+	        extra = full.substring(full.indexOf(' '));
         } else {
-	        if (actions.containsKey(command)) {
-	        	actions.get(command).takeAction();
-	        } else {
-	        	System.out.println("I do not know how to " + command + ".");
-	        }
+        	command = full;
         }
         
+        if (actions.containsKey(command) && extra.equals("ahem")) {
+        	actions.get(command).takeAction();
+        } else if (actions.containsKey(command) && !extra.equals("ahem")){
+        	actions.get(command).takeAction(extra);
+        } else {
+        	System.out.println("You do not know how to " + command + ".");
+        }
+                
         System.out.println("");
+        
     }
 }

@@ -14,16 +14,13 @@ public class HoldAction implements Action {
 
 	@Override
 	public void takeAction() {
-		System.out.print("What do you want to hold?--> ");
-        String item = keyboard.nextLine().toLowerCase();  
-
-        game.getPockets().getFrom(item);
+		
 	}
 
 	@Override
 	public void takeAction(String substring) {
-		// TODO Auto-generated method stub
-		
+	
+        game.getPockets().getFrom(item);
 	}
 
 }
