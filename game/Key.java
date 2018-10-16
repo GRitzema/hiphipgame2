@@ -5,11 +5,17 @@ public class Key implements Item{
 	private Inventory pockets;
 	private String name;
 	private String description;
+	private Room door;
+	private Room currentRoom;
+	private boolean isLocked;
 	
-	public Key(String name, String description) {		
+	public Key(String name, String description, Room door) {		
 		this.pockets = pockets;
 		this.name = name;
 		this.description = description;
+		this.door = door;
+		this.currentRoom = currentRoom;
+		this.isLocked = true;
 	}
 	
 	public String getDescription() {
@@ -20,23 +26,14 @@ public class Key implements Item{
 		return name;
 	}
 	
-	
-
-
-
-	
 	public boolean isEdible() {
 		return false;
 	}
-
-
-
-	
-
 	
 	public void use() {
-		// TODO Auto-generated method stub
-		
+		if (currentRoom == door) {
+			isLocked = false;
+		}
 	}
 
 

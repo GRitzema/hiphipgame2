@@ -20,7 +20,9 @@ public class GoAction implements Action {
 				
 		if (nextRoom == null) {
             System.out.println("There is no door in that direction.");
-		} else {
+		} else if (nextRoom.getLocked() == true) {
+			System.out.println("The door is locked.");
+		} else{
             player.setCurrentRoom(nextRoom);
         }
 	}

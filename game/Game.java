@@ -36,7 +36,10 @@ public class Game {
     public Game() {
         rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new Room("a room.", "There is nothing of interest."); 
+            rooms[i] = new Room("a room.", "There is nothing of interest.", false); 
+            if (i == 2 || i == 6 || i == 10) {
+            	rooms[i].setLocked(true);
+            }
         }
         
         setRooms();
@@ -65,41 +68,40 @@ public class Game {
     
     private void setRooms() {
     	
-       
-        rooms[0].setRoom("forward",rooms[1]);
-        rooms[1].setRoom("backward", rooms[0]);
-        rooms[1].setRoom("forward", rooms[2]);
-        rooms[2].setRoom("backward", rooms[1]);
-        rooms[2].setRoom("left", rooms[3]);
-        rooms[2].setRoom("right", rooms[4]);
-        rooms[2].setRoom("forward", rooms[5]);
-        rooms[3].setRoom("right", rooms[2]);
-        rooms[4].setRoom("left", rooms[2]);
-        rooms[5].setRoom("backward", rooms[2]);
-        rooms[5].setRoom("forward", rooms[6]);
-        rooms[6].setRoom("backward", rooms[5]);
-        rooms[6].setRoom("left", rooms[7]);
-        rooms[6].setRoom("right", rooms[8]);
-        rooms[6].setRoom("forward", rooms[9]);
-        rooms[7].setRoom("right", rooms[6]);
-        rooms[8].setRoom("left", rooms[6]);
-        rooms[9].setRoom("backward", rooms[6]);
-        rooms[9].setRoom("forward", rooms[10]);
-        rooms[10].setRoom("backward", rooms[9]);
-        over = false;
-
-        rooms[0].setDescription("a parkinglot. 0");
-        rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
-        rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
-        rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
-        rooms[4].setDescription("an ice storage. 4");
-        rooms[5].setDescription("Edmand Chapel. There is a monster on the stage. 5");
-        rooms[6].setDescription("a changing-room. There is a vending machine in a corner 6");
-        rooms[7].setDescription("the side stage. There is an ATM in a corner 7");
-        rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-        rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
-        rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
-        
+    	rooms[0].setRoom("forward",rooms[1]);
+    	rooms[1].setRoom("backward", rooms[0]);
+    	rooms[1].setRoom("forward", rooms[2]);
+    	rooms[2].setRoom("backward", rooms[1]);
+    	rooms[2].setRoom("left", rooms[3]);
+    	rooms[2].setRoom("right", rooms[4]);
+    	rooms[2].setRoom("forward", rooms[5]);
+    	rooms[3].setRoom("right", rooms[2]);
+    	rooms[4].setRoom("left", rooms[2]);
+    	rooms[5].setRoom("backward", rooms[2]);
+		rooms[5].setRoom("forward", rooms[6]);
+		rooms[6].setRoom("backward", rooms[5]);
+	 	rooms[6].setRoom("left", rooms[7]);
+	 	rooms[6].setRoom("right", rooms[8]);
+	 	rooms[6].setRoom("forward", rooms[9]);
+	 	rooms[7].setRoom("right", rooms[6]);
+	 	rooms[8].setRoom("left", rooms[6]);
+	 	rooms[9].setRoom("backward", rooms[6]);
+	 	rooms[9].setRoom("forward", rooms[10]);
+	 	rooms[10].setRoom("backward", rooms[9]);
+	 	over = false;
+	
+		rooms[0].setDescription("a parkinglot. 0");
+		rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
+		rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
+		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
+		rooms[4].setDescription("an ice storage. 4");
+		rooms[5].setDescription("Edmand Chapel. There is a monster on the stage. 5");
+		rooms[6].setDescription("a changing-room. There is a vending machine in a corner 6");
+		rooms[7].setDescription("the side stage. There is an ATM in a corner 7");
+		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
+		rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
+		rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
+	       
     }
     
     private void populateRooms () {

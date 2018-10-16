@@ -26,18 +26,21 @@ public class Room {
     private Monster theMonster;
 
     private HashMap<String, Item> inside = new HashMap<String, Item>();
+    
+    private boolean locked;
 
     /**
      * Constructor.
      * @param description A String describing this room to the user.
      */
-    public Room(String description, String inRoom) { 
+    public Room(String description, String inRoom, boolean locked) { 
     	this.description = description; 
     	doors.put("left", null);
     	doors.put("right", null);
     	doors.put("forward", null);
     	doors.put("backward", null);
     	this.theMonster = null;
+    	this.locked = locked;
     	}
       
     public Room getDoors(String command){
@@ -86,7 +89,15 @@ public class Room {
     	return inRoom;
     }
     
-    public void placeMonster(Monster newMonster) {
+    public boolean getLocked() {
+    	return locked;
+    }
+    
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
+
+	public void placeMonster(Monster newMonster) {
     	theMonster = newMonster;
     }
 	
