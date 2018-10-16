@@ -6,12 +6,15 @@ public class Food implements Item {
 	private String description;
 	private String name;
 	private Player eater;
+	private String type;
 	
-	public Food(int hp, String name, String description, Player eater) {
+	public Food(int hp, String name, String description, Player eater, String type) {
 		this.hp = hp;
 		this.name = name;
 		this.description = description;
+		this.type = type;
 		this.eater = eater;
+
 	}
 	
 	public String getDescription() {
@@ -33,5 +36,10 @@ public class Food implements Item {
 	
 	public boolean isEdible() {
 		return true;
+	}
+
+	@Override
+	public String returnType() {
+		return type;
 	}
 }

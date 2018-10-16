@@ -5,7 +5,11 @@ public class Sword implements Item{
 	private String material;
 	private String name;
 	private String description;
+
 	private Player wielder;
+
+	private String type = "sword";
+
 	
 	public Sword(String material, String name, String description, Player wielder) {
 		this.material = material;
@@ -28,12 +32,18 @@ public class Sword implements Item{
 		return material;
 	}
 
+
 	
 	public void use() {	
-		wielder.setSword(this);
+		wielder.setSword(this);	
 	}
 	
 	public boolean isEdible() {
 		return false;
+	}
+
+	@Override
+	public String returnType() {
+		return type;
 	}
 }

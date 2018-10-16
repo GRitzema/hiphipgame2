@@ -5,6 +5,7 @@ public class Key implements Item{
 	private Inventory pockets;
 	private String name;
 	private String description;
+	private String type = "key";
 	
 	public Key(String name, String description) {		
 		this.pockets = pockets;
@@ -21,10 +22,6 @@ public class Key implements Item{
 	}
 	
 	
-
-
-
-	
 	public boolean isEdible() {
 		return false;
 	}
@@ -37,6 +34,11 @@ public class Key implements Item{
 	public void use() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	
+	public String returnType() {
+		return type;
 	}
 
 

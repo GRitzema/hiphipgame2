@@ -17,9 +17,17 @@ public class UseAction implements Action {
 		System.out.print("Use what?");
 	}
 
-	@Override
+	
 	public void takeAction(String item) {
 		
+		Item thing = pockets.getFrom(item);
+		
+		if (thing.returnType().equals(null)) {
+			System.out.println("You do not have that item in your inventory.");
+		} else {
+			//insert code here
+			//implement items/ use them here
+		}
 	}
 
 }

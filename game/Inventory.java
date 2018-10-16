@@ -10,7 +10,7 @@ public class Inventory {
 	private HashMap<String, Item> pockets = new HashMap<String, Item>();	
 	
 	public void addToInventory(Item x) {
-		pockets.put(x.getDescription(), x);
+		pockets.put(x.returnName(), x);
 		
 	}
 	
@@ -33,15 +33,19 @@ public class Inventory {
 		}
 	}
 	
-	public boolean checkInventory(String what) {
-		if (pockets.get(what) != null) {
-			return true;
+	public Item getFrom(String what) {
+		Item e = new Empty();
+		
+		for (Item i : pockets.values()) {
+			if (i.returnType().equals(what)) {
+				e = i;
+			} 
 		}
-		else {
-			return false;
-		}
+		return e;
 	}
 	
+	
+	/**
 	public Item getFrom(String what){ 
 		
 		if (pockets.get(what) != null) {
@@ -52,6 +56,7 @@ public class Inventory {
 		}
 		
 	}
+	*/
 		
 
 }
