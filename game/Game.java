@@ -48,7 +48,7 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[10];
+        Room[] rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room", "There is nothing of interest.");
         
