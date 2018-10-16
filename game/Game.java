@@ -24,16 +24,12 @@ public class Game {
     
     private Room[] rooms;
     
-    private Inventory pockets = new Inventory();
-    
     private Item left = new Empty();
     private Item right = new Empty();
     
     public Item getLeft() { return left; }
     public Item getRight() { return right; }
-    public Inventory getPockets() { return pockets;}
-    
-    
+       
     /**
      * Constructor to set up the game.
      */
@@ -92,15 +88,15 @@ public class Game {
         rooms[10].setRoom("backward", rooms[9]);
         over = false;
 
-        Key key1 = new Key(pockets, "Handcuffs Key", "Open the hallway gate to the waiting room.");
+        Key key1 = new Key("Handcuffs Key", "Open the hallway gate to the waiting room.");
         Riddle riddle1 = new Riddle("asdf", "jkl");
         rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, pockets, null, key1));
        
-        Key key2 = new Key(pockets, "Master Key", "Open the door to the backstage room.");
+        Key key2 = new Key("Master Key", "Open the door to the backstage room.");
         Riddle riddle2 = new Riddle("asdf", "jkl");
         rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, pockets, null, key2));
        
-        Key key3 = new Key(pockets, "Golden Key", "Open a secret room.");
+        Key key3 = new Key("Golden Key", "Open a secret room.");
         Riddle riddle3 = new Riddle("asdf", "jkl");
         rooms[9].placeMonster(new Monster("Satan", 100, riddle3, pockets, null, key3));
 

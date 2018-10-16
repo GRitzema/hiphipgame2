@@ -6,8 +6,6 @@ public interface Item {
 		
 	public String returnName();
 	
-	public void pickUp();
-	
 	public boolean isEdible();
 	
 	public void use();
