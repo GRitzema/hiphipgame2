@@ -12,6 +12,7 @@ public class Player {
 	 * the state by representing the user's current location.
 	 */
 	private Room currentRoom;
+	private Inventory pockets = new Inventory();
 	
 	public Player(int health, Sword sword) {
 		this.health = health;
@@ -25,6 +26,8 @@ public class Player {
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
+	
+	public Inventory getPockets() { return pockets;}
 	
 	public int getHealth() {
 		return health;

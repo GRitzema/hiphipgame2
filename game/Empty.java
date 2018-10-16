@@ -17,6 +17,12 @@ public class Empty implements Item {
 	public boolean isEdible(){
 		return false;
 	}
+
+	@Override
+	public void use() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

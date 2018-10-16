@@ -43,13 +43,13 @@ public class Parser {
     	player = game.getPlayer();
     	keyboard = new Scanner (System.in);
     	room = player.getCurrentRoom();
-    	pockets = game.getPockets();
+    	pockets = player.getPockets();
         actions.put("inventory",new InventoryAction(pockets, game));
         actions.put("look", new LookAction(player));
         actions.put("help", new HelpAction());
-        actions.put("go", new GoAction(game.getPlayer()));
-        //actions.put("use", new UseAction(pockets));
-        //actions.put("hold", new HoldAction(pockets));
+        actions.put("go", new GoAction(player));
+        actions.put("get", new PickUpAction(player));
+        actions.put("use", new UseAction(pockets));
     }
 
     /**

@@ -5,14 +5,14 @@ public class Monster {
 	private String name;
 	private Riddle riddle;
 	private int health;
-	private Inventory pockets;
+	private Room room;
 	private Item item;
 	private Key key;
 	
-	public Monster(String name, int health, Riddle riddle, Inventory pockets, Item item, Key key) {
+	public Monster(String name, int health, Riddle riddle, Room room, Item item, Key key) {
 		this.health = health;
 		this.riddle = riddle;
-		this.pockets = pockets;
+		this.room = room;
 		this.item = item;
 		this.key = key;
 	}
@@ -23,8 +23,8 @@ public class Monster {
 	public void defeat() {
 		if (this.health <= 0)
 		System.out.println("The ");	
-		pockets.addToInventory(item);
-		pockets.addToInventory(key);
+		room.addInside(item.returnName(), item);
+		room.addInside(key.returnName(),key);
 	}
 	
 	public int getHealth() {

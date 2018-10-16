@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class UseAction implements Action {
 
-	Game game;
+	Inventory pockets;
 	
 	private Scanner keyboard;
 	
-	public UseAction(Game game) {
-		this.game = game;
+	public UseAction(Inventory pockets) {
+		this.pockets = pockets;
 	}
 
 	@Override
