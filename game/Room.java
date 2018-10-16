@@ -1,4 +1,5 @@
 package game;
+import java.util.*;
 
 import java.util.HashMap;
 
@@ -45,10 +46,7 @@ public class Room {
     	doors.put("forward", null);
     	doors.put("backward", null);
     	}
-    
-    
-   
-    
+      
     public HashMap<String,Room> getDoors(){
     	return doors;
     }
@@ -70,7 +68,7 @@ public class Room {
     
     /**
      * Methods to determine the rooms to which various
-     * doors-- if they extist-- lead.
+     * doors-- if they exist-- lead.
      */
     
     /**
