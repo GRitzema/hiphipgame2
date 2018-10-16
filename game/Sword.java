@@ -33,5 +33,7 @@ public class Sword implements Item{
 		return material;
 	}
 	
-	
+	public boolean isEdible() {
+		return false;
+	}
 }

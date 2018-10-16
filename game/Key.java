@@ -24,4 +24,7 @@ public class Key implements Item{
 		pockets.addToInventory(new Key(pockets, name, description));
 	}
 	
+	public boolean isEdible() {
+		return false;
+	}
 }

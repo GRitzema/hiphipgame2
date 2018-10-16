@@ -31,9 +31,9 @@ public class Food implements Item {
 	
 	public void use() {
 		p.setHealth(hp + p.getHealth());
-		
+		pockets.removeFromInventory(this);
 		System.out.println("You ate the " + name + "! You gained " + hp);
-		System.out.println("You now have " + p.getHealth());
+		System.out.println("You now have " + p.getHealth() + "health!");
 	}
 	
 	public boolean isEdible() {

@@ -22,7 +22,7 @@ public class Monster {
 	}
 	public void defeat() {
 		if (this.health <= 0)
-		System.out.println("The ");	
+		System.out.println("You defeated " + name + "! You received the " + key + "and the "+ item + ".");	
 		pockets.addToInventory(item);
 		pockets.addToInventory(key);
 	}
@@ -43,5 +43,6 @@ public class Monster {
 		return key;
 	}
 
+	
 	
 }

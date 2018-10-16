@@ -18,6 +18,8 @@ public class Empty implements Item {
 		return false;
 	}
 	
-	
+	public void use() {
+		
+	}
 
 }
