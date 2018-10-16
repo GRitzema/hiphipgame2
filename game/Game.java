@@ -49,8 +49,12 @@ public class Game {
      */
     public Game() {
         Room[] rooms = new Room[11];
-        for (int i = 0; i < rooms.length; i++)
-            rooms[i] = new Room("a room", "There is nothing of interest.");
+
+        for (int i = 0; i < rooms.length; i++) {
+            rooms[i] = new Room("a room. You are in room " + i + ".", "There is nothing of interest."); 
+        }
+  
+        setRooms(rooms);
 
         currentRoom = rooms[0];
         
@@ -101,7 +105,24 @@ public class Game {
         rooms[10].setRoom("backward", rooms[9]);
         over = false;
         
-        rooms[0].setInRoom("There is a key in the corner");
+        rooms[0].setInRoom("There are few coins in a parking meter.");
+        rooms[3].setInRoom("There are few coins in a jar.");
+        rooms[4].setInRoom("There is food in an icebox.");
+        rooms[6].setInRoom("There is food inside a shopping bag.");
+        rooms[7].setInRoom("There is a sword underneath a carpet.");
+        
+        rooms[0].setDescription("a parkinglot.");
+        rooms[1].setDescription("a hallway. There is a monster at the end of the hallway.");
+        rooms[2].setDescription("a waiting room. There is an ATM in the corner.");
+        rooms[3].setDescription("a storage. There is a scroll on the wall.");
+        rooms[4].setDescription("an ice storage.");
+        rooms[5].setDescription("Edmand Chapel. There is a monster on the stage.");
+        rooms[6].setDescription("a changing-room. There is a vending machine in a corner");
+        rooms[7].setDescription("the side stage. There is an ATM in a corner");
+        rooms[8].setDescription("the side stage. There is a scroll on the wall.");
+        rooms[9].setDescription("the backstage. There is a monster among the dresses.");
+        rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box.");
+        
     }
     
 }

@@ -20,10 +20,12 @@ public class GoAction implements Action {
 		
 		Room nextRoom = room.getDoors(command);
 		
-		if (nextRoom == null) 
+		if (nextRoom == null) {
             System.out.println("There is no door in that direction.");
-        else
+		} else {
             game.setCurrentRoom(nextRoom);
+            room = nextRoom;
+        }
 	}
 
 	public void takeAction() {

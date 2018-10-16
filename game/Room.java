@@ -17,11 +17,6 @@ import java.util.HashMap;
 public class Room {
 	
     /**
-     * Rooms adjacent to this one, to which there is a door.
-     */
-    private Room forward, backward, left, right;
-
-    /**
      * A description of this room
      */
     private String description;
@@ -51,7 +46,7 @@ public class Room {
 		if(doors.containsKey(command)){
 			return doors.get(command);
 		} else {
-			System.out.println("Go where?");
+			System.out.println("You don't know what direction that is...");
 			return this;
 		}
     }
@@ -64,6 +59,10 @@ public class Room {
      * Retrieve a description of this room (to the user).
      */
     public String getDescription() { return description; }
+    
+    public void setDescription(String descrip) {
+    	description = descrip;
+    }
     
     public void setInRoom(String thing) {
     	inRoom = thing;
