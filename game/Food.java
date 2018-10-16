@@ -5,14 +5,13 @@ public class Food implements Item {
 	private int hp;
 	private String description;
 	private String name;
-	private Inventory pockets;
-	private Player p;
+	private Player eater;
 	
-	public Food(int hp, String name, String description, Inventory pockets, Player p) {
+	public Food(int hp, String name, String description, Player eater) {
 		this.hp = hp;
 		this.name = name;
 		this.description = description;
-		this.pockets = pockets;
+		this.eater = eater;
 	}
 	
 	public String getDescription() {
@@ -25,15 +24,11 @@ public class Food implements Item {
 	}
 
 	
-	public void pickUp() {
-		pockets.addToInventory(this);	
-	}
-	
 	public void use() {
-		p.setHealth(hp + p.getHealth());
-		pockets.removeFromInventory(this);
+		eater.setHealth(hp + eater.getHealth());
+		eater.removeFromInventory(this);
 		System.out.println("You ate the " + name + "! You gained " + hp);
-		System.out.println("You now have " + p.getHealth() + "health!");
+		System.out.println("You now have " + eater.getHealth() + "health!");
 	}
 	
 	public boolean isEdible() {
