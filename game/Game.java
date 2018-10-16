@@ -16,7 +16,7 @@ package game;
 public class Game {
 	
     /**
-     * The current room the user is in. This serves to
+     * The current room the user is in. This serves two
      * purposes-- it is our only permanent connection to
      * the rooms in this game (the other rooms are reachable
      * by traversing this room's "doors"-- and it maintains
@@ -48,31 +48,15 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[5];
+        Room[] rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++)
             rooms[i] = new Room("a room", "There is nothing of interest.");
-        
-        rooms[0].setRoom("forward",rooms[1]);
-        rooms[1].setRoom("backward", rooms[0]);
-        
-        /**
-        rooms[0].setNorth(rooms[1]);
-        rooms[1].setSouth(rooms[0]);
-        rooms[2].setSouth(rooms[3]);
-        rooms[3].setNorth(rooms[2]);
-        rooms[3].setWest(rooms[0]);
-        rooms[0].setEast(rooms[3]);
-        rooms[4].setDown(rooms[3]);
-        rooms[3].setUp(rooms[4]);
-        rooms[0].setTunnel(rooms[2]);
-        rooms[2].setTunnel(rooms[0]);
-        rooms[0].setInRoom("There is a key in the corner");
-        over = false;
-        */
+  
+        setRooms(rooms);
+
         currentRoom = rooms[0];
-        
     }
-    
+ 
     /**
      * Is this game over or not?
      */
@@ -82,7 +66,7 @@ public class Game {
      * Move into a different current room.
      */
     public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
-
+    
     /**
      * Indicate that the game is now over.
      */
@@ -90,6 +74,33 @@ public class Game {
     
     public Inventory inventory() {
     	return pockets;
+    }
+    
+    private void setRooms(Room[] rooms) {
+        
+        rooms[0].setRoom("forward",rooms[1]);
+        rooms[1].setRoom("backward", rooms[0]);
+        rooms[1].setRoom("forward", rooms[2]);
+        rooms[2].setRoom("backward", rooms[1]);
+        rooms[2].setRoom("left", rooms[3]);
+        rooms[2].setRoom("right", rooms[4]);
+        rooms[2].setRoom("forward", rooms[5]);
+        rooms[3].setRoom("right", rooms[2]);
+        rooms[4].setRoom("left", rooms[2]);
+        rooms[5].setRoom("backward", rooms[2]);
+        rooms[5].setRoom("forward", rooms[6]);
+        rooms[6].setRoom("backward", rooms[5]);
+        rooms[6].setRoom("left", rooms[7]);
+        rooms[6].setRoom("right", rooms[8]);
+        rooms[6].setRoom("forward", rooms[9]);
+        rooms[7].setRoom("right", rooms[6]);
+        rooms[8].setRoom("left", rooms[6]);
+        rooms[9].setRoom("backward", rooms[6]);
+        rooms[9].setRoom("forward", rooms[10]);
+        rooms[10].setRoom("backward", rooms[9]);
+        over = false;
+        
+        rooms[0].setInRoom("There is a key in the corner");
     }
     
 }
