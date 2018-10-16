@@ -46,7 +46,7 @@ public class Parser {
         actions.put("help", new HelpAction());
         actions.put("go", new GoAction(game, room));
         //actions.put("use", new UseAction(pockets));
-        //actions.put("hold", HoldAction());
+        //actions.put("hold", new HoldAction(pockets));
     }
 
     /**
@@ -59,12 +59,13 @@ public class Parser {
         // The room that the user is in.
         Room room = game.getCurrentRoom();
         pockets = game.inventory();
-        String command;
-        String extra = "ahem";
-
+        
         System.out.println("You are in " + room.getDescription());
 
         System.out.print("Enter command--> ");
+        String command;
+        String extra = "ahem";
+        
         String full = keyboard.nextLine().toLowerCase();  // user's command
         if (full.indexOf(' ') != -1) {
 	        command = full.substring(0, full.indexOf(' '));

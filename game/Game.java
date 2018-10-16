@@ -49,8 +49,9 @@ public class Game {
      */
     public Game() {
         Room[] rooms = new Room[11];
-        for (int i = 0; i < rooms.length; i++)
-            rooms[i] = new Room("a room", "There is nothing of interest.");
+        for (int i = 0; i < rooms.length; i++) {
+            rooms[i] = new Room("a room. You are in room " + i + ".", "There is nothing of interest."); 
+        }
   
         setRooms(rooms);
 
