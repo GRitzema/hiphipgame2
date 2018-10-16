@@ -32,6 +32,18 @@ public class Sword implements Item{
 	public String getMaterial() {
 		return material;
 	}
+
+	@Override
+	public boolean isEdible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void use() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	public boolean isEdible() {
 		return false;
