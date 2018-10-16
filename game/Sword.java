@@ -3,17 +3,15 @@ package game;
 public class Sword implements Item{
 	
 	private String material;
-	private Inventory pockets;
 	private String name;
 	private String description;
+	private Player wielder;
 	
-	
-	public Sword(Inventory pockets, String material, String name, String description) {
-		this.pockets = pockets;
+	public Sword(String material, String name, String description, Player wielder) {
 		this.material = material;
 		this.name = name;
 		this.description = description;
-		
+		this.wielder = wielder;
 		
 	}
 	
@@ -25,24 +23,14 @@ public class Sword implements Item{
 		return name;
 	}
 	
-	public void pickUp() {
-		pockets.addToInventory(new Sword(pockets, material, name, description));
-	}
 		
 	public String getMaterial() {
 		return material;
 	}
 
-	@Override
-	public boolean isEdible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void use() {
-		// TODO Auto-generated method stub
-		
+	
+	public void use() {	
+		wielder.setSword(this);
 	}
 	
 	public boolean isEdible() {

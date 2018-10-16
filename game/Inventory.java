@@ -15,8 +15,8 @@ public class Inventory {
 	}
 	
 	public void removeFromInventory(Item x) {
-		if (pockets.containsKey(x.getDescription()))
-			pockets.remove(x.getDescription());
+		if (pockets.containsKey(x.returnName()))
+			pockets.remove(x.returnName());
 	}
 	
 	public void displayInventory() {

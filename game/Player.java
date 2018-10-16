@@ -45,4 +45,8 @@ public class Player {
 		sword = newSword;
 	}
 	
+	public void removeFromInventory(Item x) {
+			pockets.removeFromInventory(x);
+	}
+	
 }
