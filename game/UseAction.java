@@ -14,12 +14,11 @@ public class UseAction implements Action {
 
 	@Override
 	public void takeAction() {
-		System.out.print("Use " + game.getLeft().returnName() + " or " + game.getRight().returnName() + "?");
+		System.out.print("Use what?");
 	}
 
 	@Override
-	public void takeAction(String substring) {
-		// TODO Auto-generated method stub
+	public void takeAction(String item) {
 		
 	}
 
