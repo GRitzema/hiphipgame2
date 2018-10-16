@@ -21,15 +21,11 @@ public class Room {
      */
     private String description;
     
-    /**
-     * A more detailed description of the items of a room.
-     */
-    private String inRoom;
-    
-    
     private HashMap<String,Room> doors = new HashMap<String,Room>();
     
-    private ArrayList<Item> inside = new ArrayList<Item>();
+    private Monster theMonster;
+
+    private HashMap<String, Item> inside = new HashMap<String, Item>();
 
     /**
      * Constructor.
@@ -37,11 +33,11 @@ public class Room {
      */
     public Room(String description, String inRoom) { 
     	this.description = description; 
-    	this.inRoom = inRoom;
     	doors.put("left", null);
     	doors.put("right", null);
     	doors.put("forward", null);
     	doors.put("backward", null);
+    	this.theMonster = null;
     	}
       
     public Room getDoors(String command){
@@ -57,23 +53,41 @@ public class Room {
     	doors.put(direction, next);
     }
     
-    public void addInside(Item a) {
-    	inside.add(a);
+    public void addInside(String name, Item a) {
+    	inside.put(name, a);
     }
     
     /**
      * Retrieve a description of this room (to the user).
      */
-    public String getDescription() { return description; }
+    public String getDescription() { 
+    	return description; 
+    	}
+    
+    public Item takeOut(String name) {
+    	Item returner = inside.remove(name);
+    	return returner;
+    }
     
     public void setDescription(String descrip) {
     	description = descrip;
     }
     
-    public void setInRoom(String thing) {
-    	inRoom = thing;
+    public String getInRoom() {
+    	String inRoom = "There is ";
+    	if (inside.isEmpty()) {
+    		inRoom = inRoom + "no item of interest in the room.";
+    	} else {
+    		for (Item i : inside.values()) {
+	    		inRoom = inRoom + i.getDescription() + ", ";
+	    	}
+	    	inRoom = inRoom.substring(0,inRoom.length() - 2) + ".";
+    	}
+    	return inRoom;
     }
     
-    public String getInRoom() { return inRoom; }
+    public void placeMonster(Monster newMonster) {
+    	theMonster = newMonster;
+    }
 	
 }

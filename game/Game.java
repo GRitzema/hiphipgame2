@@ -14,17 +14,8 @@ package game;
  */
 
 public class Game {
-	
-    /**
-     * The current room the user is in. This serves two
-     * purposes-- it is our only permanent connection to
-     * the rooms in this game (the other rooms are reachable
-     * by traversing this room's "doors"-- and it maintains
-     * the state by representing the user's current location.
-     */
-    private Room currentRoom;
     
-    private Player p = new Player(50);
+	private Player p = new Player(50,null);
 
     /**
      * Keeps track of whether this game is over or not.
@@ -44,35 +35,28 @@ public class Game {
     
     
     /**
-     * Return the room in which the user is currently.
-     */
-    public Room getCurrentRoom() { return currentRoom; }
-    
-    /**
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[11];
         rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new Room("a room. You are in room " + i + ".", "There is nothing of interest."); 
+            rooms[i] = new Room("a room.", "There is nothing of interest."); 
         }
-  
+        
         setRooms();
 
-        currentRoom = rooms[0];
+        p.setCurrentRoom(rooms[0]);
 
+    }
+    
+    public Player getPlayer() {
+    	return p;
     }
  
     /**
      * Is this game over or not?
      */
     public boolean isOver() { return over; }
-
-    /**
-     * Move into a different current room.
-     */
-    public void setCurrentRoom(Room currentRoom) { this.currentRoom = currentRoom; }
     
     /**
      * Indicate that the game is now over.
@@ -84,7 +68,8 @@ public class Game {
     }
     
     private void setRooms() {
-        
+    	
+       
         rooms[0].setRoom("forward",rooms[1]);
         rooms[1].setRoom("backward", rooms[0]);
         rooms[1].setRoom("forward", rooms[2]);
@@ -107,30 +92,39 @@ public class Game {
         rooms[10].setRoom("backward", rooms[9]);
         over = false;
 
-        rooms[0].setInRoom("There are few coins in a parking meter.");
-        rooms[3].setInRoom("There are few coins in a jar.");
-        rooms[4].setInRoom("There is food in an icebox.");
-        rooms[6].setInRoom("There is food inside a shopping bag.");
-        rooms[7].setInRoom("There is a sword underneath a carpet.");
-        
-        rooms[0].setDescription("a parkinglot.");
-        rooms[1].setDescription("a hallway. There is a monster at the end of the hallway.");
-        rooms[2].setDescription("a waiting room. There is an ATM in the corner.");
-        rooms[3].setDescription("a storage. There is a scroll on the wall.");
-        rooms[4].setDescription("an ice storage.");
-        rooms[5].setDescription("Edmand Chapel. There is a monster on the stage.");
-        rooms[6].setDescription("a changing-room. There is a vending machine in a corner");
-        rooms[7].setDescription("the side stage. There is an ATM in a corner");
-        rooms[8].setDescription("the side stage. There is a scroll on the wall.");
-        rooms[9].setDescription("the backstage. There is a monster among the dresses.");
-        rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box.");
+        Key key1 = new Key(pockets, "Handcuffs Key", "Open the hallway gate to the waiting room.");
+        Riddle riddle1 = new Riddle("asdf", "jkl");
+        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, pockets, null, key1));
+       
+        Key key2 = new Key(pockets, "Master Key", "Open the door to the backstage room.");
+        Riddle riddle2 = new Riddle("asdf", "jkl");
+        rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, pockets, null, key2));
+       
+        Key key3 = new Key(pockets, "Golden Key", "Open a secret room.");
+        Riddle riddle3 = new Riddle("asdf", "jkl");
+        rooms[9].placeMonster(new Monster("Satan", 100, riddle3, pockets, null, key3));
 
-        populateRooms();
+        rooms[0].setDescription("a parkinglot. 0");
+        rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
+        rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
+        rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
+        rooms[4].setDescription("an ice storage. 4");
+        rooms[5].setDescription("Edmand Chapel. There is a monster on the stage. 5");
+        rooms[6].setDescription("a changing-room. There is a vending machine in a corner 6");
+        rooms[7].setDescription("the side stage. There is an ATM in a corner 7");
+        rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
+        rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
+        rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
+
     }
     
     private void populateRooms () {
-    	rooms[0].addInside(new Money(5));
-    	rooms[3].addInside(new Money(10));
+    	//rooms[0].addInside(new Money(5));
+    	//rooms[3].addInside(new Money(10));
+
+    	rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
+    	rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
+
     	//rooms[4].addInside(new Food(20,"a butterscotch and snail pie", pockets, p));
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(newSword());
