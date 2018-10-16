@@ -23,11 +23,15 @@ public class Game {
      * the state by representing the user's current location.
      */
     private Room currentRoom;
+    
+    private Player p = new Player(50);
 
     /**
      * Keeps track of whether this game is over or not.
      */
     private boolean over;
+    
+    private Room[] rooms;
     
     private Inventory pockets = new Inventory();
     
@@ -48,12 +52,12 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        Room[] rooms = new Room[11];
+        rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++) {
             rooms[i] = new Room("a room. You are in room " + i + ".", "There is nothing of interest."); 
         }
   
-        setRooms(rooms);
+        setRooms();
 
         currentRoom = rooms[0];
     }
@@ -77,7 +81,7 @@ public class Game {
     	return pockets;
     }
     
-    private void setRooms(Room[] rooms) {
+    private void setRooms() {
         
         rooms[0].setRoom("forward",rooms[1]);
         rooms[1].setRoom("backward", rooms[0]);
@@ -101,7 +105,18 @@ public class Game {
         rooms[10].setRoom("backward", rooms[9]);
         over = false;
         
+        populateRooms();
+        
         rooms[0].setInRoom("There is a key in the corner");
+    }
+    
+    private void populateRooms () {
+    	rooms[0].addInside(new Money(5));
+    	rooms[3].addInside(new Money(10));
+    	//rooms[4].addInside(new Food(20,"a butterscotch and snail pie", pockets, p));
+    	//rooms[7].addInside(new Sword());
+    	//rooms[4].addInside(newSword());
+    	//rooms[6].addInside(new Food());
     }
     
 }

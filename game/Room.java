@@ -28,6 +28,8 @@ public class Room {
     
     
     private HashMap<String,Room> doors = new HashMap<String,Room>();
+    
+    private ArrayList<Item> inside = new ArrayList<Item>();
 
     /**
      * Constructor.
@@ -53,6 +55,10 @@ public class Room {
     
     public void setRoom(String direction,Room next) {
     	doors.put(direction, next);
+    }
+    
+    public void addInside(Item a) {
+    	inside.add(a);
     }
     
     /**
