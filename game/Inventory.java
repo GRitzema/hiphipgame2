@@ -1,27 +1,30 @@
 package game;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
+
 
 public class Inventory {
 	
-	private ArrayList<Item> pockets = new ArrayList<Item>(); 
-		
+	
+	private HashMap<String, Item> pockets = new HashMap<String, Item>();	
 	
 	public void addToInventory(Item x) {
-		pockets.add(x);
+		pockets.put(x.getDescription(), x);
 		
 	}
 	
 	public void removeFromInventory(Item x) {
-		if (pockets.indexOf(x) >= 0)
-			pockets.remove(pockets.indexOf(x));
+		if (pockets.containsKey(x.getDescription()))
+			pockets.remove(x.getDescription());
 	}
 	
 	public void displayInventory() {
 		int i = 1;
 		if (!pockets.isEmpty()) {
-			for (Item it : pockets) {
-				System.out.println(i + ". " + it);
+			Object [] arr = pockets.keySet().toArray();
+			for (int j = 0; j>arr.length; j++) {
+				System.out.println(i + ". " + arr[j]);
 				i++;
 			}
 		}
@@ -31,7 +34,7 @@ public class Inventory {
 	}
 	
 	public boolean checkInventory(String what) {
-		if (pockets.indexOf(what) >= 0) {
+		if (pockets.get(what) != null) {
 			return true;
 		}
 		else {
@@ -41,8 +44,8 @@ public class Inventory {
 	
 	public Item getFrom(String what){ 
 		
-		if (pockets.indexOf(what) >= 0) {
-			return pockets.get(pockets.indexOf(what));
+		if (pockets.get(what) != null) {
+			return pockets.get(what);
 		} else {
 			System.out.println("You do not have that item in your inventory\n");
 			return new Empty();

@@ -1,10 +1,13 @@
 package game;
 
+
 public class Player {
 	private int health;
+	private Sword sword;
 	
-	public Player(int health) {
+	public Player(int health, Sword sword) {
 		this.health = health;
+		this.sword = sword;
 	}
 
 	public int getHealth() {
@@ -15,6 +18,12 @@ public class Player {
 		this.health = (int) d;
 	}
 	
+	public Sword getSword() {
+		return sword;
+	}
 	
+	public void setSword(Sword newSword) {
+		sword = newSword;
+	}
 	
 }

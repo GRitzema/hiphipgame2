@@ -22,6 +22,7 @@ public class Monster {
 	}
 	public void defeat() {
 		if (this.health <= 0)
+		System.out.println("The ");	
 		pockets.addToInventory(item);
 		pockets.addToInventory(key);
 	}

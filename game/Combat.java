@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Scanner;
+
 public class Combat {
 
 	private Player p;
@@ -19,6 +21,12 @@ public class Combat {
 	}
 	
 	public void playerCombat(Sword sword) {
+		Scanner keyboard1 = new Scanner(System.in);
+		Scanner keyboard2 = new Scanner(System.in);
+		
+		String turn1 = keyboard1.nextLine();
+		
+		
 		double damage = 0;
 		if (Math.random()>=0.2) {
 			System.out.println("You missed " + m.getName() + "!");
