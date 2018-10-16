@@ -2,43 +2,28 @@ package game;
 
 public class Monster {
 
+	private String name;
 	private Riddle riddle;
 	private int health;
-	private Game game;
-	private Player p;
 	private Inventory pockets;
 	private Item item;
+	private Key key;
 	
-	public Monster(int health, Riddle riddle, Game game, Player p, Inventory pockets, Item item) {
+	public Monster(String name, int health, Riddle riddle, Inventory pockets, Item item, Key key) {
 		this.health = health;
 		this.riddle = riddle;
-		this.game = game;
-		this.p = p;
 		this.pockets = pockets;
 		this.item = item;
-	}
-	
-	public void monsterCombat() {		
-		if (health >= 0) {
-			p.setHealth(p.getHealth()-(Math.random()*10));
-		}
-	}
-	
-	public void playerCombat(Sword sword) {
-		if (sword.getMaterial().equals("wood")) {
-			this.setHealth(health-10-(Math.random()*10));
-		}
-		if (sword.getMaterial().equals("iron")) {
-			this.setHealth(health-25-(Math.random()*10));
-		}
-		if (sword.getMaterial().equals("diamond")) {
-			this.setHealth(health-50-(Math.random()*10));
-		}
+		this.key = key;
 	}
 		
-	public void dropItem() {
+	public String getName() {
+		return name;
+	}
+	public void defeat() {
 		if (this.health <= 0)
 		pockets.addToInventory(item);
+		pockets.addToInventory(key);
 	}
 	
 	public int getHealth() {
@@ -48,4 +33,14 @@ public class Monster {
 	public void setHealth(double health) {
 		this.health = (int) health;
 	}
+
+	public Riddle getRiddle() {
+		return riddle;
+	}
+	
+	public Key getKey() {
+		return key;
+	}
+
+	
 }
