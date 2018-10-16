@@ -92,18 +92,6 @@ public class Game {
         rooms[10].setRoom("backward", rooms[9]);
         over = false;
 
-        Key key1 = new Key(pockets, "Handcuffs Key", "Open the hallway gate to the waiting room.");
-        Riddle riddle1 = new Riddle("asdf", "jkl");
-        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, pockets, null, key1));
-       
-        Key key2 = new Key(pockets, "Master Key", "Open the door to the backstage room.");
-        Riddle riddle2 = new Riddle("asdf", "jkl");
-        rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, pockets, null, key2));
-       
-        Key key3 = new Key(pockets, "Golden Key", "Open a secret room.");
-        Riddle riddle3 = new Riddle("asdf", "jkl");
-        rooms[9].placeMonster(new Monster("Satan", 100, riddle3, pockets, null, key3));
-
         rooms[0].setDescription("a parkinglot. 0");
         rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
         rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
@@ -115,7 +103,7 @@ public class Game {
         rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
         rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
         rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
-
+        
     }
     
     private void populateRooms () {
@@ -129,6 +117,18 @@ public class Game {
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(newSword());
     	//rooms[6].addInside(new Food());
+    
+        Key key1 = new Key(pockets, "Handcuffs Key", "a handcuffs key on the floor");
+        Riddle riddle1 = new Riddle("asdf", "jkl");
+        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, key1));
+       
+        Key key2 = new Key(pockets, "Master Key", "a master key on the floor");
+        Riddle riddle2 = new Riddle("asdf", "jkl");
+        rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, rooms[5], null, key2));
+       
+        Key key3 = new Key(pockets, "Golden Key", "a golden key on the floor");
+        Riddle riddle3 = new Riddle("asdf", "jkl");
+        rooms[9].placeMonster(new Monster("Satan", 100, riddle3, rooms[9], null, key3));
     }
     
 }

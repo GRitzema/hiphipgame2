@@ -24,4 +24,8 @@ public class Key implements Item{
 		pockets.addToInventory(new Key(pockets, name, description));
 	}
 	
+	public void use() {
+		if ()
+	}
+	
 }
