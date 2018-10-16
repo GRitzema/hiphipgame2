@@ -25,19 +25,11 @@ public class Key implements Item{
 		// TODO Auto-generated method stub
 		return false;
 	}
-<<<<<<< HEAD
 	
-	public void use() {
-		if ()
-	}
-	
-=======
-
 	@Override
 	public void use() {
 		// TODO Auto-generated method stub
 		
 	}
 
->>>>>>> df47345dd23277ba0dd5854766161b00e4fe4105
 }
