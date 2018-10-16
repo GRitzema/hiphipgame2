@@ -8,6 +8,7 @@ public class Key implements Item{
 	private Room door;
 	private Room currentRoom;
 	private boolean isLocked;
+	private String type = "key";
 	
 	public Key(String name, String description, Room door) {		
 		this.pockets = pockets;
@@ -25,7 +26,7 @@ public class Key implements Item{
 	public String returnName() {
 		return name;
 	}
-	
+
 	public boolean isEdible() {
 		return false;
 	}
@@ -34,6 +35,11 @@ public class Key implements Item{
 		if (currentRoom == door) {
 			isLocked = false;
 		}
+	}
+
+	
+	public String returnType() {
+		return type;
 	}
 
 

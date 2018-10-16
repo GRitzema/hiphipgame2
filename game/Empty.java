@@ -24,8 +24,9 @@ public class Empty implements Item {
 		
 	}
 	
-	public void use() {
-		
+
+	public String returnType() {
+		return null;
 	}
 
 }

@@ -61,7 +61,7 @@ public class Parser {
     public void executeTurn(Game game) {
         // The room that the user is in.
         Room room = player.getCurrentRoom();
-        pockets = game.inventory();
+        pockets = player.getPockets();
         
         System.out.println("You are in " + room.getDescription());
 
