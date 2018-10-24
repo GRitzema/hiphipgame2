@@ -37,8 +37,9 @@ public class Game {
      */
     public Game() {
         rooms = new Room[11];
+        
         for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new Room("a room.", "There is nothing of interest.", false, null); 
+            rooms[i] = new Room("a room.", "There is nothing of interest.", false, new HashMap<String,Item>()); 
             if (i == 2 || i == 6 || i == 10) {
             	rooms[i].setLocked(true);
             }
@@ -110,7 +111,9 @@ public class Game {
     	//rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
     	//rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
 
-    	//rooms[4].addInside(new Food(20,"a butterscotch and snail pie", pockets, p));
+    	rooms[0].addInside("Pie", new Food(50,"Pie","Restores all hp", p, 100, "Food"));
+    	rooms[0].addInside("Mushroom", new Food(10, "Mushroom", "Restores 10 hp", p, 10, "Food"));
+    	rooms[1].addInside("Sandwich", new Food(15, "Sandwich", "Restores 15 hp", p, 20, "Food"));
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());

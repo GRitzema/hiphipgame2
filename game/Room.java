@@ -98,10 +98,10 @@ public class Room {
     public String getInRoom() {
     	String inRoom = "There is ";
     	if (inside.isEmpty()) {
-    		inRoom = inRoom + "no item of interest in the room.";
+    		inRoom = inRoom + "no item of interest in the room.";   	
     	} else {
     		for (Item i : inside.values()) {
-	    		inRoom = inRoom + i.getDescription() + ", ";
+	    		inRoom = inRoom + i.returnName() + ", ";
 	    	}
 	    	inRoom = inRoom.substring(0,inRoom.length() - 2) + ".";
     	}
@@ -131,5 +131,6 @@ public class Room {
 	public void placeShop(Shop aShop) {
     	theShop = aShop;
     }
-
+	
+	
 }

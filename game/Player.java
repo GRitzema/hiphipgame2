@@ -3,6 +3,7 @@ package game;
 
 public class Player {
 	private int health;
+	private int maxHealth;
 	private Sword sword;
 	/**
 	 * The current room the user is in. This serves two
@@ -17,6 +18,7 @@ public class Player {
 	public Player(int health, Sword sword) {
 		this.health = health;
 		this.sword = sword;
+		this.maxHealth = health;
 	}
 
 	public void setCurrentRoom(Room r) {
@@ -50,5 +52,12 @@ public class Player {
 		pockets.removeFromInventory(x);
 	}
 	
+	public void addToInventory(Item x) {
+		pockets.addToInventory(x);
+	}
+	
+	public int getMaxHealth() {
+		return maxHealth;
+	}
 
 }

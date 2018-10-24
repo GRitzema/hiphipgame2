@@ -36,10 +36,16 @@ public class Food implements Item {
 	}
 
 	public void use() {
-		eater.setHealth(hp + eater.getHealth());
-		eater.removeFromInventory(this);
-		System.out.println("You ate the " + name + "! You gained " + hp);
-		System.out.println("You now have " + eater.getHealth() + "health!");
+		if ((hp + eater.getHealth()) >= eater.getMaxHealth()) {
+			eater.setHealth(hp + eater.getHealth());
+			eater.removeFromInventory(this);
+			System.out.println("You ate the " + name + "! You gained " + hp);
+			System.out.println("You now have " + eater.getHealth() + "health!");
+		}
+		else {
+			eater.setHealth(eater.getMaxHealth());
+			System.out.println("You maxed out your health to " + eater.getMaxHealth() + "hp!");
+		}
 	}
 	
 	public boolean isEdible() {

@@ -1,5 +1,6 @@
 /bin/
 /Game.class
+<<<<<<< HEAD
 /Parser.class
 /PlayGame.class
 /Room.class
@@ -9,14 +10,38 @@
 /Sword.class
 /Monster.class
 /Riddle.class
+=======
+/Inventory.class
+/Item.class
+/Key.class
+/Parser.class
+/PlayGame.class
+/Room.class
+>>>>>>> f499bf5ccedebe073308dc8522daead8680ef3d4
 /Action.class
 /GoAction.class
 /HelpAction.class
 /HoldAction.class
 /InventoryAction.class
 /LookAction.class
+<<<<<<< HEAD
 /UseAction.class
 /Player.class
 /Combat.class
 /Empty.class
 /Food.class
+=======
+/Monster.class
+/Player.class
+/Riddle.class
+/Sword.class
+/UseAction.class
+/Empty.class
+/Combat.class
+/Food.class
+/VendingMachine.class
+/FoodShop.class
+/Shop.class
+/UnlockAction.class
+/PickUpAction.class
+>>>>>>> f499bf5ccedebe073308dc8522daead8680ef3d4
