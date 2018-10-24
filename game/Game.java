@@ -117,7 +117,7 @@ public class Game {
 
         Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor", rooms[1]);
         rooms[2].setKey(key1);
-        rooms[1].addInside("key1", key1);
+        //rooms[1].addInside("key1", key1);
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
         rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, null));
        
