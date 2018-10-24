@@ -47,7 +47,7 @@ public class Player {
 
 	
 	public void removeFromInventory(Item x) {
-			pockets.removeFromInventory(x);
+		pockets.removeFromInventory(x);
 	}
 	
 
