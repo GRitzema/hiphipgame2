@@ -22,7 +22,7 @@ public class GoAction implements Action {
             System.out.println("There is no door in that direction.");
 		} else if (nextRoom.getLocked() == true) {
 			System.out.println("The door is locked.");
-		} else{
+		} else {
             player.setCurrentRoom(nextRoom);
         }
 	}

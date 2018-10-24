@@ -2,21 +2,16 @@ package game;
 
 public class Key implements Item{
 
-	private Inventory pockets;
 	private String name;
 	private String description;
 	private Room door;
 	private Room currentRoom;
-	private boolean isLocked;
 	private String type = "key";
 	
 	public Key(String name, String description, Room door) {		
-		this.pockets = pockets;
 		this.name = name;
 		this.description = description;
 		this.door = door;
-		this.currentRoom = currentRoom;
-		this.isLocked = true;
 	}
 	
 	public String getDescription() {
@@ -33,7 +28,7 @@ public class Key implements Item{
 	
 	public void use() {
 		if (currentRoom == door) {
-			isLocked = false;
+			door.setLocked(false);
 		}
 	}
 

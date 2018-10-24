@@ -45,6 +45,14 @@ public class Inventory {
 	}
 	
 	
+	public boolean contains(Item something) {
+		if (pockets.containsValue(something)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	/**
 	public Item getFrom(String what){ 
 		

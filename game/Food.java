@@ -6,27 +6,35 @@ public class Food implements Item {
 	private String description;
 	private String name;
 	private Player eater;
+	private int price;
 	private String type;
 	
-	public Food(int hp, String name, String description, Player eater, String type) {
+	public Food(int hp, String name, String description, Player eater, int price, String type) {
 		this.hp = hp;
 		this.name = name;
 		this.description = description;
+		this.price = price;
 		this.type = type;
 		this.eater = eater;
 
 	}
 	
+	public int getHp() {
+		return hp;
+	}
+
 	public String getDescription() {
 		return description;
 	}
-
 	
 	public String returnName() {
 		return name;
 	}
-
 	
+	public int getPrice() {
+		return price;
+	}
+
 	public void use() {
 		eater.setHealth(hp + eater.getHealth());
 		eater.removeFromInventory(this);

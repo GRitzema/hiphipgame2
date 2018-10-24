@@ -1,5 +1,7 @@
 package game;
 
+import java.util.HashMap;
+
 /**
  * Game.java
  * 
@@ -36,13 +38,14 @@ public class Game {
     public Game() {
         rooms = new Room[11];
         for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new Room("a room.", "There is nothing of interest.", false); 
+            rooms[i] = new Room("a room.", "There is nothing of interest.", false, null); 
             if (i == 2 || i == 6 || i == 10) {
             	rooms[i].setLocked(true);
             }
         }
         
         setRooms();
+        populateRooms();
 
         p.setCurrentRoom(rooms[0]);
 
@@ -100,29 +103,40 @@ public class Game {
 	       
     }
     
-    private void populateRooms () {
+    private void populateRooms() {
     	//rooms[0].addInside(new Money(5));
     	//rooms[3].addInside(new Money(10));
 
-    	rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
-    	rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
+    	//rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
+    	//rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
 
     	//rooms[4].addInside(new Food(20,"a butterscotch and snail pie", pockets, p));
     	//rooms[7].addInside(new Sword());
-    	//rooms[4].addInside(newSword());
+    	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());
-    
-        Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor");
-        Riddle riddle1 = new Riddle("asdf", "jkl");
-        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, key1));
+
+        Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor", rooms[1]);
+        rooms[2].setKey(key1);
+        rooms[1].addInside("key1", key1);
+        Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
+        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, null));
        
-        Key key2 = new Key("Master Key", "a master key on the floor");
-        Riddle riddle2 = new Riddle("asdf", "jkl");
+        Key key2 = new Key("Master Key", "a master key on the floor", rooms[5]);
+        rooms[6].setKey(key2);
+        Riddle riddle2 = new Riddle("What is Dr. Pohly's second occupation?", "DJ");
         rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, rooms[5], null, key2));
        
-        Key key3 = new Key("Golden Key", "a golden key on the floor");
+        Key key3 = new Key("Golden Key", "a golden key on the floor", rooms[9]);
+        rooms[10].setKey(key3);
         Riddle riddle3 = new Riddle("asdf", "jkl");
         rooms[9].placeMonster(new Monster("Satan", 100, riddle3, rooms[9], null, key3));
+	
+        HashMap<Item, Integer> vending = new HashMap<Item, Integer>();
+		vending.put(new Food(10, "Shin-Ramyun", "Main course", p, 10, null), 3);
+		vending.put(new Food(2, "Chocolate", "Dessert", p, 1, null), 5);
+		Shop vendingMachine = new Shop("Vending Machine", vending);
+		rooms[6].placeShop(vendingMachine);
+
     }
     
 }

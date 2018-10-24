@@ -24,23 +24,30 @@ public class Room {
     private HashMap<String,Room> doors = new HashMap<String,Room>();
     
     private Monster theMonster;
+     
+    private Shop theShop;
 
     private HashMap<String, Item> inside = new HashMap<String, Item>();
     
     private boolean locked;
+    
+    private Key key;
 
     /**
      * Constructor.
      * @param description A String describing this room to the user.
      */
-    public Room(String description, String inRoom, boolean locked) { 
+    public Room(String description, String inRoom, boolean locked, HashMap<String, Item> inside) { 
     	this.description = description; 
     	doors.put("left", null);
     	doors.put("right", null);
     	doors.put("forward", null);
     	doors.put("backward", null);
     	this.theMonster = null;
+    	this.theShop = null;
     	this.locked = locked;
+    	this.key = null;
+    	this.inside = inside;
     	}
       
     public Room getDoors(String command){
@@ -60,6 +67,18 @@ public class Room {
     	inside.put(name, a);
     }
     
+    public HashMap<String, Item> getInside() {
+		return inside;
+	}
+
+	public boolean isInside(String thing) {
+		if (inside.containsKey(thing)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
     /**
      * Retrieve a description of this room (to the user).
      */
@@ -72,7 +91,7 @@ public class Room {
     	return returner;
     }
     
-    public void setDescription(String descrip) {
+	public void setDescription(String descrip) {
     	description = descrip;
     }
     
@@ -97,8 +116,20 @@ public class Room {
 		this.locked = locked;
 	}
 
+	public Key getKey() {
+		return key;
+	}
+
+	public void setKey(Key key) {
+		this.key = key;
+	}
+
 	public void placeMonster(Monster newMonster) {
     	theMonster = newMonster;
     }
-	
+
+	public void placeShop(Shop aShop) {
+    	theShop = aShop;
+    }
+
 }

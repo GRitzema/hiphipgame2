@@ -48,8 +48,10 @@ public class Parser {
         actions.put("look", new LookAction(player));
         actions.put("help", new HelpAction());
         actions.put("go", new GoAction(player));
-        actions.put("get", new PickUpAction(player));
+        //actions.put("get", new PickUpAction(player));
         actions.put("use", new UseAction(pockets));
+        actions.put("unlock", new UnlockAction(pockets, room));
+        actions.put("pick up", new PickUpAction(room, pockets));
     }
 
     /**
