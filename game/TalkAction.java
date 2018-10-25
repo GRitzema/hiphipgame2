@@ -6,30 +6,42 @@ public class TalkAction implements Action{
 
 	private Room room;
 	private Player p;
-	private Combat battle;;
 	
-	public TalkAction(Player p, Room room) {
+	
+	public TalkAction(Player p) {
 		this.p = p;
-		this.room = room;
-		this.battle = new Combat(p, room.getMonster());
+		this.room = p.getCurrentRoom();
+		
 	}
 	
 	public void takeAction() {
-		System.out.println("Talk to whom?");
-		
+		System.out.println("Talk to whom?");	
 	}
 
 	
 	public void takeAction(String enemy) {
 		Scanner keyboard = new Scanner(System.in);
-		if (enemy.substring(0, 2).equals("to") && enemy.substring(3).equals("monster") && room.hasMonster()) {	
-		System.out.println("Hear my riddle! " + room.getMonster().getRiddle());
-		System.out.println("(What is your guess?)");
+		room = p.getCurrentRoom();
+		Monster monster = room.getMonster();
+		if (enemy.equals("to monster") && room.hasMonster()) {			
+					
+			System.out.println("Hear my riddle! " + room.getMonster().getRiddle().getQuestion());
+			System.out.println("(What is your guess?): ");
 			String guess = keyboard.nextLine();
-			battle.engage(guess);
+			
+			if (guess.equals(monster.getRiddle().getAnswer())){
+				System.out.println("Hmmph, I suppose that answer will suffice.");
+				System.out.println(monster.getName() + " gave you the " +  monster.getKey().returnName()+"!");
+				p.addToInventory(monster.getKey());
+			}
+			else {
+				Combat battle = new Combat(p, room.getMonster());
+				battle.engage();
+			}
+		
 		}
 		else {
-			System.out.println("There's no one there of that name!");
+			System.out.println("There's no one here of that name!");
 		} 
 		
 	}

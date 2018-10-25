@@ -111,10 +111,10 @@ public class Game {
     	//rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
     	//rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
 
-    	rooms[0].addInside("Pie", new Food(50,"Pie","Restores all hp", p, 100, "Food"));
-    	rooms[0].addInside("Mushroom", new Food(10, "Mushroom", "Restores 10 hp", p, 10, "Food"));
-    	rooms[1].addInside("Sandwich", new Food(15, "Sandwich", "Restores 15 hp", p, 20, "Food"));
-    	rooms[1].addInside("Cake", new Food (20, "Cake", "Restores 20 hp", p, 20, "Food"));
+    	rooms[0].addInside("pie", new Food(50,"Pie","Restores all hp", p, 100, "Food"));
+    	rooms[0].addInside("mushroom", new Food(10, "Mushroom", "Restores 10 hp", p, 10, "Food"));
+    	rooms[1].addInside("sandwich", new Food(15, "Sandwich", "Restores 15 hp", p, 20, "Food"));
+    	rooms[1].addInside("cake", new Food (20, "Cake", "Restores 20 hp", p, 20, "Food"));
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());
@@ -123,7 +123,8 @@ public class Game {
         rooms[2].setKey(key1);
         //rooms[1].addInside("key1", key1);
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
-        rooms[1].placeMonster(new Monster("Public Security", 1000, riddle1, rooms[1], null, null));
+        Key key10 = new Key("Skeleton key", "unlocks door", rooms[1]);
+        rooms[1].placeMonster(new Monster("public safety", 1000, riddle1, rooms[1], null, key10));
        
         Key key2 = new Key("Master Key", "a master key on the floor", rooms[5]);
         rooms[6].setKey(key2);
