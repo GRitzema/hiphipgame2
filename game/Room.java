@@ -127,10 +127,22 @@ public class Room {
 	public void placeMonster(Monster newMonster) {
     	theMonster = newMonster;
     }
+	
+	public Monster getMonster() {
+		return theMonster;
+	}
 
 	public void placeShop(Shop aShop) {
     	theShop = aShop;
     }
 	
+	public boolean hasMonster() {
+		if (theMonster == null) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 	
 }

@@ -61,7 +61,7 @@ public class Parser {
         actions.put("go", new GoAction(player));
         //actions.put("get", new PickUpAction(player));
         actions.put("use", new UseAction(pockets));
-        actions.put("talk", new TalkAction(player, monster));
+        actions.put("talk", new TalkAction(player));
         actions.put("fight", new FightAction(player, monster));
         actions.put("unlock", new UnlockAction(pockets, room));
         actions.put("pickup", new PickUpAction(player));

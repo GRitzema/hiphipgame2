@@ -15,12 +15,17 @@ public class PickUpAction implements Action{
 
 	public void takeAction(String substring) { 
 		room = p.getCurrentRoom();
+		
 		if (room.isInside(substring)) {
 			Item x = room.getInside().get(substring);
 			p.addToInventory(x);
+			room.takeOut(substring);
+			System.out.println("You picked up the " + substring);
 		} else {
 			System.out.println("There is no such thing in the room");
-		}
+		}  
+		
+		
 	}
 
 }

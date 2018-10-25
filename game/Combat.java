@@ -8,24 +8,29 @@ public class Combat {
 	private Monster m;
 	private Inventory pockets;
 	
-	public Combat(Player p, Monster m, Inventory pockets) {
+	public Combat(Player p, Monster m) {
 		this.p = p;
 		this.m = m;
+		this.pockets = p.getInventory();
 	}
 	
 	
 	public void monsterCombat() {		
 		if (m.getHealth() >= 0) {
-			p.setHealth(p.getHealth()-(Math.random()*10));
+			double damage = Math.random()*10;
+			p.setHealth(p.getHealth()-damage);
+		System.out.println("The monster inflicted " + damage);
+		System.out.println("You now have " + p.getHealth() + "hp!");
 		}
 	}
 	
 	public void playerCombat(Sword sword) {
+		System.out.println("It is your turn! What will you do?");
 		Scanner keyboard = new Scanner(System.in);		
 		
 		String turn = keyboard.nextLine();
 		
-		if (turn.substring(0,3).equals("eat ") && pockets.getFrom(turn.substring(4)).isEdible()) {
+		if (turn.substring(0,2).equals("eat") && pockets.getFrom(turn.substring(4)).isEdible()) {
 			pockets.getFrom(turn.substring(4)).use();
 		}
 		
@@ -59,26 +64,23 @@ public class Combat {
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took" + damage + "!");
 			}
-			else 
+			else if (sword == null)
 				damage = 5 + Math.random()*10;
 				m.setHealth(m.getHealth()-damage);
 				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
 		}
 	}
 	
-	public void engage(String guess) {
-		if (guess.equals(m.getRiddle().getAnswer())){
-			System.out.println("Hmmph, I suppose that answer will suffice.");
-			System.out.println(m.getName() + "gave you the " + m.getKey() + "!");
-			pockets.addToInventory(m.getKey());
+	public void engage() {	
+		
+		System.out.println("Mwahaha, your ignorance shall make you pay!");
+		while(m.getHealth() >= 0) {
+			playerCombat(p.getSword());
+			monsterCombat();
 		}
-		else {
-			System.out.println("Mwahaha, your ignorance shall make you pay!");
-			while(m.getHealth() >= 0) {
-				playerCombat(p.getSword());
-				monsterCombat();
-			}
-		}
+		m.defeat();
 	}
+	
+	
 	
 }
