@@ -72,7 +72,7 @@ public class Room {
 	}
 
 	public boolean isInside(String thing) {
-		if (inside.containsKey(thing)) {
+		if (inside.containsValue(thing)) {
 			return true;
 		} else {
 			return false;

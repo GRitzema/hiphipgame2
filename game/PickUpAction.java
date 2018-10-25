@@ -14,7 +14,6 @@ public class PickUpAction implements Action{
 	}
 
 	public void takeAction(String substring) { 
-		
 		room = p.getCurrentRoom();
 		if (room.isInside(substring)) {
 			Item x = room.getInside().get(substring);
