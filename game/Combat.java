@@ -8,9 +8,10 @@ public class Combat {
 	private Monster m;
 	private Inventory pockets;
 	
-	public Combat(Player p, Monster m, Inventory pockets) {
+	public Combat(Player p, Monster m) {
 		this.p = p;
 		this.m = m;
+		this.pockets = p.getInventory();
 	}
 	
 	
@@ -67,10 +68,11 @@ public class Combat {
 	}
 	
 	public void engage(String guess) {
+		
 		if (guess.equals(m.getRiddle().getAnswer())){
 			System.out.println("Hmmph, I suppose that answer will suffice.");
 			System.out.println(m.getName() + "gave you the " + m.getKey() + "!");
-			pockets.addToInventory(m.getKey());
+			p.addToInventory(m.getKey());
 		}
 		else {
 			System.out.println("Mwahaha, your ignorance shall make you pay!");
@@ -78,6 +80,7 @@ public class Combat {
 				playerCombat(p.getSword());
 				monsterCombat();
 			}
+			m.defeat();
 		}
 	}
 	

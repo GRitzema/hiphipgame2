@@ -60,4 +60,7 @@ public class Player {
 		return maxHealth;
 	}
 
+	public Inventory getInventory() {
+		return pockets;
+	}
 }

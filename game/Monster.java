@@ -10,6 +10,7 @@ public class Monster {
 	private Key key;
 	
 	public Monster(String name, int health, Riddle riddle, Room room, Item item, Key key) {
+		this.name = name;
 		this.health = health;
 		this.riddle = riddle;
 		this.room = room;
