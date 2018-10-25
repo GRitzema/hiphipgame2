@@ -17,6 +17,7 @@ public class UnlockAction implements Action {
 
 	public void takeAction() {
 		Key theKey = door.getKey();
+		System.out.println(theKey.getDescription());
 		if (pocket.contains(theKey)) {
 			theKey.use();
 			System.out.println("The door is unlocked.");

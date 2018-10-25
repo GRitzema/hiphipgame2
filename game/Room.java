@@ -1,5 +1,4 @@
 package game;
-import java.util.*;
 
 import java.util.HashMap;
 
@@ -95,6 +94,9 @@ public class Room {
     	description = descrip;
     }
     
+    /**
+     * Retrieve things hidden in the room.
+     */
     public String getInRoom() {
     	String inRoom = "There is ";
     	if (inside.isEmpty()) {

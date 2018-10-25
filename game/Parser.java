@@ -23,32 +23,32 @@ public class Parser {
     private Scanner keyboard;
     
     /**
-     * Inventory class
+     * Inventory class.
      */
     private Inventory pockets;
     
     /**
-     * Map of possible actions
+     * Map of possible actions.
      */
     private HashMap<String, Action> actions = new HashMap<String, Action>();
     
     /**
-     * Room class
+     * Room class.
      */
     private Room room;
     
     /**
-     * Player class
+     * Player class.
      */
     private Player player;
     
     /**
-     * Monster class
+     * Monster class.
      */
     private Monster monster;
     
     /**
-     * Plain constructor
+     * Plain constructor.
      */
     public Parser(Game game) {
     	player = game.getPlayer();
