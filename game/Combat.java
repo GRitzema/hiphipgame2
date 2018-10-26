@@ -30,8 +30,8 @@ public class Combat {
 		
 		String turn = keyboard.nextLine();
 		
-		if (turn.substring(0,2).equals("eat") && pockets.getFrom(turn.substring(4)).isEdible()) {
-			pockets.getFrom(turn.substring(4)).use();
+		if (turn.substring(0,3).equals("eat") && p.getPockets().receiveItem(turn.substring(4)).isEdible()) {
+			p.getPockets().getFrom(turn.substring(4)).use();
 		}
 		
 		else if(turn.equals("fight")) {
@@ -40,6 +40,11 @@ public class Combat {
 		
 		else {
 			System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
+			System.out.println(turn.substring(4));
+			
+			p.getPockets().displayInventory();
+			
+			
 		}
 	}
 	

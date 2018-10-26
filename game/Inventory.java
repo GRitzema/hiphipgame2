@@ -55,6 +55,10 @@ public class Inventory {
 		}
 	}
 	
+	public Item receiveItem(String it) {
+		return pockets.get(it);
+	}
+	
 	/**
 	public Item getFrom(String what){ 
 		

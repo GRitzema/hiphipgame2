@@ -43,9 +43,10 @@ public class Monster {
 
 		p.addKill();
 		
-		System.out.println("The ");	
+		
 		room.addInside(item.returnName(), item);
 		room.addInside(key.returnName(),key);
+		room.setMonster(null);
 
 		}
 

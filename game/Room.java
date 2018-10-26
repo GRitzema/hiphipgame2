@@ -133,6 +133,10 @@ public class Room {
 	public Monster getMonster() {
 		return theMonster;
 	}
+	
+	public void setMonster(Monster x) {
+		theMonster = x;
+	}
 
 	public void placeShop(Shop aShop) {
     	theShop = aShop;
