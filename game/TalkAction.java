@@ -6,12 +6,13 @@ public class TalkAction implements Action{
 
 	private Room room;
 	private Player p;
+	private Game game;
 	
 	
-	public TalkAction(Player p) {
+	public TalkAction(Player p, Game game) {
 		this.p = p;
 		this.room = p.getCurrentRoom();
-		
+		this.game = game;
 	}
 	
 	public void takeAction() {
@@ -38,7 +39,7 @@ public class TalkAction implements Action{
 				System.out.println(monster.getName() + " vanished in thin air!");
 			}
 			else {
-				Combat battle = new Combat(p, room.getMonster());
+				Combat battle = new Combat(p, room.getMonster(), game);
 				battle.engage();
 			}
 		

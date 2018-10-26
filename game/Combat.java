@@ -7,11 +7,13 @@ public class Combat {
 	private Player p;
 	private Monster m;
 	private Inventory pockets;
+	private Game game;
 	
-	public Combat(Player p, Monster m) {
+	public Combat(Player p, Monster m, Game game) {
 		this.p = p;
 		this.m = m;
 		this.pockets = p.getInventory();
+		this.game = game;
 	}
 	
 	
@@ -25,6 +27,7 @@ public class Combat {
 	}
 	
 	public void playerCombat() {
+		
 		System.out.println("It is your turn! What will you do?");
 		Scanner keyboard = new Scanner(System.in);		
 		
@@ -34,7 +37,7 @@ public class Combat {
 		if (turn.length()>4) {
 			item = p.getPockets().receiveItem(turn.substring(4));
 		}
-	
+		
 		
 		if (turn.length() > 3 && turn.substring(0,3).equals("eat") && item != null && item.isEdible()) {
 			item.use();
@@ -47,6 +50,7 @@ public class Combat {
 		else {
 			System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
 		}
+		
 	}
 	
 	public void fight(Sword sword) {
@@ -81,9 +85,13 @@ public class Combat {
 	public void engage() {	
 		
 		System.out.println("Mwahaha, your ignorance shall make you pay!");
-		while(m.getHealth() >= 0) {
+		while(m.getHealth() >= 0 && p.getHealth()>=0) {
 			playerCombat();
 			monsterCombat();
+		}
+		if (p.getHealth() <=0) {
+			System.out.println("You were defeated!");
+			game.finishGame();
 		}
 		m.defeat();
 	}
