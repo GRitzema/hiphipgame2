@@ -23,7 +23,7 @@ public class TalkAction implements Action{
 		Scanner keyboard = new Scanner(System.in);
 		room = p.getCurrentRoom();
 		Monster monster = room.getMonster();
-		if (enemy.equals("to boss") && room.hasMonster()) {			
+		if (enemy.equals("to monster") && room.hasMonster()) {			
 					
 			System.out.println("\n" + monster.getName() + " boss " + monster.getDes() + ".");
 			System.out.println("\"Hear my riddle! " + room.getMonster().getRiddle().getQuestion() + "\"");

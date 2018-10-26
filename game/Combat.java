@@ -29,9 +29,15 @@ public class Combat {
 		Scanner keyboard = new Scanner(System.in);		
 		
 		String turn = keyboard.nextLine();
+		Item item = null;;
 		
-		if (turn.substring(0,3).equals("eat") && p.getPockets().receiveItem(turn.substring(4)).isEdible()) {
-			p.getPockets().getFrom(turn.substring(4)).use();
+		if (turn.length()>4) {
+			item = p.getPockets().receiveItem(turn.substring(4));
+		}
+	
+		
+		if (turn.length() > 3 && turn.substring(0,3).equals("eat") && item != null && item.isEdible()) {
+			item.use();
 		}
 		
 		else if(turn.equals("fight")) {
@@ -40,11 +46,6 @@ public class Combat {
 		
 		else {
 			System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
-			System.out.println(turn.substring(4));
-			
-			p.getPockets().displayInventory();
-			
-			
 		}
 	}
 	

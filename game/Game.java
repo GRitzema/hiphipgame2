@@ -121,11 +121,13 @@ public class Game {
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
         
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
+        
+        rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
        
         rooms[2].setKey(key1);
         rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "rattles its handcuffs threateningly"));
-
-       
+        
+        
         Key key2 = new Key("Master Key", "a master key on the floor");
         rooms[6].setKey(key2);
         Riddle riddle2 = new Riddle("What is Dr. Pohly's second occupation?", "DJ");

@@ -58,7 +58,14 @@ public class Inventory {
 	public Item receiveItem(String it) {
 		return pockets.get(it);
 	}
+
+	public HashMap<String, Item> getPockets() {
+		return pockets;
+	}
+
+
 	
+
 	/**
 	public Item getFrom(String what){ 
 		

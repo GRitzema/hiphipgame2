@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class UseAction implements Action {
 
-	Inventory pockets;
 	
-	private Scanner keyboard;
+	private Player p;
+	private Inventory pockets;
 	
-	public UseAction(Inventory pockets) {
-		this.pockets = pockets;
+	
+	public UseAction(Player p) {
+		this.p = p;
+		this.pockets = p.getInventory();
 	}
 
 	@Override
@@ -19,14 +21,11 @@ public class UseAction implements Action {
 
 	
 	public void takeAction(String item) {
-		
-		Item thing = pockets.getFrom(item);
-		
-		if (thing.returnType().equals(null)) {
-			System.out.println("You do not have that item in your inventory.");
-		} else {
-			//insert code here
-			//implement items/ use them here
+		if (pockets.getPockets().containsKey(item)) {
+			pockets.receiveItem(item).use();
+		}
+		else {
+			System.out.println("You can't use that :(");
 		}
 	}
 
