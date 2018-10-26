@@ -48,6 +48,11 @@ public class Parser {
     private Monster monster;
     
     /**
+     * Shop class.
+     */
+    private Shop shop;
+    
+    /**
      * Plain constructor.
      */
     public Parser(Game game) {
@@ -63,6 +68,7 @@ public class Parser {
         actions.put("fight", new FightAction(player, monster));
         actions.put("unlock", new UnlockAction(player));
         actions.put("pickup", new PickUpAction(player));
+        actions.put("shop", new ShopAction(player));
     }
 
     /**

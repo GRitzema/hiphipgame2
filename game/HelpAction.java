@@ -14,6 +14,7 @@ public class HelpAction implements Action {
     	System.out.println("unlock: unlock the door that is locked"); 
     	System.out.println("pick up : pick up the thing in the room");
     	System.out.println("eat : eat a food item in your inventory");
+    	System.out.println("shop : shop in a shop in in the room");
 	}
 
 	public void takeAction(String substring) {
