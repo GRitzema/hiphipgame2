@@ -33,13 +33,21 @@ public class Monster {
 	public void defeat() {
 		if (this.health <= 0) {
 
-		System.out.println("You defeated " + name + "! You received the " + key + "and the "+ item + ".");	
+		System.out.println("You defeated " + name + "! The " + key.returnName() + " and the "+ item.returnName() + " fell on the floor.");	
 		
-		p.addKill();
-		
-		System.out.println("The ");	
+
+
 		room.addInside(item.returnName(), item);
 		room.addInside(key.returnName(),key);
+		
+
+		p.addKill();
+		
+		
+		room.addInside(item.returnName(), item);
+		room.addInside(key.returnName(),key);
+		room.setMonster(null);
+
 		}
 
 	}

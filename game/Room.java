@@ -152,7 +152,11 @@ public class Room {
 	public Monster getMonster() {
 		return theMonster;
 	}
-	
+
+	public void setMonster(Monster x) {
+		theMonster = x;
+	}
+
 	public Shop getTheShop() {
 		return theShop;
 	}
