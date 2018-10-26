@@ -23,7 +23,7 @@ public class Inventory {
 		int i = 1;
 		if (!pockets.isEmpty()) {
 			Object [] arr = pockets.keySet().toArray();
-			for (int j = 0; j>arr.length; j++) {
+			for (int j = 0; j<arr.length; j++) {
 				System.out.println(i + ". " + arr[j]);
 				i++;
 			}
