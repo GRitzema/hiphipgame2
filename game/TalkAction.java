@@ -25,7 +25,8 @@ public class TalkAction implements Action{
 		Monster monster = room.getMonster();
 		if (enemy.equals("to monster") && room.hasMonster()) {			
 					
-			System.out.println("Hear my riddle! " + room.getMonster().getRiddle().getQuestion());
+			System.out.println("\n" + monster.getName() + " boss " + monster.getDes() + ".");
+			System.out.println("\"Hear my riddle! " + room.getMonster().getRiddle().getQuestion() + "\"");
 			System.out.print("(What is your guess?): ");
 			String guess = keyboard.nextLine();
 			

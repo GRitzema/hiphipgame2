@@ -91,16 +91,16 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
-		rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
-		rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
+		rooms[1].setDescription("a hallway. Public safety at the end of the hallway. 1");
+		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
-		rooms[5].setDescription("Edmand Chapel. There is a monster on the stage. 5");
-		rooms[6].setDescription("a changing-room. There is a vending machine in a corner 6");
-		rooms[7].setDescription("the side stage. There is an ATM in a corner 7");
+		rooms[5].setDescription("Edmand Chapel. Chaplain Blackmon is on the stage. 5");
+		rooms[6].setDescription("a backstage. There is a stall in a corner 6");
+		rooms[7].setDescription("the side stage. There is a pantry in a corner 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-		rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
-		rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
+		rooms[9].setDescription("the garden of Eden. Satan is hiding among the bushes. 9");
+		rooms[10].setDescription("secret storage. Dr. Ryken's Perry is in a safe box. 10");
 	       
     }
     
@@ -119,28 +119,32 @@ public class Game {
     	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());
 
-        Key key1 = new Key("handcuffs key", "a handcuffs key on the floor", rooms[1]);
+
+        Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
         
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
-        rooms[1].placeMonster(new Monster("Public safety", 20, riddle1, rooms[1], oldScroll, key1));
        
-        Key key2 = new Key("Master Key", "a master key on the floor", rooms[5]);
+        rooms[2].setKey(key1);
+        rooms[1].placeMonster(new Monster(p, "Public Safety", 1000, riddle1, rooms[1], oldScroll, key1, "rattles its handcuffs threateningly"));
+
+       
+        Key key2 = new Key("Master Key", "a master key on the floor");
         rooms[6].setKey(key2);
         Riddle riddle2 = new Riddle("What is Dr. Pohly's second occupation?", "DJ");
-        rooms[5].placeMonster(new Monster("Chaplain Blackmon", 500, riddle2, rooms[5], null, key2));
+        rooms[5].placeMonster(new Monster(p, "Chaplain Blackmon", 500, riddle2, rooms[5], null, key2, "flips through his Bible"));
        
-        Key key3 = new Key("Golden Key", "a golden key on the floor", rooms[9]);
+        Key key3 = new Key("Golden Key", "a golden key on the floor");
         rooms[10].setKey(key3);
         Riddle riddle3 = new Riddle("asdf", "jkl");
-        rooms[9].placeMonster(new Monster("Satan", 100, riddle3, rooms[9], null, key3));
+        rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
 	
         HashMap<Item, Integer> vending = new HashMap<Item, Integer>();
 		vending.put(new Food(10, "Shin-Ramyun", "Main course", p, 10, null), 3);
 		vending.put(new Food(2, "Chocolate", "Dessert", p, 1, null), 5);
 		Shop vendingMachine = new Shop("Vending Machine", vending);
-		rooms[6].placeShop(vendingMachine);
+		rooms[2].placeShop(vendingMachine);
 
     }
     

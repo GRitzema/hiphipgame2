@@ -53,7 +53,6 @@ public class Parser {
     public Parser(Game game) {
     	player = game.getPlayer();
     	keyboard = new Scanner (System.in);
-    	room = player.getCurrentRoom();
     	pockets = player.getPockets();
         actions.put("inventory",new InventoryAction(pockets, game));
         actions.put("look", new LookAction(player));
@@ -62,7 +61,7 @@ public class Parser {
         actions.put("use", new UseAction(pockets));
         actions.put("talk", new TalkAction(player));
         actions.put("fight", new FightAction(player, monster));
-        actions.put("unlock", new UnlockAction(pockets, room));
+        actions.put("unlock", new UnlockAction(player));
         actions.put("pickup", new PickUpAction(player));
     }
 
