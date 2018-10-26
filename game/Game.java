@@ -137,16 +137,16 @@ public class Game {
         rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
 	
         HashMap<String, Food> vending = new HashMap<String, Food>();
-		Shop vendingMachine = new Shop("Vending Machine", vending);
-		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 10), 3);
-		vendingMachine.addToShop(new Food(20, "Gatorade", "Restore 20 hp", p, 10), 3);
-		vendingMachine.addToShop(new Food(3, "Hershey", "Restore 3 hp", p, 10), 3);
-		vendingMachine.addToShop(new Food(12, "Bubble Tea", "Restore 12 hp", p, 10), 3);
+		Shop vendingMachine = new Shop("Vending Machine", vending, false);
+		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);
+		vendingMachine.addToShop(new Food(20, "Gatorade", "Restore 20 hp", p, 4), 3);
+		vendingMachine.addToShop(new Food(3, "Hershey", "Restore 3 hp", p, 6), 3);
+		vendingMachine.addToShop(new Food(12, "Bubble Tea", "Restore 12 hp", p, 8), 3);
 		vendingMachine.addToShop(new Food(7, "Pop-Secret", "Restore 7 hp", p, 10), 3);
 		rooms[0].setTheShop(vendingMachine);
 		
         HashMap<String, Food> stall = new HashMap<String, Food>();
-		Shop foodStall = new Shop("Kitchen Pantry", stall);
+		Shop foodStall = new Shop("Kitchen Pantry", stall, true);
 		foodStall.addToShop(new Food(12, "French Fries", "Restores 12 hp", p, 1), 2);
 		foodStall.addToShop(new Food(30,"Hot Dog","Restores 30 hp", p, 100), 5);
 		foodStall.addToShop(new Food(10, "Chicken Nuggets", "Restores 10 hp", p, 10), 3);
@@ -155,7 +155,7 @@ public class Game {
 		rooms[6].setTheShop(foodStall);
 		
         HashMap<String, Food> pantry = new HashMap<String, Food>();
-		Shop kitchenPantry = new Shop("Kitchen Pantry", pantry);
+		Shop kitchenPantry = new Shop("Kitchen Pantry", pantry, true);
 		kitchenPantry.addToShop(new Food(2, "Cookie", "Restores 2 hp", p, 1), 5);
 		kitchenPantry.addToShop(new Food(50,"Salad","Restores all hp", p, 100), 7);
 		kitchenPantry.addToShop(new Food(35, "Arancini", "Restores 35 hp", p, 10), 10);

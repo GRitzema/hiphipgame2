@@ -13,10 +13,12 @@ public class Shop {
 	
 	private HashMap<String, Food> store = new HashMap<String, Food>();	
 	
+	private boolean cookingService;
+	
 	/**
 	 * Initializing the shop
 	 */
-	public Shop(String name, HashMap<String, Food> store) {
+	public Shop(String name, HashMap<String, Food> store, boolean cookingService) {
 		this.store = store;
 	}
 	
@@ -63,19 +65,8 @@ public class Shop {
 		return store;
 	}
 
-	/**
-	 * Cooking two foods
-	 * @param x The first food to be cooked
-	 * @param y The second food to be cooked
-	 * @return The cooked food
-	 */
-	public Food cook(Food x, Food y) {
-		int hp = x.getHp() + y.getHp() + (x.getHp()*(5/100)) + (y.getHp()*(5/100));
-		String name = x.returnName() + "-" + y.returnName();
-		String description = "Cooked food";
-		int price = x.getPrice() + y.getPrice() + 1;
-		Food newFood = new Food(hp, name, description, user, price);
-		return newFood;
+	public boolean hasCookingService() {
+		return cookingService;
 	}
 	
 }
