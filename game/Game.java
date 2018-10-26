@@ -91,15 +91,15 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
-		rooms[1].setDescription("a hallway. There is a monster at the end of the hallway. 1");
+		rooms[1].setDescription("a hallway. Public safety at the end of the hallway. 1");
 		rooms[2].setDescription("a waiting room. There is an ATM in the corner. 2");
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
-		rooms[5].setDescription("Edmand Chapel. There is a monster on the stage. 5");
+		rooms[5].setDescription("Edmand Chapel. Chaplain Blackmon is on the stage. 5");
 		rooms[6].setDescription("a changing-room. There is a vending machine in a corner 6");
 		rooms[7].setDescription("the side stage. There is an ATM in a corner 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-		rooms[9].setDescription("the backstage. There is a monster among the dresses. 9");
+		rooms[9].setDescription("the backstage. Satan is hiding among the dresses. 9");
 		rooms[10].setDescription("secret room. Dr. Ryken's Perry is in a safe box. 10");
 	       
     }
