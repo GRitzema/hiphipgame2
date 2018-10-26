@@ -25,7 +25,11 @@ public class Inventory {
 		
 			Object [] arr = pockets.keySet().toArray();
 			for (int j = 0; j<arr.length; j++) {
+
+				System.out.println(i + ". " + arr[j]);
+
 				System.out.println("    " + i + ". " + arr[j]);
+
 				i++;
 			}
 		}
