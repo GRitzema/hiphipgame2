@@ -13,6 +13,7 @@ public class InventoryAction implements Action {
 	public void takeAction() {
 		System.out.println("In your pockets there are:");
     	pockets.displayInventory();
+
     	
 	}
 

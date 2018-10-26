@@ -22,14 +22,19 @@ public class Inventory {
 	public void displayInventory() {
 		int i = 1;
 		if (!pockets.isEmpty()) {
+		
 			Object [] arr = pockets.keySet().toArray();
 			for (int j = 0; j<arr.length; j++) {
+
 				System.out.println(i + ". " + arr[j]);
+
+				System.out.println("    " + i + ". " + arr[j]);
+
 				i++;
 			}
 		}
 		else {
-			System.out.println("Just air... and a little lint");
+			System.out.println("    Just air... and a little lint");
 		}
 	}
 	
