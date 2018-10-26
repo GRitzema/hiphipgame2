@@ -91,15 +91,15 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
-		rooms[1].setDescription("a hallway. Public safety at the end of the hallway. 1");
+		rooms[1].setDescription("a hallway. (a monster) at the end of the hallway. 1");
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
-		rooms[5].setDescription("Edmand Chapel. Chaplain Blackmon is on the stage. 5");
-		rooms[6].setDescription("a backstage. There is a stall in a corner 6");
-		rooms[7].setDescription("the side stage. There is a pantry in a corner 7");
+		rooms[5].setDescription("Edmand Chapel. (a monster) on the stage. 5");
+		rooms[6].setDescription("a backstage. There is a food stall in a corner. 6");
+		rooms[7].setDescription("the side stage. There is a pantry in the corner kitchen. 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-		rooms[9].setDescription("the garden of Eden. Satan is hiding among the bushes. 9");
+		rooms[9].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 9");
 		rooms[10].setDescription("secret storage. Dr. Ryken's Perry is in a safe box. 10");
 	       
     }
@@ -111,10 +111,6 @@ public class Game {
     	//rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
     	//rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
 
-    	rooms[0].addInside("pie", new Food(50,"Pie","Restores all hp", p, 100, "Food"));
-    	rooms[0].addInside("mushroom", new Food(10, "Mushroom", "Restores 10 hp", p, 10, "Food"));
-    	rooms[1].addInside("sandwich", new Food(15, "Sandwich", "Restores 15 hp", p, 20, "Food"));
-    	rooms[1].addInside("cake", new Food (20, "Cake", "Restores 20 hp", p, 20, "Food"));
     	//rooms[7].addInside(new Sword());
     	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());
@@ -140,11 +136,32 @@ public class Game {
         Riddle riddle3 = new Riddle("asdf", "jkl");
         rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
 	
-        HashMap<Item, Integer> vending = new HashMap<Item, Integer>();
-		vending.put(new Food(10, "Shin-Ramyun", "Main course", p, 10, null), 3);
-		vending.put(new Food(2, "Chocolate", "Dessert", p, 1, null), 5);
+        HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending);
-		rooms[2].placeShop(vendingMachine);
+		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 10), 3);
+		vendingMachine.addToShop(new Food(20, "Gatorade", "Restore 20 hp", p, 10), 3);
+		vendingMachine.addToShop(new Food(3, "Hershey", "Restore 3 hp", p, 10), 3);
+		vendingMachine.addToShop(new Food(12, "Bubble Tea", "Restore 12 hp", p, 10), 3);
+		vendingMachine.addToShop(new Food(7, "Pop-Secret", "Restore 7 hp", p, 10), 3);
+		rooms[0].setTheShop(vendingMachine);
+		
+        HashMap<String, Food> stall = new HashMap<String, Food>();
+		Shop foodStall = new Shop("Kitchen Pantry", stall);
+		foodStall.addToShop(new Food(12, "French Fries", "Restores 12 hp", p, 1), 2);
+		foodStall.addToShop(new Food(30,"Hot Dog","Restores 30 hp", p, 100), 5);
+		foodStall.addToShop(new Food(10, "Chicken Nuggets", "Restores 10 hp", p, 10), 3);
+    	foodStall.addToShop(new Food(25, "Crepes", "Restores 25 hp", p, 20), 4);
+    	foodStall.addToShop(new Food(15, "Ice cream", "Restores 15 hp", p, 20), 2);
+		rooms[6].setTheShop(foodStall);
+		
+        HashMap<String, Food> pantry = new HashMap<String, Food>();
+		Shop kitchenPantry = new Shop("Kitchen Pantry", pantry);
+		kitchenPantry.addToShop(new Food(2, "Cookie", "Restores 2 hp", p, 1), 5);
+		kitchenPantry.addToShop(new Food(50,"Salad","Restores all hp", p, 100), 7);
+		kitchenPantry.addToShop(new Food(35, "Arancini", "Restores 35 hp", p, 10), 10);
+		kitchenPantry.addToShop(new Food(45, "Curry", "Restores 45 hp", p, 20), 3);
+		kitchenPantry.addToShop(new Food(27, "Shin Ramyun", "Restores 27 hp", p, 20), 1);
+		rooms[7].setTheShop(kitchenPantry);
 
     }
     

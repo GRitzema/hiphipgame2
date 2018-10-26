@@ -9,12 +9,11 @@ public class Food implements Item {
 	private int price;
 	private String type;
 	
-	public Food(int hp, String name, String description, Player eater, int price, String type) {
+	public Food(int hp, String name, String description, Player eater, int price) {
 		this.hp = hp;
 		this.name = name;
 		this.description = description;
 		this.price = price;
-		this.type = type;
 		this.eater = eater;
 
 	}

@@ -62,14 +62,28 @@ public class Room {
     	doors.put(direction, next);
     }
     
+    /**
+     * Set objects inside the room
+     * @param name The name of the object
+     * @param a    The object
+     */
     public void addInside(String name, Item a) {
     	inside.put(name, a);
     }
     
+    /**
+     * Getter method for items list inside the room
+     * @return The objects inside the room
+     */
     public HashMap<String, Item> getInside() {
 		return inside;
 	}
 
+    /**
+     * Checking whether something exists inside the room
+     * @param thing The thing that wants to be checked for its existence
+     * @return Whether or not the thing exists
+     */
 	public boolean isInside(String thing) {
 		if (inside.containsKey(thing)) {
 			return true;
@@ -85,6 +99,11 @@ public class Room {
     	return description; 
     	}
     
+    /**
+     * Removing an object from the room
+     * @param name The name of the object
+     * @return The item to remove
+     */
     public Item takeOut(String name) {
     	Item returner = inside.remove(name);
     	return returner;
@@ -133,15 +152,19 @@ public class Room {
 	public Monster getMonster() {
 		return theMonster;
 	}
-	
+
 	public void setMonster(Monster x) {
 		theMonster = x;
 	}
 
-	public void placeShop(Shop aShop) {
-    	theShop = aShop;
-    }
-	
+	public Shop getTheShop() {
+		return theShop;
+	}
+
+	public void setTheShop(Shop theShop) {
+		this.theShop = theShop;
+	}
+
 	public boolean hasMonster() {
 		if (theMonster == null) {
 			return false;
