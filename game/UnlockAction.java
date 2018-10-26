@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class UnlockAction implements Action {
 	
-	private Inventory pocket;
+	private Player p;
 	
 	private Room door;
 
-	public UnlockAction(Inventory pocket, Room door) {
-		this.pocket = pocket;
+	public UnlockAction(Player p, Room door) {
+		this.p = p;
 		this.door = door;
 	}
 	
@@ -17,8 +17,8 @@ public class UnlockAction implements Action {
 
 	public void takeAction() {
 		Key theKey = door.getKey();
-		System.out.println(theKey.getDescription());
-		if (pocket.contains(theKey)) {
+		System.out.println(theKey.returnName());
+		if (p.getInventory().contains(theKey)) {
 			theKey.use();
 			System.out.println("The door is unlocked.");
 		} else {

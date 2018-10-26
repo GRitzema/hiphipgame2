@@ -27,9 +27,7 @@ public class Key implements Item{
 	}
 	
 	public void use() {
-		if (currentRoom == door) {
-			door.setLocked(false);
-		}
+
 	}
 
 	

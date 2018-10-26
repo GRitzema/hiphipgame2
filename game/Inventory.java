@@ -45,8 +45,8 @@ public class Inventory {
 	}
 	
 	
-	public boolean contains(Item something) {
-		if (pockets.containsValue(something)) {
+	public boolean contains(Key something) {
+		if (pockets.containsKey(something)) {
 			return true;
 		} else {
 			return false;
