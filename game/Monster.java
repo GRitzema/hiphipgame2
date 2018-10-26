@@ -9,14 +9,16 @@ public class Monster {
 	private Item item;
 	private Key key;
 	private String descrip;
+	private Player p;
 	
-	public Monster(String name, int health, Riddle riddle, Room room, Item item, Key key, String des) {
+	public Monster(Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String des) {
 		this.name = name;
 		this.health = health;
 		this.riddle = riddle;
 		this.room = room;
 		this.item = item;
 		this.key = key;
+		this.p = p;
 		descrip = des;
 	}
 		
@@ -29,14 +31,16 @@ public class Monster {
 	}
 	
 	public void defeat() {
-		if (this.health <= 0)
+		if (this.health <= 0) {
 
 		System.out.println("You defeated " + name + "! You received the " + key + "and the "+ item + ".");	
 		
-
+		p.addKill();
+		
 		System.out.println("The ");	
 		room.addInside(item.returnName(), item);
 		room.addInside(key.returnName(),key);
+		}
 
 	}
 	

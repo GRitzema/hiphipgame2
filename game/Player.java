@@ -14,11 +14,13 @@ public class Player {
 	 */
 	private Room currentRoom;
 	private Inventory pockets = new Inventory();
+	private int killCount;
 	
 	public Player(int health, Sword sword) {
 		this.health = health;
 		this.sword = sword;
 		this.maxHealth = health;
+		killCount = 0;
 	}
 
 	public void setCurrentRoom(Room r) {
@@ -45,6 +47,14 @@ public class Player {
 	
 	public void setSword(Sword newSword) {
 		sword = newSword;
+	}
+	
+	public void addKill() {
+		++killCount;
+	}
+	
+	public int getKills() {
+		return killCount;
 	}
 
 	
