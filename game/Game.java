@@ -119,10 +119,12 @@ public class Game {
     	//rooms[4].addInside(new Sword());
     	//rooms[6].addInside(new Food());
 
-        Key key1 = new Key("Handcuffs Key", "a handcuffs key on the floor", rooms[1]);
+        Key key1 = new Key("handcuffs key", "a handcuffs key on the floor", rooms[1]);
         rooms[2].setKey(key1);
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
-        rooms[1].placeMonster(new Monster("Public safety", 1000, riddle1, rooms[1], null, key1));
+        
+        Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
+        rooms[1].placeMonster(new Monster("Public safety", 20, riddle1, rooms[1], oldScroll, key1));
        
         Key key2 = new Key("Master Key", "a master key on the floor", rooms[5]);
         rooms[6].setKey(key2);

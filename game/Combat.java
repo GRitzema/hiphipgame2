@@ -24,7 +24,7 @@ public class Combat {
 		}
 	}
 	
-	public void playerCombat(Sword sword) {
+	public void playerCombat() {
 		System.out.println("It is your turn! What will you do?");
 		Scanner keyboard = new Scanner(System.in);		
 		
@@ -35,7 +35,7 @@ public class Combat {
 		}
 		
 		else if(turn.equals("fight")) {
-			fight(sword);
+			fight(p.getSword());
 		}
 		
 		else {
@@ -45,11 +45,16 @@ public class Combat {
 	
 	public void fight(Sword sword) {
 		double damage = 0;
-		if (Math.random()>=0.2) {
+		if (Math.random()<=0.2) {
 			System.out.println("You missed " + m.getName() + "!");
 		}
 		else {
-			if (sword.getMaterial().equals("wood")) {
+			if (sword == null) {
+				damage = 5 + Math.random()*10;
+				m.setHealth(m.getHealth()-damage);
+				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
+			}			
+			else if (sword.getMaterial().equals("wood")) {
 				damage = 10 + Math.random()*10;
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took " + damage + "!");
@@ -63,11 +68,7 @@ public class Combat {
 				damage = 50 + Math.random()*10;
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took" + damage + "!");
-			}
-			else if (sword == null)
-				damage = 5 + Math.random()*10;
-				m.setHealth(m.getHealth()-damage);
-				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
+			}			
 		}
 	}
 	
@@ -75,7 +76,7 @@ public class Combat {
 		
 		System.out.println("Mwahaha, your ignorance shall make you pay!");
 		while(m.getHealth() >= 0) {
-			playerCombat(p.getSword());
+			playerCombat();
 			monsterCombat();
 		}
 		m.defeat();
