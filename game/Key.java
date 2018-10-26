@@ -26,14 +26,12 @@ public class Key implements Item{
 		return false;
 	}
 	
-	public void use() {
-
-	}
-
-	
 	public String returnType() {
 		return type;
 	}
+
+	
+	public void use() {	}
 
 
 }

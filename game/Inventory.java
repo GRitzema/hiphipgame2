@@ -25,9 +25,6 @@ public class Inventory {
 		
 			Object [] arr = pockets.keySet().toArray();
 			for (int j = 0; j<arr.length; j++) {
-
-				System.out.println(i + ". " + arr[j]);
-
 				System.out.println("    " + i + ". " + arr[j]);
 
 				i++;
@@ -50,8 +47,8 @@ public class Inventory {
 	}
 	
 	
-	public boolean contains(Key something) {
-		if (pockets.containsKey(something)) {
+	public boolean contains(Item something) {
+		if (pockets.containsValue(something)) {
 			return true;
 		} else {
 			return false;
