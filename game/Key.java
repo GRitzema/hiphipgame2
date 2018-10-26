@@ -4,14 +4,11 @@ public class Key implements Item{
 
 	private String name;
 	private String description;
-	private Room door;
-	private Room currentRoom;
 	private String type = "key";
 	
-	public Key(String name, String description, Room door) {		
+	public Key(String name, String description) {		
 		this.name = name;
 		this.description = description;
-		this.door = door;
 	}
 	
 	public String getDescription() {
@@ -25,17 +22,12 @@ public class Key implements Item{
 	public boolean isEdible() {
 		return false;
 	}
-	
-	public void use() {
-		if (currentRoom == door) {
-			door.setLocked(false);
-		}
-	}
 
-	
 	public String returnType() {
 		return type;
 	}
+
+	public void use() {	}
 
 
 }
