@@ -91,7 +91,13 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
-		rooms[1].setDescription("a hallway. (a monster) at the end of the hallway. 1");
+		
+		if (rooms[1].hasMonster()) {
+			rooms[1].setDescription("a hallway. (a monster) at the end of the hallway. 1");
+		}
+		else {
+			rooms[1].setDescription("a hallway. 1");
+		}
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
