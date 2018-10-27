@@ -1,4 +1,4 @@
-package game;
+/**package game;
 
 public class FightAction implements Action {
 
@@ -44,4 +44,4 @@ public class FightAction implements Action {
 		System.out.println("You do not know how to do that");
 	}
 
-}
+}**/

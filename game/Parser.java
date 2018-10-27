@@ -88,7 +88,10 @@ public class Parser {
         System.out.println("You are in " + room.getDescription());
         
         if (room.hasMonster()) {
-        	System.out.println("There is a monster in the room.");
+        	System.out.println("There is a monster in front of you.");
+        }
+        if (room.hasSph()) {
+        	System.out.println("There is a sphinx waiting for you.");
         }
 
         System.out.print("Enter command--> ");

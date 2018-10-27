@@ -58,7 +58,7 @@ public class LookAction implements Action {
 			return "There are no exits in this room";
 		}
 		
-		String add = "There are doors to the ";
+		String add = "There are exits to the ";
 		for (int i = 0; i != adjacent.length && adjacent[i] != null; i++) {
 			String print = "";
 			if (i < adjacent.length - 1 && i != 0) {

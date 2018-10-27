@@ -10,7 +10,6 @@ public class ShopAction implements Action {
 	private Inventory bag;
 	Scanner keyboard = new Scanner(System.in);
 	private HashMap<String, Food> cart = new HashMap<String, Food>();
-	private boolean exitShop = false;
 		
 	public ShopAction(Player p) {
 		this.p = p;
@@ -36,11 +35,16 @@ public class ShopAction implements Action {
 		theShop.displayMenu();
 		System.out.print("What would you like to buy? ");
 		String order = keyboard.nextLine();
-		if (theShop.getStore().containsKey(order)){
+		HashMap<String, Food> stuff = theShop.getStore();
+		if (stuff.containsKey(order) && (stuff.get(order).getPrice() <= p.getWealth())){
 			cart.put(order, theShop.getStore().get(order));
 			bag.addToInventory(theShop.getStore().get(order));
 			theShop.removeFromShop(theShop.getStore().get(order));
 			System.out.println("You purchased " + order + ".");
+			p.setWealth(p.getWealth()-stuff.get(order).getPrice());
+		}
+		else if (stuff.containsKey(order) && (stuff.get(order).getPrice() > p.getWealth())) {
+			System.out.println("Sorry, you do not have enough money.");
 		} else {
 			System.out.println("Sorry, we don't sell " + order + ".");
 		}
@@ -193,12 +197,6 @@ public class ShopAction implements Action {
 		System.out.println("   1) Recook the ingredient you have\n   2) Buy more ingredients");
 		String answer = keyboard.nextLine();
 		return answer;
-	}
-	
-	public String exit() {
-		System.out.println("Do you still want to cook (y/n)?");
-		String ans = keyboard.nextLine();
-		return ans;
 	}
 	
 }
