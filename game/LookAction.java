@@ -13,6 +13,10 @@ public class LookAction implements Action {
 	public void takeAction() {	
 		room = p.getCurrentRoom();
 		System.out.println(room.getInRoom());
+		
+		if (room.getCash().getAmount() != 0) {
+			System.out.println("Also, there are " + room.getCash().getAmount() + " dollars in the room.");
+		}
 	}
 
 	

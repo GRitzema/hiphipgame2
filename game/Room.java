@@ -31,6 +31,8 @@ public class Room {
     private boolean locked;
     
     private Key key;
+    
+    private Money cash;
 
     /**
      * Constructor.
@@ -47,9 +49,18 @@ public class Room {
     	this.locked = locked;
     	this.key = null;
     	this.inside = inside;
+    	this.cash = new Money(0);
     	}
       
-    public Room getDoors(String command){
+    public Money getCash() {
+		return cash;
+	}
+
+	public void setCash(Money cash) {
+		this.cash = cash;
+	}
+
+	public Room getDoors(String command){
 		if(doors.containsKey(command)){
 			return doors.get(command);
 		} else {
@@ -173,5 +184,6 @@ public class Room {
 			return true;
 		}
 	}
+	
 	
 }

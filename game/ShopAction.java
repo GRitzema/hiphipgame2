@@ -10,6 +10,7 @@ public class ShopAction implements Action {
 	private Inventory bag;
 	Scanner keyboard = new Scanner(System.in);
 	private HashMap<String, Food> cart = new HashMap<String, Food>();
+	private boolean exitShop = false;
 		
 	public ShopAction(Player p) {
 		this.p = p;
@@ -47,26 +48,7 @@ public class ShopAction implements Action {
 		System.out.println("Would you like to buy something else? (y/n)");
 		String answer = keyboard.nextLine();
 		if (answer.equals("n")) {
-			if (theShop.hasCookingService()) {
-				System.out.println("Would you like to cook?");
-				String youWould = keyboard.nextLine();
-				if (youWould == "y") {
-					System.out.println("Choose the first ingredient to cook: ");
-					Food ingredient1 = chooseIngredient();
-					System.out.println("Choose the second ingredient to cook: ");
-					Food ingredient2 = chooseIngredient();
-					Food dish = cook(ingredient1, ingredient2);
-					bag.addToInventory(dish);
-					bag.removeFromInventory(ingredient1);
-					bag.removeFromInventory(ingredient2);
-					System.out.println("You cooked " + dish.returnName());
-				} else if (answer.equals("n")) {
-
-				} else {
-					System.out.println("Please type y/n.");
-					cooking();
-				}
-			}
+			cookingPrep();
 			System.out.println("Thank you for shopping with us, come back soon!");
 		} else if (answer.equals("y")) {
 			buy();
@@ -84,47 +66,103 @@ public class ShopAction implements Action {
 	 * @return The cooked food
 	 */
 	public Food cook(Food x, Food y) {
-		int hp = x.getHp() + y.getHp() + (x.getHp()*(5/100)) + (y.getHp()*(5/100));
-		String name = x.returnName() + "-" + y.returnName();
-		String description = "Restores " + hp + " hp";
-		int price = x.getPrice() + y.getPrice() + 1;
-		Food newFood = new Food(hp, name, description, p, price);
+		int hp = 0;
+		String name = "";
+		String description = "";
+		Food newFood = null;
+		int price = 0;
+		if (x != null && y != null) {
+			System.out.println("You are mixing " + x.returnName() + " and " + y.returnName() + "...");
+			hp = x.getHp() + y.getHp() + (x.getHp()*(5/100)) + (y.getHp()*(5/100));
+			name = x.returnName() + "-" + y.returnName();
+			description = "Restores " + hp + " hp";
+			price = x.getPrice() + y.getPrice() + 1;
+			newFood = new Food(hp, name, description, p, price);
+		} else if (x == null && y != null) {
+			hp = y.getHp() - (y.getHp()*(5/100));
+			name = "overcooked" + y.returnName();
+			description = "Restores " + hp + " hp";
+			price = y.getPrice() + 1;
+			newFood = new Food(hp, name, description, p, price);
+		}
 		return newFood;
 	}
 	
 	/**
-	 * Choosing ingredient to cook
+	 * Getting the ingredient to cook.
+	 * @param instruction What kind of ingredient?
+	 * @return The ingredient to cook.
 	 */
-	public Food chooseIngredient() {
-		System.out.println("In your cart: ");
+	public Food chooseIngredient(String instruction, String note) {
+		Food theIngredient = null;
 		String inCart = "FOOD \t\t HP \n";
-		return null;
-/**		if (!cart.isEmpty()) {
-			Object [] arr = cart.values().toArray();
+		if (!cart.isEmpty()) {
+			System.out.println("In your cart: ");
 			for (Food i : cart.values()) {
 	    		inCart = inCart + i.returnName() + " \t " + i.getHp() + "\n";
 	    	}
 	    	System.out.println(inCart);
+			System.out.println("Choose " + instruction + " ingredient to cook: " + note);
+			System.out.println("(Type \"none\" if you don't need additional ingredient.)");
 			String ingredient = keyboard.nextLine();
 			if (cart.containsKey(ingredient)) {
-				return cart.get(ingredient);
+				theIngredient = cart.get(ingredient);
+			} else if (ingredient.equals("none")) {
 			} else {
 				System.out.println("There is no such food in your cart.");
-				return null;
+				chooseIngredient(instruction, note);
 			}
 		} else {
-			System.out.println("You need to buy at least two ingredients first.");
-			return null;
-		}*/
+			System.out.println("You don't have any ingredient.");			
+		}
+		return theIngredient;
 	}
 	
 	/**
 	 * Cooking foods
 	 */
-	public String cooking() {
-		System.out.println("Would you like to cook?");
-		String youWould = keyboard.nextLine();
-		return youWould;
+	public String offer() {
+		System.out.println("We provide cooking service. Would you like to cook (y/n)? ");
+		String wantCook = keyboard.nextLine();
+		return wantCook;
+	}
+	
+	/**
+	 * Choosing ingredients to cook.
+	 */
+	public void cookingPrep() {
+		if (theShop.hasCookingService()) {
+			String check = offer();
+			if (check.equals("y")) {
+				Food ingredient1 = chooseIngredient("the first", "");
+				if (ingredient1 != null) {
+					System.out.println("You need at least one ingredient to cook.");
+					buy();
+				}
+				Food ingredient2 = chooseIngredient("the second", "(Type \"none\" if you don't need more ingredient)");
+				Food dish = cook(ingredient1, ingredient2);
+				if (dish != null) {
+					bag.addToInventory(dish);
+				}
+				bag.removeFromInventory(ingredient1);	
+				if (ingredient2 != null) {
+					bag.removeFromInventory(ingredient2);
+				}
+				if (dish != null) {
+					System.out.println("You cooked " + dish.returnName());
+				} 
+			} else if (check.equals("n")) {
+			} else {
+				System.out.println("Please type y/n.");
+				cookingPrep();
+			}
+		}
+	}
+	
+	public String exit() {
+		System.out.println("Do you still want to cook (y/n)?");
+		String ans = keyboard.nextLine();
+		return ans;
 	}
 	
 }

@@ -35,16 +35,15 @@ public class Food implements Item {
 	}
 
 	public void use() {
-		if ((hp + eater.getHealth()) <= eater.getMaxHealth()) {
+		if ((hp + eater.getHealth()) >= eater.getMaxHealth()) {
 			eater.setHealth(hp + eater.getHealth());
 			eater.removeFromInventory(this);
 			System.out.println("You ate the " + name + "! You gained " + hp);
-			System.out.println("You now have " + eater.getHealth() + " health!");
+			System.out.println("You now have " + eater.getHealth() + "health!");
 		}
 		else {
 			eater.setHealth(eater.getMaxHealth());
 			System.out.println("You maxed out your health to " + eater.getMaxHealth() + "hp!");
-			eater.removeFromInventory(this);
 		}
 	}
 	
@@ -52,8 +51,8 @@ public class Food implements Item {
 		return true;
 	}
 
-	@Override
 	public String returnType() {
 		return type;
 	}
+
 }

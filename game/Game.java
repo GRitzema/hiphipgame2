@@ -91,6 +91,7 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
+		rooms[0].setCash(new Money(5));
 		
 		if (rooms[1].hasMonster()) {
 			rooms[1].setDescription("a hallway. (a monster) at the end of the hallway. 1");
@@ -102,8 +103,8 @@ public class Game {
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
 		rooms[5].setDescription("Edmand Chapel. (a monster) on the stage. 5");
-		rooms[6].setDescription("a backstage. There is a food stall in a corner. 6");
-		rooms[7].setDescription("the side stage. There is a pantry in the corner kitchen. 7");
+		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. 6");
+		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
 		rooms[9].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 9");
 		rooms[10].setDescription("secret storage. Dr. Ryken's Perry is in a safe box. 10");
@@ -147,29 +148,29 @@ public class Game {
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
 		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);
-		vendingMachine.addToShop(new Food(20, "Gatorade", "Restore 20 hp", p, 4), 3);
-		vendingMachine.addToShop(new Food(3, "Hershey", "Restore 3 hp", p, 6), 3);
-		vendingMachine.addToShop(new Food(12, "Bubble Tea", "Restore 12 hp", p, 8), 3);
-		vendingMachine.addToShop(new Food(7, "Pop-Secret", "Restore 7 hp", p, 10), 3);
-		rooms[0].setTheShop(vendingMachine);
+		vendingMachine.addToShop(new Food(20, "Gatorade", "Restore 20 hp", p, 10), 3);
+		vendingMachine.addToShop(new Food(5, "Hershey", "Restore 5 hp", p, 6), 3);
+		vendingMachine.addToShop(new Food(15, "Bubble Tea", "Restore 15 hp", p, 8), 3);
+		vendingMachine.addToShop(new Food(10, "Pop-Secret", "Restore 10 hp", p, 4), 3);
+		rooms[2].setTheShop(vendingMachine);
 		
-        HashMap<String, Food> stall = new HashMap<String, Food>();
-		Shop foodStall = new Shop("Kitchen Pantry", stall, true);
-		foodStall.addToShop(new Food(12, "French Fries", "Restores 12 hp", p, 1), 2);
-		foodStall.addToShop(new Food(30,"Hot Dog","Restores 30 hp", p, 100), 5);
-		foodStall.addToShop(new Food(10, "Chicken Nuggets", "Restores 10 hp", p, 10), 3);
-    	foodStall.addToShop(new Food(25, "Crepes", "Restores 25 hp", p, 20), 4);
-    	foodStall.addToShop(new Food(15, "Ice cream", "Restores 15 hp", p, 20), 2);
-		rooms[6].setTheShop(foodStall);
+        HashMap<String, Food> stupe = new HashMap<String, Food>();
+		Shop stupeStall = new Shop("Kitchen Pantry", stupe, true);
+		stupeStall.addToShop(new Food(10, "French Fries", "Restores 10 hp", p, 10), 2);
+		stupeStall.addToShop(new Food(30,"Crispy Chicken","Restores 30 hp", p, 40), 5);
+		stupeStall.addToShop(new Food(15, "Beef Burger", "Restores 15 hp", p, 20), 3);
+		stupeStall.addToShop(new Food(35, "Taco Salad", "Restores 35 hp", p, 50), 4);
+		stupeStall.addToShop(new Food(15, "Pork Gyros", "Restores 15 hp", p, 30), 2);
+		rooms[0].setTheShop(stupeStall);
 		
-        HashMap<String, Food> pantry = new HashMap<String, Food>();
-		Shop kitchenPantry = new Shop("Kitchen Pantry", pantry, true);
-		kitchenPantry.addToShop(new Food(2, "Cookie", "Restores 2 hp", p, 1), 5);
-		kitchenPantry.addToShop(new Food(50,"Salad","Restores all hp", p, 100), 7);
-		kitchenPantry.addToShop(new Food(35, "Arancini", "Restores 35 hp", p, 10), 10);
-		kitchenPantry.addToShop(new Food(45, "Curry", "Restores 45 hp", p, 20), 3);
-		kitchenPantry.addToShop(new Food(27, "Shin Ramyun", "Restores 27 hp", p, 20), 1);
-		rooms[7].setTheShop(kitchenPantry);
+        HashMap<String, Food> saga = new HashMap<String, Food>();
+		Shop sagaPantry = new Shop("Kitchen Pantry", saga, true);
+		sagaPantry.addToShop(new Food(5, "Cookie", "Restores 5 hp", p, 1), 5);
+		sagaPantry.addToShop(new Food(50,"Salad","Restores all hp", p, 100), 7);
+		sagaPantry.addToShop(new Food(35, "Arancini", "Restores 35 hp", p, 10), 10);
+		sagaPantry.addToShop(new Food(45, "Curry", "Restores 45 hp", p, 20), 3);
+		sagaPantry.addToShop(new Food(25, "Shin Ramyun", "Restores 25 hp", p, 20), 1);
+		rooms[7].setTheShop(sagaPantry);
 
     }
     

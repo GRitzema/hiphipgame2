@@ -53,5 +53,11 @@
 >>>>>>> 6306ab9ac5f051ca53fdb617ce32ea766a18b549
 /ShopAction.class
 /CookAction.class
+<<<<<<< HEAD
 /EatAction.class
 /ReadAction.class
+=======
+/Check.class
+/CheckAction.class
+/Money.class
+>>>>>>> 3bfd5614adcfd922fca52ef62a8c73b5c0a9aacc
