@@ -104,6 +104,7 @@ public class Food implements Item {
 		else {
 			eater.setHealth(eater.getMaxHealth());
 			System.out.println("You maxed out your health to " + eater.getMaxHealth() + "hp!");
+			eater.removeFromInventory(this);
 		}
 	}
 	
