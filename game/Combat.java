@@ -19,7 +19,7 @@ public class Combat {
 	
 	public void monsterCombat() {		
 		if (m.getHealth() >= 0) {
-			double damage = Math.random()*10;
+			double damage = Math.round(Math.random()*10);
 			p.setHealth(p.getHealth()-damage);
 		System.out.println("The monster inflicted " + damage);
 		System.out.println("You now have " + p.getHealth() + "hp!");
@@ -60,22 +60,22 @@ public class Combat {
 		}
 		else {
 			if (sword == null) {
-				damage = 5 + Math.random()*10;
+				damage = Math.round(5 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
 				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
 			}			
 			else if (sword.getMaterial().equals("wood")) {
-				damage = 10 + Math.random()*10;
+				damage = Math.round(10 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took " + damage + "!");
 			}
 			else if (sword.getMaterial().equals("iron")) {
-				damage = 25 + Math.random()*10;
+				damage = Math.round(25 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took " + damage + "!");
 			}
 			else if (sword.getMaterial().equals("diamond")) {
-				damage = 50 + Math.random()*10;
+				damage = Math.round(50 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
 				System.out.println(m.getName() + "took" + damage + "!");
 			}			
