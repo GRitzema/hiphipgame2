@@ -95,10 +95,10 @@ public class SetRooms {
         
         
         Riddle riddle4 = new Riddle("What's my middle name", "Henry");
-        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, key4, "poses fabulously"));
+        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, null, "poses fabulously"));
         
         Riddle riddle5 = new Riddle("Is the answer to this question \"no\"?", "I don't no");
-        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, key5, "contemplates existance"));
+        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, null, "contemplates existance"));
         
        
         

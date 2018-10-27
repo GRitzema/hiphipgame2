@@ -24,6 +24,7 @@ public class ShopAction implements Action {
 		} else {		
 			buy();
 			buyAgain();
+			System.out.println("Thank you for shopping with us.");
 		}
 	}
 
@@ -38,6 +39,7 @@ public class ShopAction implements Action {
 		if (theShop.getStore().containsKey(order)){
 			cart.put(order, theShop.getStore().get(order));
 			bag.addToInventory(theShop.getStore().get(order));
+			theShop.removeFromShop(theShop.getStore().get(order));
 			System.out.println("You purchased " + order + ".");
 		} else {
 			System.out.println("Sorry, we don't sell " + order + ".");
@@ -49,7 +51,6 @@ public class ShopAction implements Action {
 		String answer = keyboard.nextLine();
 		if (answer.equals("n")) {
 			cookingPrep();
-			System.out.println("Thank you for shopping with us, come back soon!");
 		} else if (answer.equals("y")) {
 			buy();
 			buyAgain();
@@ -78,11 +79,11 @@ public class ShopAction implements Action {
 			description = "Restores " + hp + " hp";
 			price = x.getPrice() + y.getPrice() + 1;
 			newFood = new Food(hp, name, description, p, price);
-		} else if (x == null && y != null) {
-			hp = y.getHp() - (y.getHp()*(5/100));
-			name = "overcooked" + y.returnName();
+		} else if (x != null && y == null) {
+			hp = x.getHp() + (x.getHp()*(5/100));
+			name = "Double " + x.returnName();
 			description = "Restores " + hp + " hp";
-			price = y.getPrice() + 1;
+			price = x.getPrice() + 1;
 			newFood = new Food(hp, name, description, p, price);
 		}
 		return newFood;
@@ -103,7 +104,6 @@ public class ShopAction implements Action {
 	    	}
 	    	System.out.println(inCart);
 			System.out.println("Choose " + instruction + " ingredient to cook: " + note);
-			System.out.println("(Type \"none\" if you don't need additional ingredient.)");
 			String ingredient = keyboard.nextLine();
 			if (cart.containsKey(ingredient)) {
 				theIngredient = cart.get(ingredient);
@@ -111,9 +111,7 @@ public class ShopAction implements Action {
 			} else {
 				System.out.println("There is no such food in your cart.");
 				chooseIngredient(instruction, note);
-			}
-		} else {
-			System.out.println("You don't have any ingredient.");			
+			}		
 		}
 		return theIngredient;
 	}
@@ -122,9 +120,25 @@ public class ShopAction implements Action {
 	 * Cooking foods
 	 */
 	public String offer() {
-		System.out.println("We provide cooking service. Would you like to cook (y/n)? ");
-		String wantCook = keyboard.nextLine();
-		return wantCook;
+		String answer;
+		if (cart.isEmpty()) {
+			 System.out.println("We provide cooking service, but you don't have any ingredient in your cart.");
+			 System.out.println("Would you like to buy an ingredient to cook (y/n)?");
+			 answer = keyboard.nextLine();
+			 if (answer.equals("y")) {
+				 buy();
+				 buyAgain();
+				 offer();
+			 } else if (answer.equals("n")) {
+			 } else {
+				System.out.println("Please type y/n.");
+				offer();
+			 }
+		} else {
+			System.out.println("We provide cooking service. Would you like to cook (y/n)? ");
+			answer = keyboard.nextLine();
+		}
+		return answer;
 	}
 	
 	/**
@@ -134,17 +148,31 @@ public class ShopAction implements Action {
 		if (theShop.hasCookingService()) {
 			String check = offer();
 			if (check.equals("y")) {
-				Food ingredient1 = chooseIngredient("the first", "");
-				if (ingredient1 != null) {
-					System.out.println("You need at least one ingredient to cook.");
-					buy();
+				Food ingredient1 = null;
+				Food ingredient2 = null;
+				if (cart.size() == 1) {
+					String ans = prepHelper();
+					if (ans.equals("1")) {
+						ingredient1 = chooseIngredient("", "");
+					} else if (ans.equals("2")){
+						buy();
+						buyAgain();
+					} else {
+						System.out.println("Please type \"1\"/\"2\"");
+					}
+				} else {
+					ingredient1 = chooseIngredient("the first", "");
+					cart.remove(ingredient1.returnName());
+					ingredient2 = chooseIngredient("the second", "(Type \"none\" if you don't need more ingredient)");
+					cart.remove(ingredient2.returnName());
 				}
-				Food ingredient2 = chooseIngredient("the second", "(Type \"none\" if you don't need more ingredient)");
 				Food dish = cook(ingredient1, ingredient2);
 				if (dish != null) {
 					bag.addToInventory(dish);
 				}
-				bag.removeFromInventory(ingredient1);	
+				if (ingredient1 != null) {
+					bag.removeFromInventory(ingredient1);
+				}
 				if (ingredient2 != null) {
 					bag.removeFromInventory(ingredient2);
 				}
@@ -157,6 +185,14 @@ public class ShopAction implements Action {
 				cookingPrep();
 			}
 		}
+	}
+	
+	public String prepHelper() {
+		System.out.println("You only have one ingredient in the cart.");
+		System.out.println("What would you like to do? ");
+		System.out.println("   1) Recook the ingredient you have\n   2) Buy more ingredients");
+		String answer = keyboard.nextLine();
+		return answer;
 	}
 	
 	public String exit() {
