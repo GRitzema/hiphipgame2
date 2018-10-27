@@ -39,9 +39,10 @@ public class ShopAction implements Action {
 		if (stuff.containsKey(order) && (stuff.get(order).getPrice() <= p.getWealth())){
 			cart.put(order, theShop.getStore().get(order));
 			bag.addToInventory(theShop.getStore().get(order));
+			p.setWealth(p.getWealth()-stuff.get(order).getPrice());
 			theShop.removeFromShop(theShop.getStore().get(order));
 			System.out.println("You purchased " + order + ".");
-			p.setWealth(p.getWealth()-stuff.get(order).getPrice());
+			
 		}
 		else if (stuff.containsKey(order) && (stuff.get(order).getPrice() > p.getWealth())) {
 			System.out.println("Sorry, you do not have enough money.");

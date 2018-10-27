@@ -32,7 +32,6 @@ public class Scroll implements Item {
 	 * @param name
 	 * @param description
 	 * @param hint
-	 * @param type
 	 */
 	public Scroll(String name, String description, String hint, String type) {
 		this.name = name;
