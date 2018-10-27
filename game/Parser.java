@@ -72,6 +72,7 @@ public class Parser {
         actions.put("eat", new EatAction(player));
         actions.put("read", new ReadAction(player));
         actions.put("check", new CheckAction(player));
+        actions.put("open", new EndGame(player, game));
     }
 
     /**

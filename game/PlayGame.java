@@ -20,8 +20,6 @@ public class PlayGame {
 
         while (! game.isOver()) 
             parser.executeTurn(game);
-
-        System.out.println("Game over.");
     }
     
 }
