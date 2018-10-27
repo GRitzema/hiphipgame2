@@ -22,7 +22,7 @@ public class Combat {
 			double damage = Math.round(Math.random()*10);
 			p.setHealth(p.getHealth()-damage);
 		System.out.println("The monster inflicted " + damage);
-		System.out.println("You now have " + p.getHealth() + "hp!");
+		System.out.println("You now have " + p.getHealth() + " hp!");
 		}
 	}
 	

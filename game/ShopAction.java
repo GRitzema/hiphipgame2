@@ -35,10 +35,15 @@ public class ShopAction implements Action {
 		theShop.displayMenu();
 		System.out.print("What would you like to buy? ");
 		String order = keyboard.nextLine();
-		if (theShop.getStore().containsKey(order)){
+		HashMap<String, Food> stuff = theShop.getStore();
+		if (stuff.containsKey(order) && (stuff.get(order).getPrice() <= p.getWealth())){
 			cart.put(order, theShop.getStore().get(order));
 			bag.addToInventory(theShop.getStore().get(order));
 			System.out.println("You purchased " + order + ".");
+			p.setWealth(p.getWealth()-stuff.get(order).getPrice());
+		}
+		else if (stuff.containsKey(order) && (stuff.get(order).getPrice() > p.getWealth())) {
+			System.out.println("Sorry, you do not have enough money.");
 		} else {
 			System.out.println("Sorry, we don't sell " + order + ".");
 		}

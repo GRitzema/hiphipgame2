@@ -3,12 +3,19 @@ package game;
 public class SetRooms {
 	
 	private Room[] rooms;
+<<<<<<< HEAD
+	private Player p;
+
+	public SetRooms(Room[] r, Player p) {
+=======
 	
 	private Player p;
 
 	public SetRooms(Room[] r, Player p) {
 		this.p = p;
+>>>>>>> fe3b5757b3422d2bfe206f84b23562c10d40de3c
 		rooms = r;
+		this.p = p;
 	}
 	
 	public void set() {
@@ -67,6 +74,11 @@ public class SetRooms {
 	 	rooms[24].setRoom("forward", rooms[26]);
 	 	
 	 	setDesc();
+<<<<<<< HEAD
+	 	setMoney();
+	 	setItems();
+	 			
+=======
 	 	
 	 	
 	 	//Sets up keys for rooms
@@ -111,12 +123,11 @@ public class SetRooms {
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
            
         
+>>>>>>> fe3b5757b3422d2bfe206f84b23562c10d40de3c
 	}
 	
 	private void setDesc() {
-		
-		rooms[0].setCash(new Money(5));
-		
+				
 		rooms[0].setDescription("a parkinglot. 0");
 		rooms[1].setDescription("a hallway. 1");
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
@@ -145,6 +156,17 @@ public class SetRooms {
 		rooms[24].setDescription("the side stage. There is a scroll on the wall. 24");
 		rooms[25].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 25");
 		rooms[26].setDescription("heaven. Dr. Ryken's Perry is in a safe box. 26");
+	}
+	
+	private void setMoney() {
+		rooms[0].setCash(new Money(30));
+		rooms[3].setCash(new Money(15));
+		rooms[4].setCash(new Money(20));
+	}
+	
+	private void setItems() {
+		rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
+		//rooms.addInside("excalibur", )
 	}
 
 }
