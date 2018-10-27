@@ -28,8 +28,16 @@ public class SetRooms {
 	 	rooms[7].setRoom("right", rooms[6]);
 	 	rooms[8].setRoom("left", rooms[6]);
 	 	rooms[9].setRoom("backward", rooms[6]);
-	 	rooms[9].setRoom("forward", rooms[10]);
-	 	rooms[10].setRoom("backward", rooms[9]);
+	 	rooms[9].setRoom("left", rooms[10]);
+	 	rooms[9].setRoom("right", rooms[11]);
+	 	
+	 	rooms[10].setRoom("right", rooms[9]);
+	 	rooms[10].setRoom("forward", rooms[12]);
+	 	rooms[12].setRoom("backward", rooms[10]);
+	 	rooms[12].setRoom("forward", rooms[13]);
+	 	rooms[13].setRoom("backward", rooms[12]);
+	 	
+	 	rooms[11].setRoom("left", rooms[9]);
 	 	
 	 	setDesc();
 	 			
