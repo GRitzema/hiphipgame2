@@ -10,38 +10,33 @@ package game;
 public class Food implements Item {
 
 	/**
-	 * The amount of hp the food can heal
+	 * The amount of hp the food can heal.
 	 */
 	private int hp;
 	
 	/**
-	 * The description of the food
+	 * The description of the food.
 	 */
 	private String description;
 	
 	/**
-	 * The name of the food
+	 * The name of the food.
 	 */
 	private String name;
 	
 	/**
-	 * The player in the game
+	 * The player in the game.
 	 */
 	private Player eater;
 	
 	/**
-	 * The price of the food in a shop
+	 * The price of the food in a shop.
 	 */
 	private int price;
-	
+
 	/**
-	 * The type of the item
-	 */
-	private String type;
-	
-	/**
-	 * Constructor
-	 * Refer to above instance variable comments
+	 * Constructor.
+	 * Refer to above instance variable comments.
 	 * @param hp
 	 * @param name
 	 * @param description
@@ -57,42 +52,42 @@ public class Food implements Item {
 	}
 	
 	/**
-	 * Getter method for hp
-	 * @return the amount of hp
+	 * Getter method for hp.
+	 * @return the amount of hp.
 	 */
 	public int getHp() {
 		return hp;
 	}
 
 	/**
-	 * Getter method for description
-	 * @return the description
+	 * Getter method for description.
+	 * @return the description.
 	 */
 	public String getDescription() {
 		return description;
 	}
 	
 	/**
-	 * Getter method for name
-	 * @return the name
+	 * Getter method for name.
+	 * @return the name.
 	 */
 	public String returnName() {
 		return name;
 	}
 	
 	/**
-	 * Getter method for price
-	 * @return price
+	 * Getter method for price.
+	 * @return price.
 	 */
 	public int getPrice() {
 		return price;
 	}
 
 	/**
-	 * Lets you eat the food
-	 * If the new health exceeds the max health, it sets it to the max health
-	 * POSTCONDITION: The food is removed from the inventory
-	 * POSTCONDITION: The player's health increased
+	 * Lets you eat the food.
+	 * If the new health exceeds the max health, it sets it to the max health.
+	 * POSTCONDITION: The food is removed from the inventory.
+	 * POSTCONDITION: The player's health increased.
 	 */
 	public void use() {
 		if ((hp + eater.getHealth()) <= eater.getMaxHealth()) {
@@ -109,19 +104,11 @@ public class Food implements Item {
 	}
 	
 	/**
-	 * Returns a boolean if you can eat it
-	 * @return false
+	 * Returns a boolean if you can eat it.
+	 * @return Whether the item is edible.
 	 */
 	public boolean isEdible() {
 		return true;
-	}
-	
-	/**
-	 * Getter method for the type
-	 * @return type
-	 */
-	public String returnType() {
-		return type;
 	}
 
 }

@@ -5,12 +5,15 @@ import java.util.HashMap;
 /**
  * Parser.java
  * 
- * Class to interpret the user's commands
+ * Class to interpret the user's commands.
  *
  * @author Thomas VanDrunen
  * Wheaton College, CS 245, Spring 2007
  * Lab 5
  * Feb 8, 2007
+ * 
+ * Edited by: Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
  */
 
 import java.util.Scanner;
@@ -23,19 +26,9 @@ public class Parser {
     private Scanner keyboard;
     
     /**
-     * Inventory class.
-     */
-    private Inventory pockets;
-    
-    /**
      * Map of possible actions.
      */
     private HashMap<String, Action> actions = new HashMap<String, Action>();
-    
-    /**
-     * Room class.
-     */
-    private Room room;
     
     /**
      * Player class.
@@ -43,22 +36,12 @@ public class Parser {
     private Player player;
     
     /**
-     * Monster class.
-     */
-    private Monster monster;
-    
-    /**
-     * Shop class.
-     */
-    private Shop shop;
-    
-    /**
      * Plain constructor.
+     * @param game The game being played.
      */
     public Parser(Game game) {
     	player = game.getPlayer();
     	keyboard = new Scanner (System.in);
-    	pockets = player.getPockets();
         actions.put("inventory",new InventoryAction(player));
         actions.put("look", new LookAction(player));
         actions.put("help", new HelpAction());
@@ -77,13 +60,13 @@ public class Parser {
     /**
      * Let the user make one "turn" at this game.
      * Give the user a description of the room, prompt for
-     * a command, and interpret the command.
+     * a command, and interpret the command..
      * @param game A reference to the object representing the game.
+     * POSTCONDITION: Printing out instructions and descriptions.
      */
     public void executeTurn(Game game) {
         // The room that the user is in.
-        Room room = player.getCurrentRoom();
-        pockets = player.getPockets();
+        Room room = player.getCurrentRoom(); // The room where the player is currently in.
         
         System.out.println("You are in " + room.getDescription());
         
@@ -95,8 +78,8 @@ public class Parser {
         }
 
         System.out.print("Enter command--> ");
-        String command;
-        String extra = "ahem";
+        String command;        // The command the user inputed
+        String extra = "ahem"; // A string to check whether the player needs an object to do an action.
         
         String full = keyboard.nextLine().toLowerCase();  // user's command
         if (full.indexOf(' ') != -1) {

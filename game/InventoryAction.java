@@ -11,18 +11,18 @@ package game;
 public class InventoryAction implements Action {
 	
 	/**
-	 * The current player
+	 * The current player.
 	 */
 	private Player p;
 	
 	/**
-	 * The player's inventory
+	 * The player's inventory.
 	 */
 	private Inventory pockets;
 	
 	/**
-	 * Constructor
-	 * @param p: the current player
+	 * Constructor.
+	 * @param p: the current player.
 	 */
 	public InventoryAction(Player p) {
 		this.p = p;
@@ -30,8 +30,9 @@ public class InventoryAction implements Action {
 	}
 
 	/**
-	 * Displays the contents of your inventory and your wealth
-	 * Calls a method in the inventory class that prints out the contents
+	 * Displays the contents of your inventory and your wealth.
+	 * Calls a method in the inventory class that prints out the contents.
+	 * POSTCONDITION: The list of items in the inventory is printed out.
 	 */
 	public void takeAction() {
 		System.out.println("In your pockets there are:");
@@ -41,7 +42,7 @@ public class InventoryAction implements Action {
 	}
 
 	/**
-	 * Prints an error message
+	 * Prints an error message.
 	 */
 	public void takeAction(String substring) {
 		System.out.println("You do not know how to do that.");

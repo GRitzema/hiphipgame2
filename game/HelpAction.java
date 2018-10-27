@@ -9,8 +9,10 @@ package game;
  * Oct 26, 2018
  */
 public class HelpAction implements Action {
+	
 	/**
-	 * Prints out the list of possible commands and their descriptions
+	 * Prints out the list of possible commands and their descriptions.
+	 * POSTCONDITION: A list of commands is printed.
 	 */
 	public void takeAction() {
 		
@@ -28,8 +30,9 @@ public class HelpAction implements Action {
     	System.out.println("check ___ : inspect an item in your inventory");
 
 	}
+	
 	/**
-	 * Prints an error message
+	 * Prints an error message.
 	 */
 	public void takeAction(String substring) {
 		System.out.println("You do not know how to do that.");

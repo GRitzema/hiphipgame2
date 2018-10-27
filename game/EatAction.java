@@ -1,12 +1,16 @@
 package game;
 
+/**
+ * EatAction.java
+ * 
+ * Class to implement the action to eat foods.
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
+
 public class EatAction implements Action{
-	
-	/**
-	 * The player in the game.
-	 */
-	private Player p;
-	
+
 	/**
 	 * The pocket that the player has.
 	 */
@@ -14,17 +18,24 @@ public class EatAction implements Action{
 	
 	/**
 	 * Initializing eat action class.
-	 * @param p The player in the game
+	 * @param p The player in the game.
 	 */
 	public EatAction(Player p) {
-		this.p = p;
 		this.pockets = p.getInventory();
 	}
 
+	/**
+	 * Print out a message.
+	 */
 	public void takeAction() {
 		System.out.print("Eat what?");
 	}
 
+	/**
+	 * Eat foods that the player has.
+	 * PRECONDITION: The food is in the player's pocket.
+	 * POSTCONDITION: The player ate the food.
+	 */
 	public void takeAction(String item) {
 		if (pockets.getPockets().containsKey(item)) {
 			if(pockets.receiveItem(item).isEdible()) {

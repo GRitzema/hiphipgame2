@@ -11,30 +11,30 @@ package game;
 public class Money {
 	
 	/**
-	 * The amount that the money is worth
+	 * The amount that the money is worth.
 	 */
 	private int amount;
 	
 	/**
-	 * Constructor
-	 * @param amount: the amount that the money is worth
+	 * Constructor.
+	 * @param amount: the amount that the money is worth.
 	 */
 	public Money(int amount) {
 		this.amount = amount;
 	}
 
 	/**
-	 * Getter method for "amount"
-	 * @return amount: the amount of money
+	 * Getter method for "amount".
+	 * @return amount: the amount of money.
 	 */
 	public int getAmount() {
 		return amount;
 	}
 	
 	/**
-	 * Setter method for "amount"
-	 * @param amount: the new amount of money
-	 * POSTCONDITION: amount is now changed
+	 * Setter method for "amount".
+	 * @param amount: the new amount of money.
+	 * POSTCONDITION: amount is now changed.
 	 */
 	public void setAmount(int amount) {
 		this.amount = amount;

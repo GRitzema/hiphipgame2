@@ -1,16 +1,25 @@
 package game;
 
+/**
+ * Item.java
+ * 
+ * Interface for item classes.
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
+
 public interface Item {
 	
 	/**
 	 * Getting the description of the item.
-	 * @return
+	 * @return The description of the item.
 	 */
 	public String getDescription();
 		
 	/**
 	 * Returning the name of the object.
-	 * @return
+	 * @return The name of the object.
 	 */
 	public String returnName();
 	
@@ -22,6 +31,7 @@ public interface Item {
 	
 	/**
 	 * Using the item.
+	 * POSTCONDITION: The item is used.
 	 */
 	public void use();
 		

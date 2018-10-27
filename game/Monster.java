@@ -1,9 +1,9 @@
 package game;
 
 /**
- * Inventory.java
+ * Monster.java
  * 
- * Class to represent the player's current inventory
+ * Class to represent the monsters in the game.
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
@@ -12,47 +12,49 @@ package game;
 public class Monster {
 
 	/**
-	 * The riddle that the monster asks
+	 * The riddle that the monster asks.
 	 */
 	private Riddle riddle;
 	
 	/**
-	 * The amount of health the monster has
+	 * The amount of health the monster has.
 	 */
 	private int health;
 	
 	/**
-	 * The room that the monster is in
+	 * The room that the monster is in.
 	 */
 	private Room room;
 	
 	/**
-	 * The item the monster holds and drops when defeated
+	 * The item the monster holds and drops when defeated.
 	 */
 	private Item item;
 	
 	/**
 	 * The key to the next room the monster gives when the riddle is answered 
-	 * or drops if it is defeated
+	 * or drops if it is defeated.
 	 */
 	private Key key;
 	
 	/**
-	 * A description of the monster
+	 * A description of the monster.
 	 */
 	private String descrip;
 	
 	/**
-	 * The current player
+	 * The current player.
 	 */
 	private Player p;
+	
+	/**
+	 * Whether the monster has an access to a secret room.
+	 */
 	private boolean strength;
-	
-	
 
 	/**
-	 * Constructor
-	 * Refer to instance variables
+	 * Constructor.
+	 * Refer to instance variables.
 	 * @param p
 	 * @param name
 	 * @param health
@@ -76,19 +78,19 @@ public class Monster {
 	}
 	
 	/**
-	 * Getter method for the description
-	 * @return the description of the monster
+	 * Getter method for the description.
+	 * @return the description of the monster.
 	 */
 	public String getDes() {
 		return descrip;
 	}
 	
 	/**
-	 * Simulates the monster's defeat
-	 * The monster disappears and the key and item are dropped and added to the room
-	 * Adds one to the player's kill count
-	 * PRECONDITION: It is called when its health is less than or equal to 0
-	 * POSTCONDITION: the monster is null and the items are added to the room
+	 * Simulates the monster's defeat.
+	 * The monster disappears and the key and item are dropped and added to the room.
+	 * Adds one to the player's kill count.
+	 * PRECONDITION: It is called when its health is less than or equal to 0.
+	 * POSTCONDITION: the monster is null and the items are added to the room.
 	 */
 	public void defeat() {
 		if (this.health <= 0) {
@@ -109,38 +111,42 @@ public class Monster {
 	}
 	
 	/**
-	 * Getter method for the monster's health
-	 * @return the monster's health
+	 * Getter method for the monster's health.
+	 * @return the monster's health.
 	 */
 	public int getHealth() {
 		return health;
 	}
 
 	/**
-	 * Setter method for the monster's health
-	 * @param health: the new health of the monster
-	 * POSTCONDITION: the monster's health is now changed
+	 * Setter method for the monster's health.
+	 * @param health: the new health of the monster.
+	 * POSTCONDITION: the monster's health is now changed.
 	 */
 	public void setHealth(double health) {
 		this.health = (int) health;
 	}
 
 	/**
-	 * Getter method for the riddle
-	 * @return the monster's riddle
+	 * Getter method for the riddle.
+	 * @return the monster's riddle.
 	 */
 	public Riddle getRiddle() {
 		return riddle;
 	}
 	
 	/**
-	 * Getter method for the key
-	 * @return the monster's key
+	 * Getter method for the key.
+	 * @return the monster's key.
 	 */
 	public Key getKey() {
 		return key;
 	}
 
+	/**
+	 * A getter method for the monster's strength.
+	 * @return Whether or not the monster has the strength.
+	 */
 	public boolean getStr() {
 		return strength;
 	}
