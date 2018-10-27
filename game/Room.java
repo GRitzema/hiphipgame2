@@ -23,6 +23,8 @@ public class Room {
     private HashMap<String,Room> doors = new HashMap<String,Room>();
     
     private Monster theMonster;
+    
+    private Sphinx sph;
      
     private Shop theShop;
 
@@ -45,6 +47,7 @@ public class Room {
     	doors.put("forward", null);
     	doors.put("backward", null);
     	this.theMonster = null;
+    	this.sph = null;
     	this.theShop = null;
     	this.locked = locked;
     	this.key = null;
@@ -189,6 +192,14 @@ public class Room {
 	
 	public Monster getMonster() {
 		return theMonster;
+	}
+	
+	public void placeSphinx(Sphinx newSph) {
+		sph = newSph;
+	}
+	
+	public Sphinx getSphinx() {
+		return sph;
 	}
 
 	public Shop getTheShop() {

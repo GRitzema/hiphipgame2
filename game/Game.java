@@ -36,7 +36,7 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        rooms = new Room[26];
+        rooms = new Room[27];
         
         for (int i = 0; i < rooms.length; i++) {
             rooms[i] = new Room("a room.", "There is nothing of interest.", false, new HashMap<String,Item>());          
@@ -75,6 +75,7 @@ public class Game {
     }
     
     private void populateRooms() {
+<<<<<<< HEAD
     	
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
@@ -97,6 +98,9 @@ public class Game {
         Riddle riddle3 = new Riddle("asdf", "jkl");
         rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
 	
+=======
+  
+>>>>>>> fe3b5757b3422d2bfe206f84b23562c10d40de3c
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
 		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);
@@ -108,7 +112,7 @@ public class Game {
 		
         HashMap<String, Food> stupe = new HashMap<String, Food>();
 		Shop stupeStall = new Shop("Kitchen Pantry", stupe, true);
-		stupeStall.addToShop(new Food(10, "French Fries", "Restores 10 hp", p, 10), 2);
+		stupeStall.addToShop(new Food(10, "FrenchFries", "Restores 10 hp", p, 10), 2);
 		stupeStall.addToShop(new Food(30,"Crispy Chicken","Restores 30 hp", p, 40), 5);
 		stupeStall.addToShop(new Food(15, "Beef Burger", "Restores 15 hp", p, 20), 3);
 		stupeStall.addToShop(new Food(35, "Taco Salad", "Restores 35 hp", p, 50), 4);

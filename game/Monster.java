@@ -2,7 +2,6 @@ package game;
 
 public class Monster {
 
-	private String name;
 	private Riddle riddle;
 	private int health;
 	private Room room;
@@ -12,7 +11,6 @@ public class Monster {
 	private Player p;
 	
 	public Monster(Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String des) {
-		this.name = name;
 		this.health = health;
 		this.riddle = riddle;
 		this.room = room;
@@ -22,10 +20,6 @@ public class Monster {
 		descrip = des;
 	}
 		
-	public String getName() {
-		return name;
-	}
-	
 	public String getDes() {
 		return descrip;
 	}
@@ -33,7 +27,7 @@ public class Monster {
 	public void defeat() {
 		if (this.health <= 0) {
 
-		System.out.println("You defeated " + name + "! The " + key.returnName() + " and the "+ item.returnName() + " fell on the floor.");	
+		System.out.println("You defeated the monster! The " + key.returnName() + " and the "+ item.returnName() + " fell on the floor.");	
 		
 
 
