@@ -1,32 +1,28 @@
 package game;
 
-import java.util.Scanner;
+public class ReadAction implements Action {
 
-public class UseAction implements Action {
-
-	
 	private Player p;
 	private Inventory pockets;
 	
 	
-	public UseAction(Player p) {
+	public ReadAction(Player p) {
 		this.p = p;
 		this.pockets = p.getInventory();
 	}
 
-	@Override
+	
 	public void takeAction() {
-		System.out.print("Use what?");
+		System.out.print("Read what?");
 	}
 
 	
 	public void takeAction(String item) {
-		if (pockets.getPockets().containsKey(item)) {
+		if (item == "scroll") {
 			pockets.receiveItem(item).use();
 		}
 		else {
-			System.out.println("You don't have that :(");
+			System.out.println("You can't read that.");
 		}
 	}
-
 }

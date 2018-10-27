@@ -69,6 +69,8 @@ public class Parser {
         actions.put("unlock", new UnlockAction(player));
         actions.put("pickup", new PickUpAction(player));
         actions.put("shop", new ShopAction(player));
+        actions.put("eat", new EatAction(player));
+        actions.put("read", new ReadAction(player));
     }
 
     /**
