@@ -72,9 +72,4 @@ public class Scroll implements Item {
 		System.out.println(hint);
 		
 	}
-
-	public String returnType() {
-		return null;
-	}
-
 }

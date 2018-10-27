@@ -158,7 +158,7 @@ public class Room {
      * Retrieve things hidden in the room.
      */
     public String getInRoom() {
-    	String inRoom = "On the floor, there is: ";
+    	String inRoom = "In the room, there is: ";
     	if (inside.isEmpty()) {
     		inRoom = inRoom + "no item of interest.";   	
     	} else {

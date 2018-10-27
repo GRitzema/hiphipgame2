@@ -144,18 +144,18 @@ public class SetRooms {
 	
 	private void setDesc() {
 				
-		rooms[0].setDescription("a parkinglot. There is a scroll on the ground.");
+		rooms[0].setDescription("a parkinglot.");
 		rooms[1].setDescription("a hallway.");
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner.");
-		rooms[3].setDescription("a storage. There is a scroll on the wall.");
+		rooms[3].setDescription("a storage.");
 		rooms[4].setDescription("an ice storage.");
 		rooms[5].setDescription("Edmund Chapel.");
 		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. A mysterious portal is open in front of you.");
 		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen.");
-		rooms[8].setDescription("the side stage. There is a scroll on the wall.");
+		rooms[8].setDescription("the side stage.");
 		rooms[9].setDescription("a white hallway. \nThere is a sign reading \"Left Door: Path of Knowledge, Right Door: Path of Strength\"");
 		
-		rooms[10].setDescription("a long hall that opens into a grassy field.  There is a scroll nailed to a tree.");
+		rooms[10].setDescription("a long hall that opens into a grassy field.");
 		rooms[12].setDescription("a mountainside.");
 		rooms[13].setDescription("a thick forest.");
 		rooms[14].setDescription("the entrance of a small cabin.");
@@ -165,7 +165,7 @@ public class SetRooms {
 		rooms[16].setDescription("a large cavern lit by torches.  There are badly drawn paintings on the walls.");
 		rooms[17].setDescription("a small cavern.  Water drips from the ceiling.");
 		rooms[18].setDescription("a tiny cave.  It is silent.");
-		rooms[19].setDescription("a small cave with a pool of water. There is a scroll on the wall.");
+		rooms[19].setDescription("a small cave with a pool of water.");
 		rooms[20].setDescription("a cavern decorated with a lot of rugs and tapestries.");
 		rooms[21].setDescription("a cave with a dirt floor. There are steps going up ahead.");
 		rooms[22].setDescription("a cave with a hole in the ceiling. Blue sky is visible through the hole.");
