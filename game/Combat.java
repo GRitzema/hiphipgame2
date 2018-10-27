@@ -4,11 +4,27 @@ import java.util.Scanner;
 
 public class Combat {
 
+	/**
+	 * The player in the game.
+	 */
 	private Player p;
+	
+	/**
+	 * The monster to fight.
+	 */
 	private Monster m;
-	private Inventory pockets;
+	
+	/**
+	 * The game being played.
+	 */
 	private Game game;
 	
+	/**
+	 * Constructor.
+	 * @param p    The player in the game.
+	 * @param m    The monster in the game.
+	 * @param game The game being played.
+	 */
 	public Combat(Player p, Monster m, Game game) {
 		this.p = p;
 		this.m = m;

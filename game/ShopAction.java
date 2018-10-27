@@ -40,6 +40,9 @@ public class ShopAction implements Action {
 		this.bag = p.getInventory();
 	}
 
+	/**
+	 * Buy foods in the shop and cook them if the shop has a cooking service.
+	 */
 	public void takeAction() {
 		if (theShop == null) {
 			System.out.println("Nothing can be bought in this room.");
