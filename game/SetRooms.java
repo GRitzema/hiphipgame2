@@ -70,9 +70,7 @@ public class SetRooms {
 	 	setDesc();
 	 	setMoney();
 	 	setItems();
-	 			
 
-	 	
 	 	//Sets up keys for rooms
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
@@ -87,15 +85,6 @@ public class SetRooms {
         Key key8 = new Key("glittery key", "a glittery key on the floor");
         rooms[21].setKey(key8);
         
-        
-        Key key3 = new Key("sphinx1", "a golden key on the floor");
-        rooms[13].setKey(key3);
-
-        Key key4 = new Key("sphinx2", "a golden key on the floor");
-        rooms[14].setKey(key4);
-        
-        Key key5 = new Key("sphinx3", "a golden key on the floor");
-        rooms[15].setKey(key5);
         
         Key key6 = new Key("Final Key", "a plain key on the floor.  It seems to glow a bit...");
         rooms[26].setKey(key6);
@@ -121,17 +110,20 @@ public class SetRooms {
                 
         
         Riddle riddle6 = new Riddle("What walks on four legs in the morning, two in the afternoon, and three in the evening?", "a man");
-        rooms[12].placeSphinx(new Sphinx(riddle6, key3, " sits on a mountain"));
+        rooms[12].placeSphinx(new Sphinx(riddle6, null, " sits on a mountain"));
         
         Riddle riddle7 = new Riddle("What is round, brown, and sticky?", "a stick");
-        rooms[12].placeSphinx(new Sphinx(riddle7, key4, " climbs up and down a tree"));
+        rooms[13].placeSphinx(new Sphinx(riddle7, null, " climbs up and down a tree"));
         
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
-        rooms[12].placeSphinx(new Sphinx(riddle8, key5, " licks a lollipop"));
+        rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31b36156dbc8fd1ec7a96e8d878a71098d66464f
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
-        rooms[12].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
+        rooms[15].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                   
 
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
@@ -140,34 +132,36 @@ public class SetRooms {
 	
 	private void setDesc() {
 				
-		rooms[0].setDescription("a parkinglot. 0");
+		rooms[0].setDescription("a parkinglot. There is a scroll on the ground. 0");
 		rooms[1].setDescription("a hallway. 1");
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
-		rooms[5].setDescription("Edmand Chapel. 5");
+		rooms[5].setDescription("Edmund Chapel. 5");
 		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. A mysterious portal is open in front of you.  6");
 		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-
-		rooms[9].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 9");
-		rooms[10].setDescription("secret storage. Dr. Ryken's Perry is in a safe box. 10");
-		rooms[11].setDescription("a parkinglot. 11");
-		rooms[12].setDescription("a hallway. 12");
-		rooms[13].setDescription("a waiting room. There is a vending machine in the corner. 13");
-		rooms[14].setDescription("a storage. There is a scroll on the wall. 14");
-		rooms[15].setDescription("an ice storage. 15");
-		rooms[16].setDescription("Edmand Chapel. (a monster) on the stage. 16");
-		rooms[17].setDescription("a backstage. Stupe's Stall is right at the corner. 17");
-		rooms[18].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 18");
-		rooms[19].setDescription("the side stage. There is a scroll on the wall. 19");
-		rooms[20].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 20");
-		rooms[21].setDescription("secret storage. Dr. Ryken's Perry is in a safe box. 21");
-		rooms[22].setDescription("a backstage. Stupe's Stall is right at the corner. 22");
-		rooms[23].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 23");
-		rooms[24].setDescription("the side stage. There is a scroll on the wall. 24");
-		rooms[25].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 25");
-		rooms[26].setDescription("heaven. Dr. Ryken's Perry is in a safe box. 26");
+		rooms[9].setDescription("a white hallway. \nThere is a sign reading \"Left Door: Path of Knowledge, Right Door: Path of Strength\"  9");
+		
+		rooms[10].setDescription("a long hall that opens into a grassy field.  There is a scroll nailed to a tree. 10");
+		rooms[12].setDescription("a mountainside. 12");
+		rooms[13].setDescription("a thick forest. 13");
+		rooms[14].setDescription("the entrance of a small cabin. 14");
+		rooms[15].setDescription("the living room of a small cabin. 15");
+		
+		rooms[11].setDescription("a hallway that opens into a cave. 11");
+		rooms[16].setDescription("a large cavern lit by torches.  There are badly drawn paintings on the walls.  16");
+		rooms[17].setDescription("a small cavern.  Water drips from the ceiling. 17");
+		rooms[18].setDescription("a tiny cave.  It is silent. 18");
+		rooms[19].setDescription("a small cave with a pool of water. There is a scroll on the wall. 19");
+		rooms[20].setDescription("a cavern decorated with a lot of rugs and tapestries. 20");
+		rooms[21].setDescription("a cave with a dirt floor. There are steps going up ahead. 21");
+		rooms[22].setDescription("a cave with a hole in the ceiling. Blue sky is visible through the hole. 22");
+		rooms[23].setDescription("a cave filled with various junk. 23");
+		rooms[24].setDescription("what looks like a basement. 24");
+		rooms[25].setDescription("a plain room with a table and chair. The walls seem to shift when you look at them. 25");
+		
+		rooms[26].setDescription("a bedroom. Dr. Ryken's Perry is in a safe box. 26");
 	}
 	
 	private void setMoney() {
