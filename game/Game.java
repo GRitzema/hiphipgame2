@@ -119,7 +119,7 @@ public class Game {
 		
         HashMap<String, Food> stupe = new HashMap<String, Food>();
 		Shop stupeStall = new Shop("Kitchen Pantry", stupe, true);
-		stupeStall.addToShop(new Food(10, "French Fries", "Restores 10 hp", p, 10), 2);
+		stupeStall.addToShop(new Food(10, "FrenchFries", "Restores 10 hp", p, 10), 2);
 		stupeStall.addToShop(new Food(30,"Crispy Chicken","Restores 30 hp", p, 40), 5);
 		stupeStall.addToShop(new Food(15, "Beef Burger", "Restores 15 hp", p, 20), 3);
 		stupeStall.addToShop(new Food(35, "Taco Salad", "Restores 35 hp", p, 50), 4);

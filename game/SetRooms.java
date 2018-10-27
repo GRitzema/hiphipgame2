@@ -36,8 +36,32 @@ public class SetRooms {
 	 	rooms[12].setRoom("backward", rooms[10]);
 	 	rooms[12].setRoom("forward", rooms[13]);
 	 	rooms[13].setRoom("backward", rooms[12]);
+	 	rooms[13].setRoom("forward", rooms[14]);
+	 	rooms[14].setRoom("backward", rooms[13]);
+	 	rooms[14].setRoom("forward", rooms[15]);
+	 	rooms[15].setRoom("backward", rooms[14]);
+	 	rooms[15].setRoom("forward", rooms[26]);
 	 	
 	 	rooms[11].setRoom("left", rooms[9]);
+	 	rooms[11].setRoom("forward", rooms[16]);
+	 	rooms[16].setRoom("backward", rooms[11]);
+	 	rooms[16].setRoom("forward", rooms[17]);
+	 	rooms[17].setRoom("backward", rooms[16]);
+	 	rooms[17].setRoom("forward", rooms[20]);
+	 	rooms[17].setRoom("left", rooms[18]);
+	 	rooms[17].setRoom("right", rooms[19]);
+	 	rooms[18].setRoom("right", rooms[17]);
+	 	rooms[19].setRoom("left", rooms[17]);
+	 	rooms[20].setRoom("backward", rooms[17]);
+	 	rooms[20].setRoom("forward", rooms[21]);
+	 	rooms[21].setRoom("backward", rooms[20]);
+	 	rooms[21].setRoom("forward", rooms[24]);
+	 	rooms[21].setRoom("left", rooms[22]);
+	 	rooms[21].setRoom("right", rooms[23]);
+	 	rooms[22].setRoom("right", rooms[21]);
+	 	rooms[23].setRoom("left", rooms[21]);
+	 	rooms[24].setRoom("backward", rooms[21]);
+	 	rooms[24].setRoom("forward", rooms[26]);
 	 	
 	 	setDesc();
 	 			
