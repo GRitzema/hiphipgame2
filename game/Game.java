@@ -36,7 +36,7 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        rooms = new Room[26];
+        rooms = new Room[27];
         
         for (int i = 0; i < rooms.length; i++) {
             rooms[i] = new Room("a room.", "There is nothing of interest.", false, new HashMap<String,Item>());          

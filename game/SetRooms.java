@@ -77,7 +77,7 @@ public class SetRooms {
 		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
 		rooms[4].setDescription("an ice storage. 4");
 		rooms[5].setDescription("Edmand Chapel. (a monster) on the stage. 5");
-		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. 6");
+		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. A mysterious portal is open in front of you.  6");
 		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 7");
 		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
 		rooms[9].setDescription("the garden of Eden. Lucifer is hiding among the bushes. 9");
