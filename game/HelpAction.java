@@ -27,7 +27,9 @@ public class HelpAction implements Action {
     	System.out.println("shop : shop in a shop in in the room");
 
 	}
-
+	/**
+	 * Prints an error message
+	 */
 	public void takeAction(String substring) {
 		System.out.println("You do not know how to do that.");
 	}
