@@ -28,7 +28,6 @@ public class Combat {
 	public Combat(Player p, Monster m, Game game) {
 		this.p = p;
 		this.m = m;
-		this.pockets = p.getInventory();
 		this.game = game;
 	}
 	
