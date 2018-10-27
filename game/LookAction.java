@@ -50,7 +50,7 @@ public class LookAction implements Action {
 	private String printAdjacent() {
 		
 		if (room.getCash().getAmount() != 0) {
-			System.out.println("There are " + room.getCash().getAmount() + " dollars on the floor.");
+			System.out.println("There are " + room.getCash().getAmount() + " dollars on a table.");
 		}
 		
 		String [] adjacent = room.returnDoors();
@@ -58,7 +58,7 @@ public class LookAction implements Action {
 			return "There are no exits in this room";
 		}
 		
-		String add = "There are exits to the ";
+		String add = "You see exits to the ";
 		for (int i = 0; i != adjacent.length && adjacent[i] != null; i++) {
 			String print = "";
 			if (i < adjacent.length - 1 && i != 0) {

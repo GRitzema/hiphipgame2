@@ -14,7 +14,7 @@ public class HelpAction implements Action {
 	 */
 	public void takeAction() {
 		
-		System.out.println("Possible Commands:");
+		System.out.println("\nPossible Commands:");
     	System.out.println("go forward/backward/left/right : move between rooms");
     	System.out.println("look : observe the room you're in");
     	System.out.println("inventory : check what's in your pockets");
@@ -25,6 +25,7 @@ public class HelpAction implements Action {
     	System.out.println("pickup ___ : pickup the thing in the room");
     	System.out.println("eat ___ : eat a food item in your inventory");
     	System.out.println("shop : shop in a shop in in the room");
+    	System.out.println("check ___ : inspect an item in your inventory");
 
 	}
 	/**

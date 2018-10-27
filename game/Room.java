@@ -158,14 +158,14 @@ public class Room {
      * Retrieve things hidden in the room.
      */
     public String getInRoom() {
-    	String inRoom = "There is ";
+    	String inRoom = "In the room, there is: ";
     	if (inside.isEmpty()) {
-    		inRoom = inRoom + "no item of interest in the room.";   	
+    		inRoom = inRoom + "no item of interest.";   	
     	} else {
     		for (Item i : inside.values()) {
 	    		inRoom = inRoom + i.returnName() + ", ";
 	    	}
-	    	inRoom = inRoom.substring(0,inRoom.length() - 2) + ".";
+	    	inRoom = inRoom.substring(0,inRoom.length() - 2);
     	}
     	return inRoom;
     }
