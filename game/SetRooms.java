@@ -108,7 +108,7 @@ public class SetRooms {
         //Sets up riddles and monsters/sphinxes
         
         Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase?", "intentional community");
-        Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
+        Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences");
         rooms[1].placeMonster(new Monster(false, p, "a monster", 20, riddle1, rooms[1], oldScroll, key1, " bobs its head along to DJ Pohly's hot new album"));
         
         Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job?", "dj");
@@ -132,11 +132,7 @@ public class SetRooms {
         
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));
-        
-<<<<<<< HEAD
 
-=======
->>>>>>> a26c16fe32c4adfd8fe0b1618297f163b722c9b8
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
         rooms[15].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                          
@@ -147,34 +143,34 @@ public class SetRooms {
 	
 	private void setDesc() {
 				
-		rooms[0].setDescription("a parkinglot. There is a scroll on the ground. 0");
-		rooms[1].setDescription("a hallway. 1");
-		rooms[2].setDescription("a waiting room. There is a vending machine in the corner. 2");
-		rooms[3].setDescription("a storage. There is a scroll on the wall. 3");
-		rooms[4].setDescription("an ice storage. 4");
-		rooms[5].setDescription("Edmund Chapel. 5");
-		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. A mysterious portal is open in front of you.  6");
-		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen. 7");
-		rooms[8].setDescription("the side stage. There is a scroll on the wall. 8");
-		rooms[9].setDescription("a white hallway. \nThere is a sign reading \"Left Door: Path of Knowledge, Right Door: Path of Strength\"  9");
+		rooms[0].setDescription("a parkinglot. There is a scroll on the ground.");
+		rooms[1].setDescription("a hallway.");
+		rooms[2].setDescription("a waiting room. There is a vending machine in the corner.");
+		rooms[3].setDescription("a storage. There is a scroll on the wall.");
+		rooms[4].setDescription("an ice storage.");
+		rooms[5].setDescription("Edmund Chapel.");
+		rooms[6].setDescription("a backstage. Stupe's Stall is right at the corner. A mysterious portal is open in front of you.");
+		rooms[7].setDescription("the side stage. There is a SAGA's pantry in the corner kitchen.");
+		rooms[8].setDescription("the side stage. There is a scroll on the wall.");
+		rooms[9].setDescription("a white hallway. \nThere is a sign reading \"Left Door: Path of Knowledge, Right Door: Path of Strength\"");
 		
-		rooms[10].setDescription("a long hall that opens into a grassy field.  There is a scroll nailed to a tree. 10");
-		rooms[12].setDescription("a mountainside. 12");
-		rooms[13].setDescription("a thick forest. 13");
-		rooms[14].setDescription("the entrance of a small cabin. 14");
+		rooms[10].setDescription("a long hall that opens into a grassy field.  There is a scroll nailed to a tree.");
+		rooms[12].setDescription("a mountainside.");
+		rooms[13].setDescription("a thick forest.");
+		rooms[14].setDescription("the entrance of a small cabin.");
 		rooms[15].setDescription("the living room of a small cabin.");
 		
-		rooms[11].setDescription("a hallway that opens into a cave. 11");
-		rooms[16].setDescription("a large cavern lit by torches.  There are badly drawn paintings on the walls.  16");
-		rooms[17].setDescription("a small cavern.  Water drips from the ceiling. 17");
-		rooms[18].setDescription("a tiny cave.  It is silent. 18");
-		rooms[19].setDescription("a small cave with a pool of water. There is a scroll on the wall. 19");
-		rooms[20].setDescription("a cavern decorated with a lot of rugs and tapestries. 20");
-		rooms[21].setDescription("a cave with a dirt floor. There are steps going up ahead. 21");
-		rooms[22].setDescription("a cave with a hole in the ceiling. Blue sky is visible through the hole. 22");
-		rooms[23].setDescription("a cave filled with various junk. 23");
+		rooms[11].setDescription("a hallway that opens into a cave.");
+		rooms[16].setDescription("a large cavern lit by torches.  There are badly drawn paintings on the walls.");
+		rooms[17].setDescription("a small cavern.  Water drips from the ceiling.");
+		rooms[18].setDescription("a tiny cave.  It is silent.");
+		rooms[19].setDescription("a small cave with a pool of water. There is a scroll on the wall.");
+		rooms[20].setDescription("a cavern decorated with a lot of rugs and tapestries.");
+		rooms[21].setDescription("a cave with a dirt floor. There are steps going up ahead.");
+		rooms[22].setDescription("a cave with a hole in the ceiling. Blue sky is visible through the hole.");
+		rooms[23].setDescription("a cave filled with various junk.");
 		rooms[24].setDescription("what looks like a basement.");
-		rooms[25].setDescription("a plain room with a table and chair. The walls seem to shift when you look at them. 25");
+		rooms[25].setDescription("a plain room with a table and chair. The walls seem to shift when you look at them.");
 		
 		rooms[26].setDescription("a bedroom. Dr. Ryken's Perry is in a safe box.");
 	}
@@ -186,8 +182,17 @@ public class SetRooms {
 	}
 	
 	private void setItems() {
+		rooms[0].addInside("wall scroll", new Scroll("wall scroll", "A scroll on the wall", "Welcome to SPHINX!  Monsters have stolen Dr. Ryken's stuffed Perry.  It's up to you to get it back.  Good luck!"));
 		rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
 		rooms[0].addInside("excalibur", new Sword("diamond", "excalibur", "A mighty, powerful blade", p));
+		
+		rooms[3].addInside("archive scroll", new Scroll("archive scroll", "A scroll in storage", "...Legend tells of a shortcut room between rooms... Who knows how to get to it, though."));
+		
+		rooms[11].addInside("cave scroll", new Scroll("cave scroll", "A scroll in a cave", "You have chosen the Path of Strength.  Your intellect will do you no good here."));
+		
+		rooms[10].addInside("tree scroll", new Scroll("tree scroll", "A scroll on a tree", "You have chosen the Path of Knowledge.  Your strength will do you no good here."));
+		
+		rooms[19].addInside("wet scroll", new Scroll("wet scroll", "A scroll in a wet cave", "The shortcut room has been discovered!  To find it, simply a-\nThe rest of the scroll has been destroyed by water."));
 	}
 
 }

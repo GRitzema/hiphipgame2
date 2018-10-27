@@ -33,13 +33,11 @@ public class Scroll implements Item {
 	 * @param name
 	 * @param description
 	 * @param hint
-	 * @param type
 	 */
-	public Scroll(String name, String description, String hint, String type) {
+	public Scroll(String name, String description, String hint) {
 		this.name = name;
 		this.description = description;
 		this.hint = hint;
-		this.type = type;
 	}
 	
 	/**
@@ -76,9 +74,7 @@ public class Scroll implements Item {
 		
 	}
 
-	@Override
 	public String returnType() {
-		return type;
+		return null;
 	}
-
 }
