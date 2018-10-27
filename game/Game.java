@@ -75,6 +75,7 @@ public class Game {
     }
     
     private void populateRooms() {
+<<<<<<< HEAD
 
     	
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
@@ -99,6 +100,9 @@ public class Game {
         rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
 	
 
+=======
+    	
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
 		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);

@@ -3,7 +3,11 @@ package game;
 public class SetRooms {
 	
 	private Room[] rooms;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
 	private Player p;
 
 	public SetRooms(Room[] r, Player p) {
@@ -68,6 +72,7 @@ public class SetRooms {
 	 	rooms[24].setRoom("forward", rooms[26]);
 	 	
 	 	setDesc();
+<<<<<<< HEAD
 
 	 	setMoney();
 	 	setItems();
@@ -75,6 +80,11 @@ public class SetRooms {
 
 	 	
 	 	
+=======
+	 	setMoney();
+	 	setItems();
+
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
 	 	//Sets up keys for rooms
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
@@ -115,9 +125,13 @@ public class SetRooms {
         
         
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
+<<<<<<< HEAD
            
         
 
+=======
+          
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
 	}
 	
 	private void setDesc() {
