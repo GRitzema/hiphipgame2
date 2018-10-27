@@ -49,6 +49,7 @@ public class Player {
 	 * The amount of money the player has
 	 */
 	private int wealth;
+	private int ending;
 	
 	/**
 	 * Constructor
@@ -187,5 +188,13 @@ public class Player {
 	 */
 	public Inventory getInventory() {
 		return pockets;
+	}
+	
+	public void setEnding(int i) {
+		ending = i;
+	}
+	
+	public int getEnding() {
+		return ending;
 	}
 }

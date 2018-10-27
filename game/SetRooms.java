@@ -76,6 +76,12 @@ public class SetRooms {
 	 	rooms[24].setRoom("backward", rooms[21]);
 	 	rooms[24].setRoom("forward", rooms[26]);
 	 	
+	 	rooms[16].setRoom("wow", rooms[25]);
+	 	rooms[20].setRoom("wow", rooms[25]);
+	 	rooms[24].setRoom("wow", rooms[25]);
+	 	
+	 	rooms[25].setRoom("forward", rooms[26]);
+	 	
 	 	setDesc();
 	 	setMoney();
 	 	setItems();
@@ -103,19 +109,19 @@ public class SetRooms {
         
         Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase?", "intentional community");
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
-        rooms[1].placeMonster(new Monster(p, "a monster", 20, riddle1, rooms[1], oldScroll, key1, " bobs its head along to DJ Pohly's hot new album"));
+        rooms[1].placeMonster(new Monster(false, p, "a monster", 20, riddle1, rooms[1], oldScroll, key1, " bobs its head along to DJ Pohly's hot new album"));
         
         Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job?", "dj");
-        rooms[5].placeMonster(new Monster(p, "a monster", 500, riddle2, rooms[5], null, key2, " flexes threateningly"));
+        rooms[5].placeMonster(new Monster(false, p, "a monster", 500, riddle2, rooms[5], null, key2, " flexes threateningly"));
                
         Riddle riddle3 = new Riddle("What's the best movie?", "land before time 2");
-        rooms[16].placeMonster(new Monster(p, "a monster", 100, riddle3, rooms[16], null, key7, " adjusts his dinosaur T-Shirt"));
+        rooms[16].placeMonster(new Monster(true, p, "a monster", 100, riddle3, rooms[16], null, key7, " adjusts his dinosaur T-Shirt"));
                 
         Riddle riddle4 = new Riddle("What's my middle name", "henry");
-        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, key8, " poses fabulously"));
+        rooms[20].placeMonster(new Monster(true, p, "a monster", 100, riddle4, rooms[20], null, key8, " poses fabulously"));
         
         Riddle riddle5 = new Riddle("Is the answer to this question \"no\"?", "i don't no");
-        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, key6, " contemplates existance"));
+        rooms[24].placeMonster(new Monster(true, p, "a monster", 100, riddle5, rooms[24], null, key6, " contemplates existance"));
                 
         
         Riddle riddle6 = new Riddle("What walks on four legs in the morning, two in the afternoon, and three in the evening?", "a man");
@@ -127,10 +133,13 @@ public class SetRooms {
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> a26c16fe32c4adfd8fe0b1618297f163b722c9b8
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
         rooms[15].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
-                  
+                         
 
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
 
@@ -153,7 +162,7 @@ public class SetRooms {
 		rooms[12].setDescription("a mountainside. 12");
 		rooms[13].setDescription("a thick forest. 13");
 		rooms[14].setDescription("the entrance of a small cabin. 14");
-		rooms[15].setDescription("the living room of a small cabin. 15");
+		rooms[15].setDescription("the living room of a small cabin.");
 		
 		rooms[11].setDescription("a hallway that opens into a cave. 11");
 		rooms[16].setDescription("a large cavern lit by torches.  There are badly drawn paintings on the walls.  16");
@@ -164,10 +173,10 @@ public class SetRooms {
 		rooms[21].setDescription("a cave with a dirt floor. There are steps going up ahead. 21");
 		rooms[22].setDescription("a cave with a hole in the ceiling. Blue sky is visible through the hole. 22");
 		rooms[23].setDescription("a cave filled with various junk. 23");
-		rooms[24].setDescription("what looks like a basement. 24");
+		rooms[24].setDescription("what looks like a basement.");
 		rooms[25].setDescription("a plain room with a table and chair. The walls seem to shift when you look at them. 25");
 		
-		rooms[26].setDescription("a bedroom. Dr. Ryken's Perry is in a safe box. 26");
+		rooms[26].setDescription("a bedroom. Dr. Ryken's Perry is in a safe box.");
 	}
 	
 	private void setMoney() {

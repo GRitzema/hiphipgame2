@@ -46,7 +46,10 @@ public class Monster {
 	 * The current player
 	 */
 	private Player p;
+	private boolean strength;
 	
+	
+
 	/**
 	 * Constructor
 	 * Refer to instance variables
@@ -59,7 +62,7 @@ public class Monster {
 	 * @param key
 	 * @param descrip
 	 */
-	public Monster(Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String descrip) {
+	public Monster(boolean s, Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String descrip) {
 		this.health = health;
 		this.riddle = riddle;
 		this.room = room;
@@ -67,6 +70,9 @@ public class Monster {
 		this.key = key;
 		this.p = p;
 		this.descrip = descrip;
+		strength = s;
+		this.descrip = descrip;
+
 	}
 	
 	/**
@@ -135,6 +141,8 @@ public class Monster {
 		return key;
 	}
 
-	
+	public boolean getStr() {
+		return strength;
+	}
 	
 }
