@@ -36,7 +36,7 @@ public class Game {
      * Constructor to set up the game.
      */
     public Game() {
-        rooms = new Room[26];
+        rooms = new Room[27];
         
         for (int i = 0; i < rooms.length; i++) {
             rooms[i] = new Room("a room.", "There is nothing of interest.", false, new HashMap<String,Item>());          
@@ -88,25 +88,35 @@ public class Game {
 
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
-        Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
+        Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase?", "intentional community");
         
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
         
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
        
         rooms[2].setKey(key1);
-        rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "rattles its handcuffs threateningly"));
+        rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "singing along to DJ Pohly's hot new album"));
         
         
         Key key2 = new Key("Master Key", "a master key on the floor");
         rooms[6].setKey(key2);
-        Riddle riddle2 = new Riddle("What is Dr. Pohly's second occupation?", "DJ");
-        rooms[5].placeMonster(new Monster(p, "Chaplain Blackmon", 500, riddle2, rooms[5], null, key2, "flips through his Bible"));
+        Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job?", "DJ");
+        rooms[5].placeMonster(new Monster(p, "a monster", 500, riddle2, rooms[5], null, key2, "flexing threateningly"));
        
         Key key3 = new Key("Golden Key", "a golden key on the floor");
         rooms[10].setKey(key3);
-        Riddle riddle3 = new Riddle("asdf", "jkl");
-        rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
+        Riddle riddle3 = new Riddle("What's the best movie?", "Land Before Time 2");
+        rooms[16].placeMonster(new Monster(p, "a monster", 100, riddle3, rooms[16], null, key3, "adjusts his dinosaur T-Shirt"));
+        
+        Key key4 = new Key("Golden Key", "a golden key on the floor");
+        rooms[10].setKey(key4);
+        Riddle riddle4 = new Riddle("What's my middle name", "Henry");
+        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, key4, "poses fabulously"));
+        
+        Key key5 = new Key("Golden Key", "a golden key on the floor");
+        rooms[10].setKey(key5);
+        Riddle riddle5 = new Riddle("Is the answer to this question \"no\"?", "I don't no");
+        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, key5, "contemplates existance"));
 	
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
