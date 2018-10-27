@@ -31,7 +31,6 @@ public class Sword implements Item{
 	 */
 	private Player wielder;
 
-	private String type = "sword";
 
 	/**
 	 * Constructor
@@ -90,8 +89,5 @@ public class Sword implements Item{
 		return false;
 	}
 
-	@Override
-	public String returnType() {
-		return type;
-	}
+	
 }

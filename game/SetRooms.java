@@ -133,10 +133,6 @@ public class SetRooms {
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));
         
-<<<<<<< HEAD
-
-=======
->>>>>>> a26c16fe32c4adfd8fe0b1618297f163b722c9b8
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
         rooms[15].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                          

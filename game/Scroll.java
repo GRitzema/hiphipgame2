@@ -24,8 +24,7 @@ public class Scroll implements Item {
 	/**
 	 * What the scroll says
 	 */
-	private String hint;
-	private String type;
+	private String hint;	
 	
 	/**
 	 * Constructor
@@ -39,7 +38,6 @@ public class Scroll implements Item {
 		this.name = name;
 		this.description = description;
 		this.hint = hint;
-		this.type = type;
 	}
 	
 	/**
@@ -75,10 +73,6 @@ public class Scroll implements Item {
 		System.out.println(hint);
 		
 	}
-
-	@Override
-	public String returnType() {
-		return type;
-	}
+	
 
 }
