@@ -95,7 +95,7 @@ public class Food implements Item {
 	 * POSTCONDITION: The player's health increased
 	 */
 	public void use() {
-		if ((hp + eater.getHealth()) >= eater.getMaxHealth()) {
+		if ((hp + eater.getHealth()) <= eater.getMaxHealth()) {
 			eater.setHealth(hp + eater.getHealth());
 			eater.removeFromInventory(this);
 			System.out.println("You ate the " + name + "! You gained " + hp);
