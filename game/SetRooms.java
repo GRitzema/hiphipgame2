@@ -3,13 +3,17 @@ package game;
 public class SetRooms {
 	
 	private Room[] rooms;
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
 	private Player p;
 
 	public SetRooms(Room[] r, Player p) {
 		this.p = p;
 		rooms = r;
-		this.p = p;
+		
 	}
 	
 	public void set() {
@@ -68,9 +72,19 @@ public class SetRooms {
 	 	rooms[24].setRoom("forward", rooms[26]);
 	 	
 	 	setDesc();
+<<<<<<< HEAD
+
+	 	setMoney();
+	 	setItems();
+	 			
+
+	 	
+	 	
+=======
 	 	setMoney();
 	 	setItems();
 
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
 	 	//Sets up keys for rooms
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
@@ -127,9 +141,20 @@ public class SetRooms {
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[12].placeSphinx(new Sphinx(riddle8, key5, " licks a lollipop"));
         
+<<<<<<< HEAD
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
         rooms[12].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                   
+=======
+        rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
+<<<<<<< HEAD
+           
+        
+
+=======
+          
+>>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
+>>>>>>> 3bc7d1765270c9fd6a63d4615640000539331125
 	}
 	
 	private void setDesc() {

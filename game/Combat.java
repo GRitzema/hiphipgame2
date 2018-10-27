@@ -56,28 +56,28 @@ public class Combat {
 	public void fight(Sword sword) {
 		double damage = 0;
 		if (Math.random()<=0.2) {
-			System.out.println("You missed " + m.getName() + "!");
+			System.out.println("You missed the monster!");
 		}
 		else {
 			if (sword == null) {
 				damage = Math.round(5 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
-				System.out.println("Your fists inflicted " + damage + " on " + m.getName());
+				System.out.println("Your fists inflicted " + damage + " on the monster!");
 			}			
 			else if (sword.getMaterial().equals("wood")) {
 				damage = Math.round(10 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
-				System.out.println(m.getName() + "took " + damage + "!");
+				System.out.println("The monster took " + damage + "!");
 			}
 			else if (sword.getMaterial().equals("iron")) {
 				damage = Math.round(25 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
-				System.out.println(m.getName() + "took " + damage + "!");
+				System.out.println("The monster took " + damage + "!");
 			}
 			else if (sword.getMaterial().equals("diamond")) {
 				damage = Math.round(50 + Math.random()*10);
 				m.setHealth(m.getHealth()-damage);
-				System.out.println(m.getName() + "took" + damage + "!");
+				System.out.println("The monster took" + damage + "!");
 			}			
 		}
 	}
