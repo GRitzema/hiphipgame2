@@ -12,29 +12,29 @@ package game;
 public class Sword implements Item{
 	
 	/**
-	 * the material of the sword
+	 * the material of the sword.
 	 */
 	private String material;
 	
 	/**
-	 * The name of the sword
+	 * The name of the sword.
 	 */
 	private String name;
 	
 	/**
-	 * A description of the sword
+	 * A description of the sword.
 	 */
 	private String description;
 
 	/**
-	 * The player that weilds the sword
+	 * The player that wields the sword.
 	 */
 	private Player wielder;
 
 
 	/**
-	 * Constructor
-	 * Refer to instance variables
+	 * Constructor.
+	 * Refer to instance variables.
 	 * @param material
 	 * @param name
 	 * @param description
@@ -48,33 +48,33 @@ public class Sword implements Item{
 	}
 	
 	/**
-	 * Getter method for the description
-	 * @return: the description of the sword
+	 * Getter method for the description.
+	 * @return: the description of the sword.
 	 */
 	public String getDescription() {
 		return description;
 	}
 	
 	/**
-	 * Getter method for name
-	 * @return the name of the sword
+	 * Getter method for name.
+	 * @return the name of the sword.
 	 */
 	public String returnName() {
 		return name;
 	}
 	
 	/**
-	 * Getter method for the material 	
-	 * @return the material of the sword
+	 * Getter method for the material. 	
+	 * @return the material of the sword.
 	 */
 	public String getMaterial() {
 		return material;
 	}
 
 	/**
-	 * Method lets you equipped the sword to change your damage in combat
-	 * Method from the player class is called
-	 * POSTCONDITION: the player's sword is now changed
+	 * Method lets you equipped the sword to change your damage in combat.
+	 * Method from the player class is called.
+	 * POSTCONDITION: the player's sword is now changed.
 	 */
 	public void use() {	
 		wielder.setSword(this);
@@ -82,8 +82,8 @@ public class Sword implements Item{
 	}
 	
 	/**
-	 * Determines if the sword is edible
-	 * @return false (since it is not edible)
+	 * Determines if the sword is edible.
+	 * @return false (since it is not edible).
 	 */
 	public boolean isEdible() {
 		return false;

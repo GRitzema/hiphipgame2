@@ -17,6 +17,9 @@ import java.util.HashMap;
 
 public class Game {
     
+	/**
+	 * The player in the game.
+	 */
 	Player p = new Player(50,null);
 
     /**
@@ -24,14 +27,11 @@ public class Game {
      */
     private boolean over;
     
+    /**
+     * Rooms in the game.
+     */
     private Room[] rooms;
     
-    private Item left = new Empty();
-    private Item right = new Empty();
-    
-    public Item getLeft() { return left; }
-    public Item getRight() { return right; }
-       
     /**
      * Constructor to set up the game.
      */
@@ -46,12 +46,16 @@ public class Game {
         }
         
         setRooms();
-        populateRooms();
+        populateShops();
 
         p.setCurrentRoom(rooms[0]);
 
     }
     
+    /**
+     * Getter method to get the player.
+     * @return The player in the game.
+     */
     public Player getPlayer() {
     	return p;
     }
@@ -66,6 +70,9 @@ public class Game {
      */
     public void finishGame() { over = true; }
     
+    /**
+     * Setter method to set the rooms.
+     */
     private void setRooms() {
     	
     	SetRooms set = new SetRooms(rooms, p);
@@ -74,7 +81,10 @@ public class Game {
     	over = false;   
     }
     
-    private void populateRooms() {
+    /**
+     * Adding shops into the rooms.
+     */
+    private void populateShops() {
 
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
@@ -87,7 +97,7 @@ public class Game {
 		
         HashMap<String, Food> stupe = new HashMap<String, Food>();
 		Shop stupeStall = new Shop("Kitchen Pantry", stupe, true);
-		stupeStall.addToShop(new Food(10, "FrenchFries", "Restores 10 hp", p, 10));
+		stupeStall.addToShop(new Food(10, "French Fries", "Restores 10 hp", p, 10));
 		stupeStall.addToShop(new Food(30,"Crispy Chicken","Restores 30 hp", p, 40));
 		stupeStall.addToShop(new Food(15, "Beef Burger", "Restores 15 hp", p, 20));
 		stupeStall.addToShop(new Food(35, "Taco Salad", "Restores 35 hp", p, 50));

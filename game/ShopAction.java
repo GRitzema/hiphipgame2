@@ -5,12 +5,35 @@ import java.util.Scanner;
 
 public class ShopAction implements Action {
 
+	/**
+	 * The shop  the user is buying from.
+	 */
 	private Shop theShop;
+	
+	/**
+	 * The player playing the game.
+	 */
 	private Player p;
+	
+	/**
+	 * The bag that the player has.
+	 */
 	private Inventory bag;
+	
+	/**
+	 * To get user's input.
+	 */
 	Scanner keyboard = new Scanner(System.in);
+	
+	/**
+	 * The shopping cart.
+	 */
 	private HashMap<String, Food> cart = new HashMap<String, Food>();
 		
+	/**
+	 * Initializing shop action class.
+	 * @param p The player playing the game.
+	 */
 	public ShopAction(Player p) {
 		this.p = p;
 		this.theShop = p.getCurrentRoom().getTheShop();
@@ -31,6 +54,9 @@ public class ShopAction implements Action {
 		System.out.println("Sorry, " + substring + " is currently not available in Wheaton.");		
 	}
 	
+	/**
+	 * A method for buying the first object.
+	 */
 	public void buy() {
 		theShop.displayMenu();
 		System.out.print("What would you like to buy? ");
@@ -42,7 +68,6 @@ public class ShopAction implements Action {
 			p.setWealth(p.getWealth()-stuff.get(order).getPrice());
 			theShop.removeFromShop(theShop.getStore().get(order));
 			System.out.println("You purchased " + order + ".");
-			
 		}
 		else if (stuff.containsKey(order) && (stuff.get(order).getPrice() > p.getWealth())) {
 			System.out.println("Sorry, you do not have enough money.");
@@ -51,6 +76,9 @@ public class ShopAction implements Action {
 		}
 	}
 
+	/**
+	 * A method for buying more objects.
+	 */
 	public void buyAgain() {
 		System.out.println("Would you like to buy something else? (y/n)");
 		String answer = keyboard.nextLine();
@@ -66,10 +94,10 @@ public class ShopAction implements Action {
 	}
 	
 	/**
-	 * Getting the cooked dish
-	 * @param x The first food to be cooked
-	 * @param y The second food to be cooked
-	 * @return The cooked food
+	 * Getting the cooked dish.
+	 * @param x The first food to be cooked.
+	 * @param y The second food to be cooked.
+	 * @return The cooked food.
 	 */
 	public Food cook(Food x, Food y) {
 		int hp = 0;
@@ -122,7 +150,7 @@ public class ShopAction implements Action {
 	}
 	
 	/**
-	 * Cooking foods
+	 * Cooking foods.
 	 */
 	public String offer() {
 		String answer;
@@ -192,6 +220,10 @@ public class ShopAction implements Action {
 		}
 	}
 	
+	/**
+	 * A helper method for cookingPrep method.
+	 * @return The answer inputed by the user.
+	 */
 	public String prepHelper() {
 		System.out.println("You only have one ingredient in the cart.");
 		System.out.println("What would you like to do? ");
