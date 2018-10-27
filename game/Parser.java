@@ -86,6 +86,10 @@ public class Parser {
         pockets = player.getPockets();
         
         System.out.println("You are in " + room.getDescription());
+        
+        if (room.hasMonster()) {
+        	System.out.println("There is a monster in the room.");
+        }
 
         System.out.print("Enter command--> ");
         String command;

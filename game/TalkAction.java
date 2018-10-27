@@ -35,7 +35,7 @@ public class TalkAction implements Action{
 				System.out.println("Hmmph, I suppose that answer will suffice.");
 				System.out.println(monster.getName() + " gave you the " +  monster.getKey().returnName()+"!");
 				p.addToInventory(monster.getKey());
-				room.setMonster(null);
+				room.placeMonster(null);
 				System.out.println(monster.getName() + " vanished in thin air!");
 			}
 			else {

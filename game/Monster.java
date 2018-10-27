@@ -46,7 +46,7 @@ public class Monster {
 		
 		room.addInside(item.returnName(), item);
 		room.addInside(key.returnName(),key);
-		room.setMonster(null);
+		room.placeMonster(null);
 
 		}
 

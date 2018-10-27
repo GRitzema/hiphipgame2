@@ -18,7 +18,6 @@ public class UnlockAction implements Action {
 		this.door = p.getCurrentRoom().getDoors("forward");
 		if (door.getLocked()) {
 			Key theKey = door.getKey();
-			System.out.println(theKey.returnName());
 			
 			if (p.getInventory().contains(theKey)) {
 				door.setLocked(false);

@@ -68,6 +68,33 @@ public class Room {
 			return this;
 		}
     }
+	
+	public String[] returnDoors() {
+		int i = 0;
+		String[] returner = new String[4];
+		
+		if (doors.get("left") != null) {
+			returner[i] = "left";
+			i++;
+		}
+		
+		if (doors.get("right") != null) {
+			returner[i] = "right";
+			i++;
+		}
+		
+		if (doors.get("forward")!= null) {
+			returner[i] = "front";
+			i++;
+		}
+		
+		if (doors.get("backward") != null) {
+			returner[i] = "back";
+			i++;
+		}
+		
+		return returner;
+	}
     
     public void setRoom(String direction,Room next) {
     	doors.put(direction, next);
@@ -162,10 +189,6 @@ public class Room {
 	
 	public Monster getMonster() {
 		return theMonster;
-	}
-
-	public void setMonster(Monster x) {
-		theMonster = x;
 	}
 
 	public Shop getTheShop() {

@@ -37,15 +37,35 @@ public class LookAction implements Action {
 		room = p.getCurrentRoom();            //sets the room to the current room the player is in
 		System.out.println(room.getInRoom());
 		
-		if (room.getCash().getAmount() != 0) {
-			System.out.println("Also, there are " + room.getCash().getAmount() + " dollars in the room.");
-		}
+		printAdjacent();
 	}
 
 	/**
 	 * Prints a given error message
 	 */
 	public void takeAction(String substring) { 
-		System.out.println("You do not know how to do that");
+		System.out.println("You cannot look at that.");
+	}
+	
+	private void printAdjacent() {
+		
+		String [] adjacent = room.returnDoors();
+		System.out.print("There are doors to the ");
+		for (int i = 0; i != adjacent.length && adjacent[i] != null; i++) {
+			String print = "";
+			if (i < adjacent.length - 1 && i != 0) {
+				print = ", ";
+			}
+			if (i == adjacent.length - 1 || (adjacent[i + 1] == null && i != 0)) {
+				print = " and ";
+			}
+			System.out.print(print + adjacent[i]);
+		}
+		System.out.println("");
+		
+		if (room.getCash().getAmount() != 0) {
+			System.out.println("Also, there are " + room.getCash().getAmount() + " dollars on the floor.");
+		}
+		
 	}
 }

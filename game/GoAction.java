@@ -1,14 +1,9 @@
 package game;
 
-import java.util.HashMap;
-import java.util.Scanner;
-
 public class GoAction implements Action {
 	
 	private Player player;
-	
-	private HashMap<String,Room> doors;
-	
+		
 	public GoAction(Player p) {
 		player = p;
 	}
