@@ -78,27 +78,32 @@ public class SetRooms {
         
         Key key3 = new Key("Golden Key", "a golden key on the floor");
         rooms[10].setKey(key3);
+        //unfinished
+        Key key4 = new Key("Golden Key", "a golden key on the floor");
+        rooms[10].setKey(key3);
+        Key key5 = new Key("Golden Key", "a golden key on the floor");
+        rooms[10].setKey(key3);
       
         
         //Sets up riddles
         
         Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase?", "intentional community");
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
-        rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "singing along to DJ Pohly's hot new album"));
+        rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, " bobs its head along to DJ Pohly's hot new album"));
         
         Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job?", "DJ");
-        rooms[5].placeMonster(new Monster(p, "a monster", 500, riddle2, rooms[5], null, key2, "flexing threateningly"));
+        rooms[5].placeMonster(new Monster(p, "a monster", 500, riddle2, rooms[5], null, key2, " flexes threateningly"));
        
         
         Riddle riddle3 = new Riddle("What's the best movie?", "Land Before Time 2");
-        rooms[16].placeMonster(new Monster(p, "a monster", 100, riddle3, rooms[16], null, key3, "adjusts his dinosaur T-Shirt"));
+        rooms[16].placeMonster(new Monster(p, "a monster", 100, riddle3, rooms[16], null, key3, " adjusts his dinosaur T-Shirt"));
         
         
         Riddle riddle4 = new Riddle("What's my middle name", "Henry");
-        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, key4, "poses fabulously"));
+        rooms[20].placeMonster(new Monster(p, "a monster", 100, riddle4, rooms[20], null, key4, " poses fabulously"));
         
         Riddle riddle5 = new Riddle("Is the answer to this question \"no\"?", "I don't no");
-        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, key5, "contemplates existance"));
+        rooms[24].placeMonster(new Monster(p, "a monster", 100, riddle5, rooms[24], null, key5, " contemplates existance"));
         
        
         
