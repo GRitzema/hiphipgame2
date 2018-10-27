@@ -12,17 +12,17 @@ package game;
 public class Player {
 	
 	/**
-	 * The player's current health
+	 * The player's current health.
 	 */
 	private int health;
 	
 	/**
-	 * The player's maximum potential health
+	 * The player's maximum potential health.
 	 */
 	private int maxHealth;
 	
 	/**
-	 * The player's current equipped sword
+	 * The player's current equipped sword.
 	 */
 	private Sword sword;
 	
@@ -36,25 +36,25 @@ public class Player {
 	private Room currentRoom;
 	
 	/**
-	 * The player's current inventory (initially empty)
+	 * The player's current inventory (initially empty).
 	 */
 	private Inventory pockets = new Inventory();
 	
 	/**
-	 * The number of monsters the player has defeated
+	 * The number of monsters the player has defeated.
 	 */
 	private int killCount;
 	
 	/**
-	 * The amount of money the player has
+	 * The amount of money the player has.
 	 */
 	private int wealth;
 	private int ending;
 	
 	/**
-	 * Constructor
-	 * @param health: the players current health
-	 * @param sword: the player's current sword
+	 * Constructor.
+	 * @param health: the players current health.
+	 * @param sword: the player's current sword.
 	 */
 	public Player(int health, Sword sword) {
 		this.health = health;
@@ -73,9 +73,9 @@ public class Player {
 	}
 
 	/**
-	 * Setter method for wealth
-	 * @param wealth: the player's new wealth
-	 * POSTCONDITION: wealth is now changed
+	 * Setter method for wealth.
+	 * @param wealth: the player's new wealth.
+	 * POSTCONDITION: wealth is now changed.
 	 */
 	public void setWealth(int wealth) {
 		this.wealth = wealth;
