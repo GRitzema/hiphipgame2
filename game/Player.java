@@ -104,43 +104,88 @@ public class Player {
 	 */
 	public Inventory getPockets() { return pockets;}
 	
+	/**
+	 * Getter method for the player's current health
+	 * @return the player's current health
+	 */
 	public int getHealth() {
 		return health;
 	}
 
+	/**
+	 * Setter method for the player's current health
+	 * @param d: the player's new health;
+	 * POSTCONDITION: The player's health is now changed
+	 */
 	public void setHealth(double d) {
 		this.health = (int) d;
 	}
 	
+	/**
+	 * Getter method for the player's current sword
+	 * @return the player's current sword
+	 */
 	public Sword getSword() {
 		return sword;
 	}
 	
+	/**
+	 * Setter method for the player's equipped sword
+	 * @param newSword: the player's newly equipped sword
+	 * POSTCONDITION: sword is now changed
+	 */
 	public void setSword(Sword newSword) {
 		sword = newSword;
 	}
 	
+	/**
+	 * Adds one to the killCount
+	 * Called when a player defeats a monster
+	 */
 	public void addKill() {
 		++killCount;
 	}
 	
+	/**
+	 * Getter method for the killCount
+	 * @return the killCount
+	 */
 	public int getKills() {
 		return killCount;
 	}
 
-	
+	/**
+	 * Removes an item from the player's inventory
+	 * Calls the same method in the Inventory class
+	 * @param x: the item to be removed from the player's inventory
+	 * POSTCONDITION: an association is now removed
+	 */
 	public void removeFromInventory(Item x) {
 		pockets.removeFromInventory(x);
 	}
 	
+	/**
+	 * Adds an item to the player's inventory
+	 * Calls the same method in the Inventory class
+	 * @param x: the item to be added to the player's inventory
+	 * POSTCONDITION: an association is now added
+	 */
 	public void addToInventory(Item x) {
 		pockets.addToInventory(x);
 	}
 	
+	/**
+	 * Getter method for the player's maximum health
+	 * @return the player's maximum health
+	 */
 	public int getMaxHealth() {
 		return maxHealth;
 	}
 
+	/**
+	 * Getter method for the inventory
+	 * @return the player's current inventory
+	 */
 	public Inventory getInventory() {
 		return pockets;
 	}
