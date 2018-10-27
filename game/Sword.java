@@ -35,7 +35,8 @@ public class Sword implements Item{
 
 	
 	public void use() {	
-		wielder.setSword(this);	
+		wielder.setSword(this);
+		System.out.println("You have equipped " + this.returnName() + "!");
 	}
 	
 	public boolean isEdible() {
