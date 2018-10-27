@@ -126,9 +126,10 @@ public class SetRooms {
         
         Riddle riddle6 = new Riddle("What walks on four legs in the morning, two in the afternoon, and three in the evening?", "a man");
         rooms[12].placeSphinx(new Sphinx(riddle6, null, " sits on a mountain"));
-        
+
         Riddle riddle7 = new Riddle("What is round, brown, and sticky?", "a stick");
         rooms[13].placeSphinx(new Sphinx(riddle7, null, " climbs up and down a tree"));
+
         
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));

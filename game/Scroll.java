@@ -24,8 +24,7 @@ public class Scroll implements Item {
 	/**
 	 * What the scroll says
 	 */
-	private String hint;
-	private String type;
+	private String hint;	
 	
 	/**
 	 * Constructor
@@ -77,4 +76,5 @@ public class Scroll implements Item {
 	public String returnType() {
 		return null;
 	}
+
 }

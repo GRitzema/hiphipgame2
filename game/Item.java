@@ -9,7 +9,5 @@ public interface Item {
 	public boolean isEdible();
 	
 	public void use();
-	
-	public String returnType();
-	
+		
 }
