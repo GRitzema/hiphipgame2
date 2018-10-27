@@ -75,7 +75,7 @@ public class Game {
     }
     
     private void populateRooms() {
-    	
+
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
 		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);

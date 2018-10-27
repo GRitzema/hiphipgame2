@@ -70,7 +70,7 @@ public class SetRooms {
 	 	setDesc();
 	 	setMoney();
 	 	setItems();
-	 			
+
 	 	//Sets up keys for rooms
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
@@ -175,7 +175,7 @@ public class SetRooms {
 	
 	private void setItems() {
 		rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
-		//rooms.addInside("excalibur", )
+		rooms[0].addInside("excalibur", new Sword("diamond", "excalibur", "A mighty, powerful blade", p));
 	}
 
 }
