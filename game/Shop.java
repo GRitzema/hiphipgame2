@@ -29,7 +29,7 @@ public class Shop {
 	 * @param x        The item that wants to be added
 	 * @param amount   The amount of the item available in the shop
 	 */
-	public void addToShop(Food x, int amount) {
+	public void addToShop(Food x) {
 		store.put(x.returnName(), x);	
 	}
 	
@@ -38,8 +38,8 @@ public class Shop {
 	 * @param x The item that wants to be removed
 	 */
 	public void removeFromShop(Food x) {
-		if (store.containsKey(x))
-			store.remove(x);
+		if (store.containsKey(x.returnName()))
+			store.remove(x.returnName());
 	}
 	
 	/**

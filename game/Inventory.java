@@ -49,11 +49,9 @@ public class Inventory {
 	public void displayInventory() {
 		int i = 1;
 		if (!pockets.isEmpty()) {
-		
 			Object[] arr = pockets.keySet().toArray();				
 
 			for (int j = 0; j<arr.length; j++) {
-
 				if(!(((String) arr[j]).substring(0,6).equals("sphinx"))) {
 					System.out.println("    " + i + ". " + arr[j]);
 					i++;

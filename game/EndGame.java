@@ -33,15 +33,27 @@ public class EndGame implements Action {
 		
 		if (k == 0) {
 			noKills();
-		} else if (k < 2 && k !=0) {
+		} else if (k < 3 && k !=0) {
 			halfKills();
-		} else if (k == 3){
+		} else if (k == 5){
 			allKills();
 		}else {
 			kills();
 		}
 		
-		System.out.println("\n Thanks for playing! \n GAME OVER");
+		switch (p.getEnding()) {
+		case 1:
+			System.out.println("You successfully outsmarted the monsters on the Path of Strength and found the shortcut room!");
+			break;
+		case 2:
+			System.out.println("You fought and defeated all the monsters on the Path of Strength, emerging victorious!");
+			break;
+		case 3:
+			System.out.println("You outsmarted the sphinxes on the Path of Knowledge!  Congratulations, wise one.");
+			break;
+		}
+		
+		System.out.println("\n Thank you for playing SPHINX! \n GAME OVER");
 		g.finishGame();
 	}
 	
@@ -54,7 +66,7 @@ public class EndGame implements Action {
 	}
 	
 	private void kills() {
-		System.out.println("Well... I mean you didn't kill ALL the monsters...");
+		System.out.println("Well... I mean, you didn't kill ALL the monsters...");
 	}
 	
 	private void allKills() {

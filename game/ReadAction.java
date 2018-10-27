@@ -19,7 +19,7 @@ public class ReadAction implements Action {
 	
 	public void takeAction(String item) {
 		String hold = item.substring(item.indexOf(' ') + 1);
-		if (hold == "scroll") {
+		if (hold.equals("scroll")) {
 			pockets.receiveItem(item).use();
 		}
 		else {
