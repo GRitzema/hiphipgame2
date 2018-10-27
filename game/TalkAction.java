@@ -32,27 +32,41 @@ public class TalkAction implements Action{
 		Scanner keyboard = new Scanner(System.in);
 		room = p.getCurrentRoom();
 		Monster monster = room.getMonster();
+		Sphinx sph = room.getSphinx();
 		if (enemy.equals("to monster") && room.hasMonster()) {			
 					
-			System.out.println("The monster" + monster.getDes() + ".");
+			System.out.println("\nThe monster" + monster.getDes() + ".");
 			System.out.println("\"Hear my riddle! " + room.getMonster().getRiddle().getQuestion() + "\"");
 			System.out.print("(What is your guess?): ");
 			String guess = keyboard.nextLine();
 			
 			if (guess.equals(monster.getRiddle().getAnswer())){
-				System.out.println("Hmmph, I suppose that answer will suffice.");
+				System.out.println("\"Hmmph, I suppose that answer will suffice.\"");
 				System.out.println("The monster gave you the " +  monster.getKey().returnName()+"!");
 				p.addToInventory(monster.getKey());
 				room.placeMonster(null);
-				System.out.println("The monster vanished in thin air!");
+				System.out.println("The monster vanished into thin air!");
 			}
 			else {
 				Combat battle = new Combat(p, room.getMonster(), game);
 				battle.engage();
 			}
 		
-		}
-		else {
+		} else if (enemy.equals("to sphinx") && room.hasSph()) {
+			System.out.println("\nThe sphinx" + sph.getDes() + ".");
+			System.out.println("\"Hear my riddle, adventurer! " + room.getSphinx().getRiddle().getQuestion() + "\"");
+			System.out.print("(What is your guess?): ");
+			String guess = keyboard.nextLine().toLowerCase();
+			
+			if (guess.equals(sph.getRiddle().getAnswer())){
+				System.out.println("\"Well done, you have answered my riddle.  You may pass.\"");
+				p.addToInventory(sph.getKey());
+				room.placeMonster(null);
+				System.out.println("The sphinx vanished into thin air!");
+			} else {
+				System.out.println("\"That answer is not correct...\"");
+			}
+		} else {
 			System.out.println("There's no one here of that name!");
 		} 
 	}

@@ -50,10 +50,17 @@ public class Inventory {
 		int i = 1;
 		if (!pockets.isEmpty()) {
 		
-			Object [] arr = pockets.keySet().toArray();
+			Object[] arr = pockets.keySet().toArray();
 			for (int j = 0; j<arr.length; j++) {
+<<<<<<< HEAD
 				System.out.println("    " + i + ". " + arr[j]);
 				i++;
+=======
+				if(!(((String) arr[j]).substring(0,6).equals("sphinx"))) {
+					System.out.println("    " + i + ". " + arr[j]);
+					i++;
+				}
+>>>>>>> 1528d6dc1f521463f69beb91e9068c6aeb0175ac
 			}
 		}
 		else {
