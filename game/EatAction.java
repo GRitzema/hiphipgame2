@@ -1,32 +1,32 @@
 package game;
 
-import java.util.Scanner;
-
-public class UseAction implements Action {
-
+public class EatAction implements Action{
 	
 	private Player p;
 	private Inventory pockets;
 	
 	
-	public UseAction(Player p) {
+	public EatAction(Player p) {
 		this.p = p;
 		this.pockets = p.getInventory();
 	}
 
 	@Override
 	public void takeAction() {
-		System.out.print("Use what?");
+		System.out.print("Eat what?");
 	}
 
 	
 	public void takeAction(String item) {
 		if (pockets.getPockets().containsKey(item)) {
-			pockets.receiveItem(item).use();
+			if(pockets.receiveItem(item).isEdible()) {
+				pockets.receiveItem(item).use();
+			} else {
+				System.out.println("You can't eat that.");
+			}
 		}
 		else {
 			System.out.println("You don't have that :(");
 		}
 	}
-
 }
