@@ -46,26 +46,39 @@ public class Combat {
 		System.out.println("It is your turn! What will you do?");
 		Scanner keyboard = new Scanner(System.in);		
 		
-		String turn = keyboard.nextLine().toLowerCase();
-		Item item = null;;
 		
-		if (turn.length()>4) {
-			item = p.getPockets().receiveItem(turn.substring(4));
+		boolean done = false;
+		
+		while (!done) {
+			String turn = keyboard.nextLine().toLowerCase();
+			Item item = null;
+			
+			if (turn.length()>4) {
+				item = p.getPockets().receiveItem(turn.substring(4));
+			}
+			if (turn.equals("inventory")) {
+				p.getPockets().displayInventory();
+			}
+		
+			else if (turn.length() > 3 && turn.substring(0,3).equals("eat") && item != null && item.isEdible()) {
+				item.use();
+				done = true;
+			}
+		
+			else if(turn.equals("fight")) {
+				fight(p.getSword());
+				done = true;
+			}
+			
+			else if(turn.equals("help")) {
+				System.out.println("In combat, you can use inventory, take a turn with eat (an item) or fight");
+			}
+			
+			else {
+				System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
+				done = true;
+			}
 		}
-		
-		
-		if (turn.length() > 3 && turn.substring(0,3).equals("eat") && item != null && item.isEdible()) {
-			item.use();
-		}
-		
-		else if(turn.equals("fight")) {
-			fight(p.getSword());
-		}
-		
-		else {
-			System.out.println("The monster is confused at what you are doing. You miss and it hits you anyway.");
-		}
-		
 	}
 	
 	public void fight(Sword sword) {
