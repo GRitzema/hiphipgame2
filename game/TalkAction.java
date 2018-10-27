@@ -41,11 +41,19 @@ public class TalkAction implements Action{
 			String guess = keyboard.nextLine();
 			
 			if (guess.equals(monster.getRiddle().getAnswer())){
-				System.out.println("\"Hmmph, I suppose that answer will suffice.\"");
-				System.out.println("The monster gave you the " +  monster.getKey().returnName()+"!");
-				p.addToInventory(monster.getKey());
-				room.placeMonster(null);
-				System.out.println("The monster vanished into thin air!");
+				if (monster.getStr()) {
+					System.out.println("\"How did you know that???\"");
+					System.out.println("The monster roars and the room around you fades away...");
+					p.setCurrentRoom(room.getDoors("wow"));
+					p.getCurrentRoom().getDoors("forward").setLocked(false);
+					p.setEnding(1);
+				} else {
+					System.out.println("\"Hmmph, I suppose that answer will suffice.\"");
+					System.out.println("The monster gave you the " +  monster.getKey().returnName()+"!");
+					p.addToInventory(monster.getKey());
+					room.placeMonster(null);
+					System.out.println("The monster vanished into thin air!");
+				}
 			}
 			else {
 				Combat battle = new Combat(p, room.getMonster(), game);

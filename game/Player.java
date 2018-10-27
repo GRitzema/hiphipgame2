@@ -16,6 +16,7 @@ public class Player {
 	private Inventory pockets = new Inventory();
 	private int killCount;
 	private int wealth;
+	private int ending;
 	
 	public Player(int health, Sword sword) {
 		this.health = health;
@@ -82,5 +83,13 @@ public class Player {
 
 	public Inventory getInventory() {
 		return pockets;
+	}
+	
+	public void setEnding(int i) {
+		ending = i;
+	}
+	
+	public int getEnding() {
+		return ending;
 	}
 }

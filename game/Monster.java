@@ -9,8 +9,9 @@ public class Monster {
 	private Key key;
 	private String descrip;
 	private Player p;
+	private boolean strength;
 	
-	public Monster(Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String des) {
+	public Monster(boolean s, Player p, String name, int health, Riddle riddle, Room room, Item item, Key key, String des) {
 		this.health = health;
 		this.riddle = riddle;
 		this.room = room;
@@ -18,6 +19,7 @@ public class Monster {
 		this.key = key;
 		this.p = p;
 		descrip = des;
+		strength = s;
 	}
 		
 	public String getDes() {
@@ -62,6 +64,8 @@ public class Monster {
 		return key;
 	}
 
-	
+	public boolean getStr() {
+		return strength;
+	}
 	
 }
