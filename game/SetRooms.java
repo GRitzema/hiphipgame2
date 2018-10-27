@@ -183,7 +183,7 @@ public class SetRooms {
 	}
 	
 	private void setItems() {
-		rooms[0].addInside("wall scroll", new Scroll("wall scroll", "A scroll on the wall", "Welcome to SPHINX!  Monsters have stolen Dr. Ryken's stuffed Perry.  It's up to you to get it back.  Good luck!"));
+		rooms[0].addInside("wall scroll", new Scroll("wall scroll", "A scroll on the wall", "Greetings, adventurer!  Monsters have stolen Dr. Ryken's stuffed Perry.  It's up to you to get it back.  Good luck!"));
 		rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
 		rooms[0].addInside("excalibur", new Sword("diamond", "excalibur", "A mighty, powerful blade", p));
 		
