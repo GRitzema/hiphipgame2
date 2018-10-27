@@ -46,7 +46,7 @@ public class Combat {
 		System.out.println("It is your turn! What will you do?");
 		Scanner keyboard = new Scanner(System.in);		
 		
-		String turn = keyboard.nextLine();
+		String turn = keyboard.nextLine().toLowerCase();
 		Item item = null;;
 		
 		if (turn.length()>4) {
