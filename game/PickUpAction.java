@@ -20,8 +20,15 @@ public class PickUpAction implements Action{
 			p.addToInventory(x);
 			Item y = room.takeOut(substring);
 			System.out.println("You picked up the " + substring);
-		} else {
-			System.out.println("There is no such thing in the room");
+		}
+		else if (substring.equals("money") && room.getCash().getAmount() != 0) {
+			p.setWealth(p.getWealth() + room.getCash().getAmount());
+			System.out.println("You picked up " + room.getCash().getAmount() + " dollars. You now have " + p.getWealth() + " dollars");
+			room.setCash(new Money(0));
+			
+		}
+		 else {
+			System.out.println("There is no such thing in the room.");
 		}  
 		
 		

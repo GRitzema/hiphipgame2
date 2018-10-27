@@ -91,6 +91,7 @@ public class Game {
 	 	over = false;
 	
 		rooms[0].setDescription("a parkinglot. 0");
+		rooms[0].setCash(new Money(5));
 		
 		if (rooms[1].hasMonster()) {
 			rooms[1].setDescription("a hallway. (a monster) at the end of the hallway. 1");

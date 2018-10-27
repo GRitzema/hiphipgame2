@@ -15,12 +15,22 @@ public class Player {
 	private Room currentRoom;
 	private Inventory pockets = new Inventory();
 	private int killCount;
+	private int wealth;
 	
 	public Player(int health, Sword sword) {
 		this.health = health;
 		this.sword = sword;
 		this.maxHealth = health;
 		killCount = 0;
+		this.wealth = 0;
+	}
+
+	public int getWealth() {
+		return wealth;
+	}
+
+	public void setWealth(int wealth) {
+		this.wealth = wealth;
 	}
 
 	public void setCurrentRoom(Room r) {
