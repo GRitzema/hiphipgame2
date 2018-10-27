@@ -129,20 +129,13 @@ public class SetRooms {
         Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
         rooms[12].placeSphinx(new Sphinx(riddle8, key5, " licks a lollipop"));
         
-<<<<<<< HEAD
+
         Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
         rooms[12].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                   
-=======
+
         rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
 
-<<<<<<< HEAD
-=======
-=======
-          
->>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
->>>>>>> 3bc7d1765270c9fd6a63d4615640000539331125
->>>>>>> 1528d6dc1f521463f69beb91e9068c6aeb0175ac
 	}
 	
 	private void setDesc() {
