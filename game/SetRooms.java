@@ -144,7 +144,7 @@ public class SetRooms {
 	
 	private void setDesc() {
 				
-		rooms[0].setDescription("a parkinglot.");
+		rooms[0].setDescription("a parking lot.");
 		rooms[1].setDescription("a hallway.");
 		rooms[2].setDescription("a waiting room. There is a vending machine in the corner.");
 		rooms[3].setDescription("a storage.");

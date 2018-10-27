@@ -25,6 +25,7 @@ public class HelpAction implements Action {
     	System.out.println("pickup ___ : pickup the thing in the room");
     	System.out.println("eat ___ : eat a food item in your inventory");
     	System.out.println("shop : shop in a shop in in the room");
+    	System.out.println("check ___ : inspect an item in your inventory");
 
 	}
 	/**
