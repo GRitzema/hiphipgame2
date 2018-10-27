@@ -2,7 +2,14 @@ package game;
 
 public class CheckAction implements Action{
 
+	/**
+	 * The player in the game.
+	 */
 	private Player p;
+	
+	/**
+	 * The pockets that the player has.
+	 */
 	private Inventory pockets;
 	
 	public CheckAction(Player p) {
@@ -16,7 +23,9 @@ public class CheckAction implements Action{
 		
 	}
 
-	
+	/**
+	 * Giving the description of the item.
+	 */
 	public void takeAction(String substring) {
 		if (pockets.receiveItem(substring) != null) {
 			System.out.println(pockets.receiveItem(substring).getDescription());
