@@ -20,6 +20,7 @@ public class Shop {
 	 */
 	public Shop(String name, HashMap<String, Food> store, boolean cookingService) {
 		this.store = store;
+		this.cookingService = cookingService;
 	}
 	
 	/**
@@ -47,7 +48,6 @@ public class Shop {
 	public void displayMenu() {
 		String menu = "MENU \t\t PRICE \n";
 		if (!store.isEmpty()) {
-			Object [] arr = store.values().toArray();
 			for (Food i : store.values()) {
 	    		menu = menu + i.returnName() + " \t " + i.getPrice() + "\n";
 	    	}
