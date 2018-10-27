@@ -68,31 +68,20 @@ public class Game {
     
     private void setRooms() {
     	
-    	SetRooms set = new SetRooms(rooms);
+    	SetRooms set = new SetRooms(rooms, p);
     	set.set();
     	
     	over = false;   
     }
     
     private void populateRooms() {
-    	//rooms[0].addInside(new Money(5));
-    	//rooms[3].addInside(new Money(10));
-
-    	//rooms[0].addInside("money1", new Money(5, "a parking meter with a few coins in it"));
-    	//rooms[3].addInside("money2", new Money(10, "a small pile of money in a jar"));
-
-    	//rooms[7].addInside(new Sword());
-    	//rooms[4].addInside(new Sword());
-    	//rooms[6].addInside(new Food());
-
-
+    	
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
         Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
         
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
         
-        rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
        
         rooms[2].setKey(key1);
         rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "rattles its handcuffs threateningly"));
