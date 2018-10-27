@@ -60,7 +60,7 @@ public class ShopAction implements Action {
 	public void buy() {
 		theShop.displayMenu();
 		System.out.print("What would you like to buy? ");
-		String order = keyboard.nextLine();
+		String order = keyboard.nextLine().toLowerCase();
 		HashMap<String, Food> stuff = theShop.getStore();
 		if (stuff.containsKey(order) && (stuff.get(order).getPrice() <= p.getWealth())){
 			cart.put(order, theShop.getStore().get(order));
