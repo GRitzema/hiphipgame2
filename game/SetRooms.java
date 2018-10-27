@@ -3,7 +3,7 @@ package game;
 /**
  * SetRooms.java
  * 
- * Class to set up rooms to refactor populateRooms() in game
+ * Class to set up rooms for refactoring
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
@@ -11,16 +11,32 @@ package game;
 
 public class SetRooms {
 	
+	/**
+	 * An array of all of the rooms in the layout
+	 */
 	private Room[] rooms;
 
+	/**
+	 * The current player
+	 */
 	private Player p;
 
+	/**
+	 * Constructor
+	 * @param r: an array of all of the rooms in the layout
+	 * @param p: the current player
+	 */
 	public SetRooms(Room[] r, Player p) {
 		this.p = p;
-		rooms = r;
-		
+		rooms = r;	
 	}
 	
+	/**
+	 * Sets up all of the rooms and their connections to other rooms
+	 * Calls the other methods in the class
+	 * Also sets up riddles, keys, sphinxes and monsters in an organized fashion
+	 * POSTCONDITION: the rooms are now populated
+	 */
 	public void set() {
 
     	rooms[0].setRoom("forward",rooms[1]);
@@ -142,6 +158,10 @@ public class SetRooms {
 
 	}
 	
+	/**
+	 * Sets up the descriptions for all of the rooms
+	 * POSTCONDITION: the rooms have new descriptions
+	 */
 	private void setDesc() {
 				
 		rooms[0].setDescription("a parking lot.");
@@ -176,12 +196,20 @@ public class SetRooms {
 		rooms[26].setDescription("a bedroom. Dr. Ryken's Perry is in a safe box.");
 	}
 	
+	/**
+	 * Gives money to the rooms that have it
+	 * POSTCONDITION: the money in the rooms is now set
+	 */
 	private void setMoney() {
 		rooms[0].setCash(new Money(30));
 		rooms[3].setCash(new Money(15));
 		rooms[4].setCash(new Money(20));
 	}
 	
+	/**
+	 * Sets items in the rooms (swords, scrolls, food, etc.)
+	 * POSTCONDITION: The rooms now have items
+	 */
 	private void setItems() {
 		
 		rooms[0].addInside("wall scroll", new Scroll("wall scroll", "A scroll on the wall", "Greetings, adventurer!  Monsters have stolen Dr. Ryken's stuffed Perry.  It's up to you to get it back.  Good luck!"));
