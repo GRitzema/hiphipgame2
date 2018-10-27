@@ -194,6 +194,14 @@ public class Room {
 		return theMonster;
 	}
 	
+	public boolean hasSph() {
+		if (sph == null) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
 	public void placeSphinx(Sphinx newSph) {
 		sph = newSph;
 	}

@@ -40,7 +40,7 @@ public class Game {
         
         for (int i = 0; i < rooms.length; i++) {
             rooms[i] = new Room("a room.", "There is nothing of interest.", false, new HashMap<String,Item>());          
-            if (i == 2 || i == 6 || i == 10) {
+            if (i == 2 || i == 6 || i == 13 || i == 14 || i == 15 || i == 26 || i == 17 || i == 21) {
             	rooms[i].setLocked(true);
             }
         }
