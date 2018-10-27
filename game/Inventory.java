@@ -51,7 +51,11 @@ public class Inventory {
 		if (!pockets.isEmpty()) {
 		
 			Object[] arr = pockets.keySet().toArray();
+<<<<<<< HEAD
+			for (int j = 0; j<arr.length; j++) {				
+=======
 			for (int j = 0; j<arr.length; j++) {
+>>>>>>> 31b36156dbc8fd1ec7a96e8d878a71098d66464f
 				if(!(((String) arr[j]).substring(0,6).equals("sphinx"))) {
 					System.out.println("    " + i + ". " + arr[j]);
 					i++;
@@ -79,12 +83,16 @@ public class Inventory {
 	/**
 	 * Returns an item of a specified string
 	 * @param it: the key to correspond to the returned item
-	 * @return 
+	 * @return the corresponding item (null if it does not exist)
 	 */
 	public Item receiveItem(String it) {
 		return pockets.get(it);
 	}
 
+	/**
+	 * Getter method for the HashMap
+	 * @return the HashMap representing the inventory
+	 */
 	public HashMap<String, Item> getPockets() {
 		return pockets;
 	}

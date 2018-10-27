@@ -1,10 +1,31 @@
 package game;
 
+/**
+ * Player.java
+ * 
+ * Class to represent the game's current player
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
 
 public class Player {
+	
+	/**
+	 * The player's current health
+	 */
 	private int health;
+	
+	/**
+	 * The player's maximum potential health
+	 */
 	private int maxHealth;
+	
+	/**
+	 * The player's current equipped sword
+	 */
 	private Sword sword;
+	
 	/**
 	 * The current room the user is in. This serves two
 	 * purposes-- it is our only permanent connection to
@@ -13,11 +34,28 @@ public class Player {
 	 * the state by representing the user's current location.
 	 */
 	private Room currentRoom;
+	
+	/**
+	 * The player's current inventory (initially empty)
+	 */
 	private Inventory pockets = new Inventory();
+	
+	/**
+	 * The number of monsters the player has defeated
+	 */
 	private int killCount;
+	
+	/**
+	 * The amount of money the player has
+	 */
 	private int wealth;
 	private int ending;
 	
+	/**
+	 * Constructor
+	 * @param health: the players current health
+	 * @param sword: the player's current sword
+	 */
 	public Player(int health, Sword sword) {
 		this.health = health;
 		this.sword = sword;
@@ -26,22 +64,44 @@ public class Player {
 		this.wealth = 0;
 	}
 
+	/**
+	 * Getter method for wealth
+	 * @return the players current wealth
+	 */
 	public int getWealth() {
 		return wealth;
 	}
 
+	/**
+	 * Setter method for wealth
+	 * @param wealth: the player's new wealth
+	 * POSTCONDITION: wealth is now changed
+	 */
 	public void setWealth(int wealth) {
 		this.wealth = wealth;
 	}
 
+	/**
+	 * Setter method for the player's current room
+	 * @param r: the new room that the player is in
+	 * POSTCONDITION: the current room is now changed
+	 */
 	public void setCurrentRoom(Room r) {
 		currentRoom = r;
 	}
 	
+	/**
+	 * Getter method for the player's current room
+	 * @return the current room that the player is in
+	 */
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
 	
+	/**
+	 * Getter method for the player's current inventory
+	 * @return the player's current inventory
+	 */
 	public Inventory getPockets() { return pockets;}
 	
 	public int getHealth() {
