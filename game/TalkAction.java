@@ -60,8 +60,13 @@ public class TalkAction implements Action{
 			
 			if (guess.equals(sph.getRiddle().getAnswer())){
 				System.out.println("\"Well done, you have answered my riddle.  You may pass.\"");
-				p.addToInventory(sph.getKey());
-				room.placeMonster(null);
+				room.placeSphinx(null);
+				if(sph.getKey() != null) {
+					p.addToInventory(sph.getKey());
+					System.out.println("The sphinx gives you a key.");
+				} else {
+					p.getCurrentRoom().getDoors("forward").setLocked(false);
+				}
 				System.out.println("The sphinx vanished into thin air!");
 			} else {
 				System.out.println("\"That answer is not correct...\"");
