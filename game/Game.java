@@ -75,34 +75,7 @@ public class Game {
     }
     
     private void populateRooms() {
-<<<<<<< HEAD
-
     	
-        Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
-        rooms[2].setKey(key1);
-        Riddle riddle1 = new Riddle("What is Wheaton's motto?", "intentional community");
-        
-        Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences", "Item");
-        
-       
-        rooms[2].setKey(key1);
-        rooms[1].placeMonster(new Monster(p, "Public Safety", 20, riddle1, rooms[1], oldScroll, key1, "rattles its handcuffs threateningly"));
-        
-        
-        Key key2 = new Key("Master Key", "a master key on the floor");
-        rooms[6].setKey(key2);
-        Riddle riddle2 = new Riddle("What is Dr. Pohly's second occupation?", "DJ");
-        rooms[5].placeMonster(new Monster(p, "Chaplain Blackmon", 500, riddle2, rooms[5], null, key2, "flips through his Bible"));
-       
-        Key key3 = new Key("Golden Key", "a golden key on the floor");
-        rooms[10].setKey(key3);
-        Riddle riddle3 = new Riddle("asdf", "jkl");
-        rooms[9].placeMonster(new Monster(p, "Satan", 100, riddle3, rooms[9], null, key3, "twirls his trident"));
-	
-
-=======
-    	
->>>>>>> e129e0c8c93e23bd04e3a23e3d74fb36574b70aa
         HashMap<String, Food> vending = new HashMap<String, Food>();
 		Shop vendingMachine = new Shop("Vending Machine", vending, false);
 		vendingMachine.addToShop(new Food(5, "Doritos", "Restore 5 hp", p, 2), 3);
