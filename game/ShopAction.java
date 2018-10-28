@@ -45,7 +45,6 @@ public class ShopAction implements Action {
 	 */
 	public ShopAction(Player p) {
 		this.p = p;
-		this.theShop = p.getCurrentRoom().getTheShop();
 		this.bag = p.getInventory();
 	}
 
@@ -54,6 +53,7 @@ public class ShopAction implements Action {
 	 * POSTCONDITION: There are new foods in the inventory.
 	 */
 	public void takeAction() {
+		this.theShop = p.getCurrentRoom().getTheShop();
 		if (theShop == null) {
 			System.out.println("Nothing can be bought in this room.");
 		} else {		

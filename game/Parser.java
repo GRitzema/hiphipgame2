@@ -55,6 +55,7 @@ public class Parser {
         actions.put("read", new ReadAction(player));
         actions.put("check", new CheckAction(player));
         actions.put("open", new EndGame(player, game));
+        actions.put("equip", new EquipAction(player));
     }
 
     /**
