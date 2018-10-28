@@ -106,7 +106,7 @@ public class SetRooms {
         Key key1 = new Key("handcuffs key", "a handcuffs key on the floor");
         rooms[2].setKey(key1);
         
-        Key key2 = new Key("Master key", "a master key on the floor");
+        Key key2 = new Key("master key", "a master key on the floor");
         rooms[6].setKey(key2);
         
         
@@ -117,44 +117,48 @@ public class SetRooms {
         rooms[21].setKey(key8);
         
         
-        Key key6 = new Key("Final Key", "a plain key on the floor.  It seems to glow a bit...");
+        Key key6 = new Key("final key", "a plain key on the floor.  It seems to glow a bit...");
         rooms[26].setKey(key6);
       
         
         //Sets up riddles and monsters/sphinxes
         
-        Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase?", "intentional community");
+        Riddle riddle1 = new Riddle("What is Wheaton College's catchphrase? (The answer is...)", "intentional community");
         Scroll oldScroll = new Scroll("old scroll", "A dusty scroll", "Your actions have consequences");
         rooms[1].placeMonster(new Monster(false, p, "a monster", 20, riddle1, rooms[1], oldScroll, key1, " bobs its head along to DJ Pohly's hot new album"));
         
-        Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job?", "dj");
-        rooms[5].placeMonster(new Monster(false, p, "a monster", 500, riddle2, rooms[5], null, key2, " flexes threateningly"));
+        Riddle riddle2 = new Riddle("What should be Dr. Pohly's side job? (The answer is a...)", "dj");
+        Sword forestBlade = new Sword("wood", "forest blade", "A wood, toy sword", p);
+        rooms[5].placeMonster(new Monster(false, p, "a monster", 50, riddle2, rooms[5], forestBlade, key2, " flexes threateningly"));
                
-        Riddle riddle3 = new Riddle("What's the best movie?", "land before time 2");
-        rooms[16].placeMonster(new Monster(true, p, "a monster", 100, riddle3, rooms[16], null, key7, " adjusts his dinosaur T-Shirt"));
+        Riddle riddle3 = new Riddle("What's the best movie? (The answer is...)", "land before time 2");
+        Food chickenParm = new Food(50, "chicken parmesan", "Restores 50 hp", p, 50);
+        rooms[16].placeMonster(new Monster(true, p, "a monster", 70, riddle3, rooms[16], chickenParm, key7, " adjusts his dinosaur T-Shirt"));
                 
-        Riddle riddle4 = new Riddle("What's my middle name", "henry");
-        rooms[20].placeMonster(new Monster(true, p, "a monster", 100, riddle4, rooms[20], null, key8, " poses fabulously"));
+        Riddle riddle4 = new Riddle("What's my middle name? (The answer is...)", "henry");
+        Sword excaliburBlade = new Sword("diamond", "excalibur blade", "The ultimate blade! Nothing can stop you now!", p);
+        rooms[20].placeMonster(new Monster(true, p, "a monster", 150, riddle4, rooms[20], excaliburBlade, key8, " poses fabulously"));
         
-        Riddle riddle5 = new Riddle("Is the answer to this question \"no\"?", "i don't no");
-        rooms[24].placeMonster(new Monster(true, p, "a monster", 100, riddle5, rooms[24], null, key6, " contemplates existance"));
+        Riddle riddle5 = new Riddle("Is the answer to this question \"no\"? (The answer is...)", "i don't no");
+        Scroll crumpledScroll = new Scroll("crumpled scroll", "A bearly readable scroll", "Dr. Ryken has no idea the kind of power Perry holds. Anyone who stares into its eyes is not the same person");
+        rooms[24].placeMonster(new Monster(true, p, "a monster", 300, riddle5, rooms[24], crumpledScroll, key6, " contemplates existance"));
                 
         
-        Riddle riddle6 = new Riddle("What walks on four legs in the morning, two in the afternoon, and three in the evening?", "a man");
+        Riddle riddle6 = new Riddle("What walks on four legs in the morning, two in the afternoon, and three in the evening? (The answer is a...)", "human");
         rooms[12].placeSphinx(new Sphinx(riddle6, null, " sits on a mountain"));
 
-        Riddle riddle7 = new Riddle("What is round, brown, and sticky?", "a stick");
+        Riddle riddle7 = new Riddle("What is round, brown, and sticky? (The answer is a...)", "stick");
         rooms[13].placeSphinx(new Sphinx(riddle7, null, " climbs up and down a tree"));
 
         
-        Riddle riddle8 = new Riddle("What tastes better than it smells?", "a tongue");
+        Riddle riddle8 = new Riddle("What tastes better than it smells? (The answer is a...)", "tongue");
         rooms[14].placeSphinx(new Sphinx(riddle8, null, " licks a lollipop"));
 
-        Riddle riddle9 = new Riddle("What is full of holes, but can still hold water?", "a sponge");
+        Riddle riddle9 = new Riddle("What is full of holes, but can still hold water? ", "sponge");
         rooms[15].placeSphinx(new Sphinx(riddle9, key6, " watches Nickelodeon"));
                          
 
-        rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
+        
 
 	}
 	
@@ -201,9 +205,14 @@ public class SetRooms {
 	 * POSTCONDITION: the money in the rooms is now set.
 	 */
 	private void setMoney() {
-		rooms[0].setCash(new Money(30));
+		rooms[0].setCash(new Money(20));
 		rooms[3].setCash(new Money(15));
 		rooms[4].setCash(new Money(20));
+		rooms[19].setCash(new Money(18));
+		rooms[21].setCash(new Money(12));
+		rooms[22].setCash(new Money(16));
+		rooms[25].setCash(new Money(1000000));
+		
 	}
 	
 	/**
@@ -214,15 +223,21 @@ public class SetRooms {
 		
 		rooms[0].addInside("wall scroll", new Scroll("wall scroll", "A scroll on the wall", "Greetings, adventurer!  Monsters have stolen Dr. Ryken's stuffed Perry.  It's up to you to get it back.  Good luck!"));
 		rooms[0].addInside("mushroom", new Food(10, "mushroom", "Restores 10 hp", p, 10));
-		rooms[0].addInside("excalibur", new Sword("diamond", "excalibur", "A mighty, powerful blade", p));
+		
 		
 		rooms[3].addInside("archive scroll", new Scroll("archive scroll", "A scroll in storage", "...Legend tells of a shortcut room between rooms... Who knows how to get to it, though."));
 		
 		rooms[11].addInside("cave scroll", new Scroll("cave scroll", "A scroll in a cave", "You have chosen the Path of Strength.  Your intellect will do you no good here."));
+		rooms[11].addInside("bananas", new Food(25, "bananas", "Restores 25 hp", p, 25));
 		
 		rooms[10].addInside("tree scroll", new Scroll("tree scroll", "A scroll on a tree", "You have chosen the Path of Knowledge.  Your strength will do you no good here."));
 		
+		rooms[17].addInside("knight's blade", new Sword("iron", "knight's blade", "The most average of blades", p));
+		
 		rooms[19].addInside("wet scroll", new Scroll("wet scroll", "A scroll in a wet cave", "The shortcut room has been discovered!  To find it, simply a-\nThe rest of the scroll has been destroyed by water."));
+		
+		rooms[23].addInside("junk sword", new Sword("wood", "junk blade", "A plastic sword. Probably a broken toy", p));
+		rooms[23].addInside("a single cheeto", new Food(1, "a single cheeto", "Restores 1 hp", p, 1));
 	}
 
 }

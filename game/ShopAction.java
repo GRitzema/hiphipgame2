@@ -129,11 +129,11 @@ public class ShopAction implements Action {
 			hp = x.getHp() + y.getHp() + (x.getHp()*(5/100)) + (y.getHp()*(5/100));
 			name = x.returnName() + "-" + y.returnName();
 			description = "Restores " + hp + " hp";
-			price = x.getPrice() + y.getPrice() + 1;
+			price = x.getPrice() + y.getPrice();
 			newFood = new Food(hp, name, description, p, price);
 		} else if (x != null && y == null) {
 			hp = x.getHp() + (x.getHp()*(5/100));
-			name = "Double " + x.returnName();
+			name = "double " + x.returnName();
 			description = "Restores " + hp + " hp";
 			price = x.getPrice() + 1;
 			newFood = new Food(hp, name, description, p, price);
@@ -162,7 +162,7 @@ public class ShopAction implements Action {
 			} else if (ingredient.equals("none")) {
 			} else {
 				System.out.println("There is no such food in your cart.");
-				chooseIngredient(instruction, note);
+				theIngredient = chooseIngredient(instruction, note);
 			}		
 		}
 		return theIngredient;
@@ -208,6 +208,7 @@ public class ShopAction implements Action {
 					String ans = prepHelper();
 					if (ans.equals("1")) {
 						ingredient1 = chooseIngredient("", "");
+						cart.remove(ingredient1.returnName());
 					} else if (ans.equals("2")){
 						buy();
 						buyAgain();
@@ -218,7 +219,7 @@ public class ShopAction implements Action {
 					ingredient1 = chooseIngredient("the first", "");
 					cart.remove(ingredient1.returnName());
 					ingredient2 = chooseIngredient("the second", "(Type \"none\" if you don't need more ingredient)");
-					cart.remove(ingredient2.returnName());
+
 				}
 				Food dish = cook(ingredient1, ingredient2);
 				if (dish != null) {

@@ -48,10 +48,11 @@ public class Game {
             }
         }
         
+        p.setWealth(30);
         setRooms();
         populateShops();
 
-        p.setCurrentRoom(rooms[0]);
+        p.setCurrentRoom(rooms[6]);
 
     }
     

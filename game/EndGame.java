@@ -72,6 +72,8 @@ public class EndGame implements Action {
 			kills();
 		}
 		
+		System.out.println("In your travels, you collected " + p.getWealth() + " dollars.  You got through with " + p.getHealth() + " hp, and killed " + p.getKills() + " monsters.");
+		
 		switch (p.getEnding()) {
 		case 1:
 			System.out.println("You successfully outsmarted the monsters on the Path of Strength and found the shortcut room!");
@@ -83,6 +85,8 @@ public class EndGame implements Action {
 			System.out.println("You outsmarted the sphinxes on the Path of Knowledge!  Congratulations, wise one.");
 			break;
 		}
+		
+		
 		
 		System.out.println("\n Thank you for playing SPHINX! \n GAME OVER");
 		g.finishGame();

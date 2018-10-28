@@ -53,8 +53,10 @@ public class Combat {
 		if (m.getHealth() >= 0) {
 			double damage = Math.round(Math.random()*10);
 			p.setHealth(p.getHealth()-damage);
-		System.out.println("The monster inflicted " + damage + " damage!");
-		System.out.println("You now have " + p.getHealth() + " hp!");
+			System.out.println("The monster inflicted " + damage + " damage!");
+			if (p.getHealth() > 0) {
+				System.out.println("You now have " + p.getHealth() + " hp!");
+			}
 		}
 	}
 	
@@ -112,7 +114,7 @@ public class Combat {
 	 */
 	public void fight(Sword sword) {
 		double damage = 0;
-		if (Math.random()<=0.2) {
+		if (Math.random()<=0.1) {
 			System.out.println("You missed the monster!");
 		}
 		else {
@@ -146,12 +148,13 @@ public class Combat {
 	public void engage() {	
 		
 		System.out.println("Mwahaha, your ignorance shall make you pay!");
-		while(m.getHealth() >= 0 && p.getHealth()>=0) {
+		while(m.getHealth() >= 0 && p.getHealth()>0) {
 			playerCombat();
 			monsterCombat();
 		}
 		if (p.getHealth() <=0) {
 			System.out.println("You were defeated!");
+			System.out.println("GAME OVER");
 			game.finishGame();
 		}
 		m.defeat();
