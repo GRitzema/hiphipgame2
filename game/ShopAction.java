@@ -95,6 +95,7 @@ public class ShopAction implements Action {
 
 	/**
 	 * A method for buying more objects and cooking foods.
+	 * If the shop has a cooking service, it will allow player to cook the foods in the shopping cart.
 	 * POSTCONDITION: There is a new food in the inventory and the shopping cart.
 	 */
 	public void buyAgain() {

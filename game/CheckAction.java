@@ -16,6 +16,10 @@ public class CheckAction implements Action{
 	 */
 	private Inventory pockets;
 	
+	/**
+	 * Initializing check action class.
+	 * @param p The player in the game.
+	 */
 	public CheckAction(Player p) {
 		this.pockets = p.getPockets();
 	}

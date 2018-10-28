@@ -3,7 +3,7 @@ package game;
 /**
  * SetRooms.java
  * 
- * Class to set up rooms for refactoring
+ * Class to set up rooms for refactoring.
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
@@ -22,9 +22,9 @@ public class SetRooms {
 	private Player p;
 
 	/**
-	 * Constructor
-	 * @param r: an array of all of the rooms in the layout
-	 * @param p: the current player
+	 * Constructor.
+	 * @param r: an array of all of the rooms in the layout.
+	 * @param p: the current player.
 	 */
 	public SetRooms(Room[] r, Player p) {
 		this.p = p;
@@ -32,10 +32,10 @@ public class SetRooms {
 	}
 	
 	/**
-	 * Sets up all of the rooms and their connections to other rooms
-	 * Calls the other methods in the class
-	 * Also sets up riddles, keys, sphinxes and monsters in an organized fashion
-	 * POSTCONDITION: the rooms are now populated
+	 * Sets up all of the rooms and their connections to other rooms.
+	 * Calls the other methods in the class.
+	 * Also sets up riddles, keys, sphinxes and monsters in an organized fashion.
+	 * POSTCONDITION: the rooms are now populated.
 	 */
 	public void set() {
 
@@ -159,8 +159,8 @@ public class SetRooms {
 	}
 	
 	/**
-	 * Sets up the descriptions for all of the rooms
-	 * POSTCONDITION: the rooms have new descriptions
+	 * Sets up the descriptions for all of the rooms.
+	 * POSTCONDITION: the rooms have new descriptions.
 	 */
 	private void setDesc() {
 				
@@ -197,8 +197,8 @@ public class SetRooms {
 	}
 	
 	/**
-	 * Gives money to the rooms that have it
-	 * POSTCONDITION: the money in the rooms is now set
+	 * Gives money to the rooms that have it.
+	 * POSTCONDITION: the money in the rooms is now set.
 	 */
 	private void setMoney() {
 		rooms[0].setCash(new Money(30));
@@ -208,7 +208,7 @@ public class SetRooms {
 	
 	/**
 	 * Sets items in the rooms (swords, scrolls, food, etc.)
-	 * POSTCONDITION: The rooms now have items
+	 * POSTCONDITION: The rooms now have items.
 	 */
 	private void setItems() {
 		
