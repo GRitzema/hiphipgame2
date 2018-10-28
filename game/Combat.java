@@ -1,5 +1,14 @@
 package game;
 
+/**
+ * Combat.java
+ * 
+ * Class to implement the action to fight a monster.
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
+
 import java.util.Scanner;
 
 public class Combat {
@@ -18,6 +27,11 @@ public class Combat {
 	 * The game being played.
 	 */
 	private Game game;
+
+	/**
+	 * The input from user.
+	 */
+	private Scanner keyboard;
 	
 	/**
 	 * Constructor.
@@ -31,7 +45,10 @@ public class Combat {
 		this.game = game;
 	}
 	
-	
+	/**
+	 * The monster attacks the player.
+	 * POSTCONDITION: Decreasing the player's health point.
+	 */
 	public void monsterCombat() {		
 		if (m.getHealth() >= 0) {
 			double damage = Math.round(Math.random()*10);
@@ -41,10 +58,14 @@ public class Combat {
 		}
 	}
 	
+	/**
+	 * The player's action toward the monster.
+	 * POSTCONDITION: Printing out instructions or descriptions based on the user's choice.
+	 */
 	public void playerCombat() {
 		
 		System.out.println("It is your turn! What will you do?");
-		Scanner keyboard = new Scanner(System.in);		
+		keyboard = new Scanner(System.in);		
 		
 		
 		boolean done = false;
@@ -81,6 +102,11 @@ public class Combat {
 		}
 	}
 	
+	/**
+	 * The player fights the monster.
+	 * @param sword The sword used for fighting.
+	 * POSTCONDITION: Decreasing the monster's health point.
+	 */
 	public void fight(Sword sword) {
 		double damage = 0;
 		if (Math.random()<=0.2) {
@@ -108,6 +134,10 @@ public class Combat {
 		}
 	}
 	
+	/**
+	 * The monster's action toward the player.
+	 * POSTCONDITION: Either the player's health is decreased or the player is defeated.
+	 */
 	public void engage() {	
 		
 		System.out.println("Mwahaha, your ignorance shall make you pay!");

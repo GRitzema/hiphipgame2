@@ -1,5 +1,14 @@
 package game;
 
+/**
+ * ShopAction.java
+ * 
+ * Class to implement shopping in the shop.
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -42,6 +51,7 @@ public class ShopAction implements Action {
 
 	/**
 	 * Buy foods in the shop and cook them if the shop has a cooking service.
+	 * POSTCONDITION: There are new foods in the inventory.
 	 */
 	public void takeAction() {
 		if (theShop == null) {
@@ -53,12 +63,16 @@ public class ShopAction implements Action {
 		}
 	}
 
+	/**
+	 * Printing out a message.
+	 */
 	public void takeAction(String substring) { 
 		System.out.println("Sorry, " + substring + " is currently not available in Wheaton.");		
 	}
 	
 	/**
 	 * A method for buying the first object.
+	 * POSTCONDITION: There is a new food in the inventory and the shopping cart.
 	 */
 	public void buy() {
 		theShop.displayMenu();
@@ -80,7 +94,8 @@ public class ShopAction implements Action {
 	}
 
 	/**
-	 * A method for buying more objects.
+	 * A method for buying more objects and cooking foods.
+	 * POSTCONDITION: There is a new food in the inventory and the shopping cart.
 	 */
 	public void buyAgain() {
 		System.out.println("Would you like to buy something else? (y/n)");
@@ -154,6 +169,7 @@ public class ShopAction implements Action {
 	
 	/**
 	 * Cooking foods.
+	 * @return The answer that the user gives.
 	 */
 	public String offer() {
 		String answer;
@@ -179,6 +195,7 @@ public class ShopAction implements Action {
 	
 	/**
 	 * Choosing ingredients to cook.
+	 * POSTCONDITION: The ingredients to cook are chosen.
 	 */
 	public void cookingPrep() {
 		if (theShop.hasCookingService()) {

@@ -3,7 +3,7 @@ package game;
 /**
  * Scroll.java
  * 
- * Class to represent the scroll item
+ * Class to represent the scroll item.
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
@@ -12,23 +12,23 @@ package game;
 public class Scroll implements Item {
 
 	/**
-	 * The name of the scroll
+	 * The name of the scroll.
 	 */
 	private String name;
 	
 	/**
-	 * The description of the scroll
+	 * The description of the scroll.
 	 */
 	private String description;
 	
 	/**
-	 * What the scroll says
+	 * What the scroll says.
 	 */
 	private String hint;	
 	
 	/**
-	 * Constructor
-	 * Refer to instance variables
+	 * Constructor.
+	 * Refer to instance variables.
 	 * @param name
 	 * @param description
 	 * @param hint
@@ -40,32 +40,33 @@ public class Scroll implements Item {
 	}
 	
 	/**
-	 * Getter method for the description
-	 * @return the description of the scroll
+	 * Getter method for the description.
+	 * @return the description of the scroll.
 	 */
 	public String getDescription() {
 		return description;
 	}
 
 	/**
-	 * Getter method for the name
-	 * @return the name of the scroll
+	 * Getter method for the name.
+	 * @return the name of the scroll.
 	 */
 	public String returnName() {		
 		return name;
 	}
 
 	/**
-	 * Determines if the scroll is edible
-	 * @return false (since it is not edible)
+	 * Determines if the scroll is edible.
+	 * @return false (since it is not edible).
 	 */
 	public boolean isEdible() {
 		return false;
 	}
 
 	/**
-	 * Lets the player read the scroll
-	 * Prints out the scroll's hint
+	 * Lets the player read the scroll.
+	 * Prints out the scroll's hint.
+	 * POSTCONDITION: Prints out the hint on the scroll.
 	 */
 	public void use() {
 		System.out.println("The scroll reads:");

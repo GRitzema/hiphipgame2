@@ -3,7 +3,7 @@ package game;
 /**
  * ReadAction.java
  * 
- * Class to implement reading scrolls
+ * Class to implement reading scrolls.
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
@@ -12,35 +12,30 @@ package game;
 public class ReadAction implements Action {
 
 	/**
-	 * the current player
-	 */
-	private Player p;
-	
-	/**
-	 * The player's inventory
+	 * The player's inventory.
 	 */
 	private Inventory pockets;
 	
 	/**
-	 * Constructor
-	 * @param p: the current player
+	 * Constructor.
+	 * @param p: the current player.
 	 */
 	public ReadAction(Player p) {
-		this.p = p;
 		this.pockets = p.getInventory();
 	}
 
 	/**
-	 * Prints an error message
+	 * Prints an error message.
 	 */
 	public void takeAction() {
 		System.out.print("Read what?");
 	}
 
 	/**
-	 * Reads a scroll's message
-	 * If the second word is scroll and it is in the inventory, the message is read
-	 * Calls the use method to do so
+	 * Reads a scroll's message.
+	 * If the second word is scroll and it is in the inventory, the message is read.
+	 * Calls the use method to do so.
+	 * POSTCONDITION: Showing the content of the scroll.
 	 */
 	public void takeAction(String item) {
 		String hold = item.substring(item.indexOf(' ') + 1);    //the second word and on of item

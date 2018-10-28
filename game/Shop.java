@@ -1,5 +1,14 @@
 package game;
 
+/**
+ * Shop.java
+ * 
+ * Class to describes shops.
+ * 
+ * @author Grace Ritzema, Lina Widodo, and Andy Peterson
+ * Oct 26, 2018
+ */
+
 import java.util.HashMap;
 
 public class Shop {
@@ -15,7 +24,11 @@ public class Shop {
 	private boolean cookingService;
 	
 	/**
-	 * Initializing the shop.
+	 * Constructor. 
+	 * Refer to the instance variables.
+	 * @param name
+	 * @param store
+	 * @param cookingService
 	 */
 	public Shop(String name, HashMap<String, Food> store, boolean cookingService) {
 		this.store = store;
@@ -24,9 +37,8 @@ public class Shop {
 	
 	/**
 	 * Adding items to the shop.
-	 * @param foodName The name of the food.
 	 * @param x        The item that wants to be added.
-	 * @param amount   The amount of the item available in the shop.
+	 * POSTCONDITION: There is a new food in the shop.
 	 */
 	public void addToShop(Food x) {
 		store.put(x.returnName(), x);	
@@ -35,6 +47,7 @@ public class Shop {
 	/**
 	 * Removing items from the shop.
 	 * @param x The item that wants to be removed.
+	 * POSTCONDITION: The item in the shop is removed.
 	 */
 	public void removeFromShop(Food x) {
 		if (store.containsKey(x.returnName()))
@@ -43,6 +56,7 @@ public class Shop {
 	
 	/**
 	 * Displaying the menu.
+	 * POSTCONDITION: The menu of the shop is printed out.
 	 */
 	public void displayMenu() {
 		String menu = "MENU \t\t PRICE \n";

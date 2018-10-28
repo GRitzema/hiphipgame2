@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * TalkAction.java
  * 
- * Class to implement talking to monsters and sphinxes
+ * Class to implement talking to monsters and sphinxes.
  * 
  * @author Grace Ritzema, Lina Widodo, and Andy Peterson
  * Oct 26, 2018
