@@ -26,7 +26,7 @@ public class HelpAction implements Action {
     	System.out.println("unlock: unlock the door that is locked"); 
     	System.out.println("pickup ___ : pickup the thing in the room");
     	System.out.println("eat ___ : eat a food item in your inventory");
-    	System.out.println("shop : shop in a shop in in the room");
+    	System.out.println("shop : shop in a shop in the room");
     	System.out.println("check ___ : inspect an item in your inventory");
     	System.out.println("\nIn combat, you can use inventory, take a turn with eat (an item) or fight");
     	System.out.println("Equip better swords to deal bigger punishment to monsters!");

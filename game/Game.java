@@ -95,7 +95,6 @@ public class Game {
      * POSTCONDITION: There are shops in the game's rooms.
      */
     private void populateShops() {
-
         HashMap<String, Food> vending = new HashMap<String, Food>(); // The map of foods available
 		Shop vendingMachine = new Shop("Vending Machine", vending, false); // The shop in room 2
 		vendingMachine.addToShop(new Food(5, "doritos", "Restore 5 hp", p, 2));
@@ -122,7 +121,6 @@ public class Game {
 		sagaPantry.addToShop(new Food(45, "curry", "Restores 45 hp", p, 20));
 		sagaPantry.addToShop(new Food(25, "shin ramyun", "Restores 25 hp", p, 20));
 		rooms[7].setTheShop(sagaPantry);
-
     }
     
 }
