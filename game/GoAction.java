@@ -26,6 +26,7 @@ public class GoAction implements Action {
 
 	/**
 	 * Moving the player to the next room.
+	 * Prevents player to move when there is no door in the player's given direction.
 	 * @param command The direction where the player wants to go.
 	 * POSTCONDITION: The player is moving to another room.
 	 */

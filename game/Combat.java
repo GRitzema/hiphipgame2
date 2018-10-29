@@ -47,19 +47,23 @@ public class Combat {
 	
 	/**
 	 * The monster attacks the player.
-	 * POSTCONDITION: Decreasing the player's health point.
+	 * POSTCONDITION: Decreasing the player's health point and print out the result of the fight.
 	 */
 	public void monsterCombat() {		
 		if (m.getHealth() >= 0) {
 			double damage = Math.round(Math.random()*10);
 			p.setHealth(p.getHealth()-damage);
-		System.out.println("The monster inflicted " + damage + " damage!");
-		System.out.println("You now have " + p.getHealth() + " hp!");
+			System.out.println("The monster inflicted " + damage + " damage!");
+			if (p.getHealth() > 0) {
+				System.out.println("You now have " + p.getHealth() + " hp!");
+			}
 		}
 	}
 	
 	/**
-	 * The player's action toward the monster.
+	 * The player's action toward the monster:
+	 * Prints out the items in the inventory, fight the monster in the room, 
+	 * print out a "help" instruction, or print out an error message.
 	 * POSTCONDITION: Printing out instructions or descriptions based on the user's choice.
 	 */
 	public void playerCombat() {
@@ -104,12 +108,13 @@ public class Combat {
 	
 	/**
 	 * The player fights the monster.
+	 * The sword being used in the combat has different material options that give different damage points.
 	 * @param sword The sword used for fighting.
 	 * POSTCONDITION: Decreasing the monster's health point.
 	 */
 	public void fight(Sword sword) {
 		double damage = 0;
-		if (Math.random()<=0.2) {
+		if (Math.random()<=0.1) {
 			System.out.println("You missed the monster!");
 		}
 		else {
@@ -136,17 +141,20 @@ public class Combat {
 	
 	/**
 	 * The monster's action toward the player.
+	 * Decreases the player's health if the player still has health point left.
+	 * The player is defeated and the game is over if there is no health point left.
 	 * POSTCONDITION: Either the player's health is decreased or the player is defeated.
 	 */
 	public void engage() {	
 		
 		System.out.println("Mwahaha, your ignorance shall make you pay!");
-		while(m.getHealth() >= 0 && p.getHealth()>=0) {
+		while(m.getHealth() >= 0 && p.getHealth()>0) {
 			playerCombat();
 			monsterCombat();
 		}
 		if (p.getHealth() <=0) {
 			System.out.println("You were defeated!");
+			System.out.println("GAME OVER");
 			game.finishGame();
 		}
 		m.defeat();

@@ -48,6 +48,7 @@ public class Game {
             }
         }
         
+        p.setWealth(30);
         setRooms();
         populateShops();
 
@@ -85,6 +86,7 @@ public class Game {
     	
     	SetRooms set = new SetRooms(rooms, p); // The room being set
     	set.set();
+    	populateShops();
     	
     	over = false;   
     }

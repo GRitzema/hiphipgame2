@@ -37,7 +37,7 @@ public class InventoryAction implements Action {
 	public void takeAction() {
 		System.out.println("In your pockets there are:");
     	pockets.displayInventory();
-    	System.out.println("Also, you have " + p.getWealth() + " dollars.");
+    	System.out.println("Also, you have " + p.getWealth() + " dollars, and " + p.getHealth() + " hp.");
     	
 	}
 

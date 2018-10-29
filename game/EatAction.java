@@ -33,6 +33,7 @@ public class EatAction implements Action{
 
 	/**
 	 * Eat foods that the player has.
+	 * Prevents player from eating an item that is not edible.
 	 * PRECONDITION: The food is in the player's pocket.
 	 * POSTCONDITION: The player ate the food.
 	 */

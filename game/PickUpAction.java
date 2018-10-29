@@ -46,6 +46,7 @@ public class PickUpAction implements Action{
 		if (room.isInside(substring)) {
 			Item x = room.getInside().get(substring); // The item that wants to be picked up.
 			p.addToInventory(x);
+			room.getInside().remove(x.returnName());
 			System.out.println("You picked up the " + substring);
 			room.takeOut(substring);
 		}
