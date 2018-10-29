@@ -115,7 +115,7 @@ public class Game {
 		
         HashMap<String, Food> saga = new HashMap<String, Food>(); // The map of foods available
 		Shop sagaPantry = new Shop("Kitchen Pantry", saga, true); // The shop in room 7
-		sagaPantry.addToShop(new Food(5, "cookie", "Restores 5 hp", p, 1));
+		sagaPantry.addToShop(new Food(5, "cookie dough", "Restores 5 hp", p, 1));
 		sagaPantry.addToShop(new Food(50,"hearty salad","Restores all hp", p, 100));
 		sagaPantry.addToShop(new Food(35, "arancini", "Restores 35 hp", p, 10));
 		sagaPantry.addToShop(new Food(45, "spicy curry", "Restores 45 hp", p, 20));
