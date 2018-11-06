@@ -9,8 +9,10 @@ package game;
  * Oct 26, 2018
  */
 
+
 public interface Action {
 
+	
 	/**
 	 * The action that the player will do when no object is not needed.
 	 * PRECONDITION: The condition before the action is done.

@@ -76,12 +76,13 @@ public class Game {
      */
     public void finishGame() { over = true; }
     
+    
     /**
      * Setter method to set the rooms.
      * PRECONDITION: There is no room in the game.
      * POSTCONDITION: There are rooms in the game.
      */
-    private void setRooms() {
+    private int setRooms() {
     	
     	SetRooms set = new SetRooms(rooms, p); // The room being set
     	set.set();
