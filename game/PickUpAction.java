@@ -48,6 +48,7 @@ public class PickUpAction implements Action{
 			p.addToInventory(x);
 			room.getInside().remove(x.returnName());
 			System.out.println("You picked up the " + substring);
+			room.takeOut(substring);
 		}
 		else if (substring.equals("money") && room.getCash().getAmount() != 0) {
 			p.setWealth(p.getWealth() + room.getCash().getAmount());

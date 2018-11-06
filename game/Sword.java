@@ -78,7 +78,7 @@ public class Sword implements Item{
 	 */
 	public void use() {	
 		wielder.setSword(this);
-		System.out.println("You have equipped " + this.returnName() + "!");
+		System.out.println("You have equipped the " + this.returnName() + "!");
 	}
 	
 	/**

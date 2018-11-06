@@ -106,7 +106,7 @@ public class TalkAction implements Action{
 				}
 				System.out.println("The sphinx vanished into thin air!");
 			} else {
-				System.out.println("\"That answer is not correct... Would you like to guess again? (y/n)\"");
+				System.out.println("\"That answer is not correct");
 				
 			}
 		} else {
