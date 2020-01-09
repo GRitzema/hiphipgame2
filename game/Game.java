@@ -81,7 +81,7 @@ public class Game {
      * PRECONDITION: There is no room in the game.
      * POSTCONDITION: There are rooms in the game.
      */
-    private int setRooms() {
+    private void setRooms() {
     	
     	SetRooms set = new SetRooms(rooms, p); // The room being set
     	set.set();
